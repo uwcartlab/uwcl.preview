@@ -14,8 +14,13 @@
 
   <style>
   #results{
-    min-height: 100%!important;
+    min-height: 150%!important;
+    height: 100% !important;
 		overflow: auto;
+  }
+  html, body{
+    height: 150% !important;
+    min-height: 150%!important;
   }
 
   </style>
@@ -63,41 +68,10 @@
 
     <body>
 
-<!--start search criteria input -->
- 	<div class="container">
- 		<div class="col-md-12 border">
+<div class=''>
+  <div id='results'>
 
-<!-- 		start search button -->
-					<div class="row">
-						<div class="row">
-							<div class="col-md-6">
-										<div id="custom-search-input">
-									<div class="input-group col-md-12">
-										<input type="text" class="form-control input-lg" id='searchbar' placeholder="Search" />
-										<span class="input-group-btn">
-											<button class="btn btn-info btn-lg" type="button">
-												<i class="glyphicon glyphicon-search"></i>
-											</button>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- end search button -->
-		</div>
-		<div class="col-md-12 border">Sort By: <button class='btn btn-small'>Date</button> | <button class='btn btn-small'>Name</button></div>
-</div> <!-- end of search criteria input-->
-
-<div class='container'>
-	<h2>Search Results</h2>
-</div>
-
-<div class='col-xs-9'>
- <div id='results'>
-   <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
- </div>
+  </div>
 </div>
 
 <footer class="footer navbar-fixed-bottom">
@@ -178,72 +152,35 @@
   searchHost = "http://cartlabserver.shc.wisc.edu:8080/search"
   $(document).ready(function(){
     //check if there is a query in the works right now
-    q = getQueryVariable("q")
-    if (q){
-      $("#searchbar").val(q)
-      search() //automatically do a search if there is a URI variable
+    q = +getQueryVariable("id")
+    if (jQuery.isNumeric(q)){
+      console.log("Argument is number")
+          $.ajax("http://cartlabserver.shc.wisc.edu:8080/search/" + q, {
+            success: function(html){
+              $("#results").empty()
+              $("#results").append(html)
+            },
+            error: function(xhr, status, error){
+              console.log(error)
+              window.location.replace("500.html")
+            },
+            contentType: "text/html"
+          })
+    }else{
+      print("Argument is not number")
+      window.location.replace("404.html")
     }
 
-    //bind UI components
-    $("#search").click(function(){
-      search()
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
     })
-    $("input[type=radio]").change(function(){
-      console.log("Clicked")
-      if ($("#searchbar").val != ""){
-        search();
-      }
+    //enable downloading
+    $("#downloadButton").click(function(e){
+      e.preventDefault()
+      loc = $(this).data('ref')
+      window.location.assign(loc);
     })
-    $("#searchbar").pressEnter(function(){
-      search();
-    })
-
-    function search(){
-      //get the query parameters
-      q = $("#searchbar").val()
-      sortBy = $("input[name=sortBy]:checked").val()
-      //set the new url
-      uri_query = getQueryVariable('q')
-      if (!uri_query){
-        //only add if the string doesn't yet have the q uri variable
-        url = location.href
-        var loc = location.href;
-        if (loc.indexOf("?") === -1)
-           loc += "?";
-        else
-           loc += "&";
-        location.href = loc + "q=" + q;
-      }
-      page = getQueryVariable('page')
-      if (!isNaN(+page)){
-        offset = globals.pageSize
-        limit = globals.pageSize
-      }
-      payload = {
-        q: q,
-        sortBy: sortBy,
-        contentType: "html"
-      }
-      //do the search via ajax
-      $.ajax(searchHost,{
-        data: payload,
-        // contentType: "text/html",
-        // dataType: "json",
-        success: function(html){
-          console.log(html)
-          $("#results").empty();
-          $("#results").append(html)
-        },
-        error: function(err){
-          window.location.replace = "500.html"
-        },
-        beforeSend: function(){
-          console.log(this.url)
-        }
-      })
-    }
   })
-
   //for parsing the query string
   function getQueryVariable(variable) {
       var query = window.location.search.substring(1);
@@ -256,19 +193,7 @@
       }
   }
 
-  //to search on enter
-  $.fn.pressEnter = function(fn) {
 
-      return this.each(function() {
-          $(this).bind('enterPress', fn);
-          $(this).keyup(function(e){
-              if(e.keyCode == 13)
-              {
-                $(this).trigger("enterPress");
-              }
-          })
-      });
-   };
-  </script>
+</script>
 </body>
 </html>
