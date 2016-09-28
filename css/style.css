@@ -229,7 +229,7 @@ blockquote.feed cite {
     width: inherit;
     max-width: 100%;
     margin: auto;
-    background-color: green;
+    background-color: #FFF;
 
     -webkit-box-shadow:0 0 15px rgba(0,0,0,0.3);
     -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -704,7 +704,7 @@ nav.navigation select {
 	max-width: 100% !important;
 	border: 1px solid rgba(0,0,0,0.3);
 	padding: 10px;
-	background-color: green;
+	background-color: #FFF;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -1188,11 +1188,16 @@ ul.thumbnails li a:hover {
 /* ==========================================================================
    Footer
    ========================================================================== */
+
+.darkbackground{
+	    background: #333 url('../img/texture.png');
+}
+
 footer {
     width: 100%;
     color: #FFF;
-    background: #333 url('../img/texture.png');
     margin-top: 50px;
+		background-color: white;
     padding: 50px 0;
     font-size: 14px;
     font-weight: 400;
