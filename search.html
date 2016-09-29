@@ -16,7 +16,17 @@
   #results{
     min-height: 100%!important;
 		overflow: auto;
+		margin-bottom: 50px!important;
+		padding-bottom: 50px!important;
   }
+	#ajaxloader{
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer{
+	margin-top: 50px;
+}
 
   </style>
 
@@ -75,7 +85,7 @@
 									<div class="input-group col-md-12">
 										<input type="text" class="form-control input-lg" id='searchbar' placeholder="Search" />
 										<span class="input-group-btn">
-											<button class="btn btn-info btn-lg" type="button">
+											<button class="btn btn-info btn-lg" id='searchbutton' type="button">
 												<i class="glyphicon glyphicon-search"></i>
 											</button>
 										</span>
@@ -87,7 +97,7 @@
 
 					<!-- end search button -->
 		</div>
-		<div class="col-md-12 border">Sort By: <button class='btn btn-small'>Date</button> | <button class='btn btn-small'>Name</button></div>
+		<div class="col-md-12 border">Sort By: <a>Date</a> | <a>Name</a></div>
 </div> <!-- end of search criteria input-->
 
 <div class='container'>
@@ -185,7 +195,7 @@
     }
 
     //bind UI components
-    $("#search").click(function(){
+    $("#searchbutton").click(function(){
       search()
     })
     $("input[type=radio]").change(function(){
@@ -230,15 +240,23 @@
         // contentType: "text/html",
         // dataType: "json",
         success: function(html){
-          console.log(html)
           $("#results").empty();
           $("#results").append(html)
+					//convert to proper case for the title
+					try {
+						titleText = $(".sr-resource-title-link").text()
+						$(".sr-resource-title-link").text(toTitleCase(titleText))
+					} catch (e) {
+						console.log("Could not convert to proper case.")
+					}
+
         },
         error: function(err){
           window.location.replace = "500.html"
         },
         beforeSend: function(){
-          console.log(this.url)
+          $("#results").empty()
+					$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
         }
       })
     }
@@ -269,6 +287,10 @@
           })
       });
    };
+	 function toTitleCase(str)
+	{
+			return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	}
   </script>
 </body>
 </html>

@@ -14,31 +14,18 @@
 
   <style>
   #results{
+    min-height: 100%!important;
 		overflow: auto;
-    margin-bottom: 300px;
+		margin-bottom: 50px!important;
+		padding-bottom: 50px!important;
   }
-  iframe{
-    height: 100%!important;
-    border:2px solid grey;
-    border-width: medium;
-  }
-  embed{
-    height: 100%!important;
-  }
-  #theFile{
-    height: 100%!important;
-    padding-top: 20px !important;
-  }
-  #theFrame{
-    height: 800px!important;
-  }
-  h5, h4{
-    padding-top: 20px!important;
-  }
-  #ajaxloader{
-    display: block;
+	#ajaxloader{
+		display: block;
     margin-left: auto;
     margin-right: auto;
+}
+footer{
+	margin-top: 50px;
 }
 
   </style>
@@ -86,10 +73,15 @@
 
     <body>
 
-<div class=''>
-  <div id='results'>
+<h2 class='category-header category-title'></h2>
+<div class='container'>
+	<h2>Projects</h2>
+</div>
 
-  </div>
+<div class='col-xs-9'>
+ <div id='results'>
+   <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
+ </div>
 </div>
 
 <footer class="footer navbar-fixed-bottom">
@@ -170,39 +162,35 @@
   searchHost = "http://cartlabserver.shc.wisc.edu:8080/search"
   $(document).ready(function(){
     //check if there is a query in the works right now
-    q = +getQueryVariable("id")
-    if (jQuery.isNumeric(q)){
-      console.log("Argument is number")
-          $.ajax("http://cartlabserver.shc.wisc.edu:8080/search/" + q, {
-            success: function(html){
-              $("#results").empty()
-              $("#results").append(html)
-            },
-            error: function(xhr, status, error){
-              console.log(error)
-              window.location.replace("500.html")
-            },
-            contentType: "text/html",
-            beforeSend: function(){
-              $("#results").empty()
-              $("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
-            }
-          })
-    }else{
-      print("Argument is not number")
-      window.location.replace("404.html")
-    }
-
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-    //enable downloading
-    $("#downloadButton").click(function(e){
-      e.preventDefault()
-      loc = $(this).data('ref')
-      window.location.assign(loc);
-    })
+    q = getQueryVariable("q")
+		console.log(q)
+			$(".category-title").text(toTitleCase(q))
+	    function search(){
+	      //get the query parameters
+	      payload = {
+	        q: q,
+	      }
+	      //do the search via ajax
+	      $.ajax(searchHost,{
+	        data: payload,
+	        // contentType: "text/html",
+	        // dataType: "json",
+	        success: function(html){
+	          $("#results").empty();
+	          $("#results").append(html)
+	        },
+	        error: function(err){
+	          window.location.replace = "500.html"
+	        },
+	        beforeSend: function(){
+	          $("#results").empty()
+						$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
+	        }
+	      })
+	    }
+			search();
   })
+
   //for parsing the query string
   function getQueryVariable(variable) {
       var query = window.location.search.substring(1);
@@ -214,8 +202,12 @@
           }
       }
   }
+	function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 
-</script>
+  </script>
 </body>
 </html>
