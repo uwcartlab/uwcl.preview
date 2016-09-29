@@ -303,8 +303,11 @@ USA
           success: function(data){
               if (data['success']){
                 console.log("Upload successful.")
-                window.location.href = "/index.html"
+                window.location.href = "uploadComplete.html"
               }
+          },
+          error: function(xhr, status, error){
+            window.location.href =  '500.html'
           }
         });
       }
