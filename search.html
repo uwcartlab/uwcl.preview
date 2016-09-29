@@ -243,12 +243,12 @@ footer{
           $("#results").empty();
           $("#results").append(html)
 					//convert to proper case for the title
-					try {
-						titleText = $(".sr-resource-title-link").text()
-						$(".sr-resource-title-link").text(toTitleCase(titleText))
-					} catch (e) {
-						console.log("Could not convert to proper case.")
-					}
+					// try {
+					// 	titleText = $(".sr-resource-title-link").text()
+					// 	$(".sr-resource-title-link").text(toTitleCase(titleText))
+					// } catch (e) {
+					// 	console.log("Could not convert to proper case.")
+					// }
 
         },
         error: function(err){
