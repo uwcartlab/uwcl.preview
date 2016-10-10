@@ -203,6 +203,7 @@ footer{
 				        success: function(html){
 				          $("#results").empty();
 				          $("#results").append(html)
+									$("#results").append("<h1>It worked!</h1>")
 				        },
 				        error: function(err){
 				          window.location.replace = "500.html"
