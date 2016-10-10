@@ -362,7 +362,7 @@ footer{
         //only add if the string doesn't yet have the q uri variable
         url = location.href
         var loc = location.href;
-        if (loc.indexOf("?") === -1)
+        if (loc.indexOf("?") === -1){
            loc += "?";
         else
            loc += "&";
@@ -390,6 +390,7 @@ footer{
         }
       })
     }
+		search()
   })
 
   //for parsing the query string
