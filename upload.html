@@ -42,7 +42,7 @@ footer{
 </style>
 </head>
 <body>
-  <a id='indexLink' href="/">Resource Search</a>
+  <a id='indexLink' href="search.html">Resource Search</a>
 <h1 class='page-header'>UWCL Resource Uploading Form <span class='text-success'><i class='beta'>beta</i></span></h1>
   <div id='main' class='container col-xs-offset-2 col-xs-6'>
   <h2 class='page-header'>The Resource</h4>
@@ -57,6 +57,8 @@ footer{
     <label>Tags <span class='text-muted'>comma separated list</span></label><input type="text" id='tags' name='tags' placeholder="maps, research, cool stuff" class='form-control' /><br / />
     <label>URL <span class='text-muted'><i>if the application is dynamically hosted</i></span></label>
     <input type='text' id='link' name='link' placeholder='http://myawesomewebsite.com/myproject' class='form-control' /><br/>
+    <!-- <label>Primary URL <span class='text-muted'>The URL is the primary artifact I'm uploading</span></label> -->
+  </br/>
   </br/>
   <h2 class='page-header'>The Authors
     <button id='addAuthor' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus'></span></button>
@@ -220,11 +222,11 @@ USA
       return
     }
 
-    if ($("#fileUpload").get(0).files.length == 0){
-      $("#fileUpload").addClass("invalid").removeClass("valid")
-      alert("Please specify a file.")
-      return
-    }
+    // if ($("#fileUpload").get(0).files.length == 0){
+    //   $("#fileUpload").addClass("invalid").removeClass("valid")
+    //   alert("Please specify a file.")
+    //   return
+    // }
 
     if($("#authorLast").hasClass("invalid")|| ($("#resourceID").val() == "")){
       $("#authorLast").addClass("invalid").removeClass("valid")
