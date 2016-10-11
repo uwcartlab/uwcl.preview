@@ -14,32 +14,34 @@
 
   <style>
   #results{
+    min-height: 100%!important;
 		overflow: auto;
-    margin-bottom: 300px;
+		margin-bottom: 50px!important;
+		padding-bottom: 50px!important;
   }
-  iframe{
-    height: 100%!important;
-    border:2px solid grey;
-    border-width: medium;
-  }
-  embed{
-    height: 100%!important;
-  }
-  #theFile{
-    height: 100%!important;
-    padding-top: 20px !important;
-  }
-  #theFrame{
-    height: 800px!important;
-  }
-  h5, h4{
-    padding-top: 20px!important;
-  }
-  #ajaxloader{
-    display: block;
+	#ajaxloader{
+		display: block;
     margin-left: auto;
     margin-right: auto;
 }
+a{
+	cursor: pointer;
+}
+
+
+ol li:before{
+	background-color: none !important;
+}
+footer{
+	margin-top: 50px;
+}
+.img-responsive{
+	position: relative;
+	margin-right:0%!important;
+	margin-left:22.5%!important;
+	padding:0px!important;
+}
+
 
   </style>
 
@@ -76,21 +78,41 @@
 
 </head>
 <body>
+	<nav class="navbar navbar-right">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="production.html">Production</a></li>
+      <li class="active"><a href="research.html">Research</a></li>
+      <li><a href="education.html">Education</a></li>
+			<li><a href="search.html">Search</a></li>
+    </ul>
+  </div>
+</nav>
     <div class="container">
         <div class="row">
             <div class="span4 logo">
-                UW Cartography Lab
+							UW Cartography Lab
             </div>
           </div>
-        </div><!--end of header -->
+    </div><!--end of header -->
+<div class='container'>
+  <h2>
+		User Experience & User Interface (UX/UI) Design
+	</h2>
+	<p>
+	Increasingly, cartographers need both to <i>encode</i> geographic information as well as <i>code</i> a useful and usable interface for exploring the resulting maps. But interface design is much more than pushing 0s and 1s, and few time-tested principles exist to inform design of the user experience. Increasingly, we contribute to interaction science, approaching topics such as cartographic interaction primitives (i.e., the building blocks of an interactive map), interface flexibility versus constraint, user expertise and motivation, coordinated multiview geovisualization, and applications of interactive mapping to support geography.
+	</p>
 
-    <body>
 
-<div class=''>
-  <div id='results'>
-
-  </div>
+	<h3>Recent projects in <i>UI/UX Design</i></h2>
+	<div id='results'>
+   <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
+	</div>
 </div>
+
+</div>
+
 
 <footer class="footer navbar-fixed-bottom">
     <!-- <div class="row darkbackground">
@@ -163,59 +185,57 @@
         "//cdn.datatables.net/1.10.12/js/jquery.dataTables.js" type=
         "text/javascript">
         </script>
+        <script>
+				  searchHost = "http://cartlabserver.shc.wisc.edu:8080/search"
+				  $(document).ready(function(){
+				    //check if there is a query in the works right now
+						search()
+				  })
 
-<script>
-  globals = {}
-  globals.pageSize = 1
-  searchHost = "http://cartlabserver.shc.wisc.edu:8080/search"
-  $(document).ready(function(){
-    //check if there is a query in the works right now
-    q = +getQueryVariable("id")
-    if (jQuery.isNumeric(q)){
-      console.log("Argument is number")
-          $.ajax("http://cartlabserver.shc.wisc.edu:8080/search/" + q, {
-            success: function(html){
-              $("#results").empty()
-              $("#results").append(html)
-            },
-            error: function(xhr, status, error){
-              console.log(error)
-              window.location.replace("500.html")
-            },
-            contentType: "text/html",
-            beforeSend: function(){
-              $("#results").empty()
-              $("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
-            }
-          })
-    }else{
-      print("Argument is not number")
-      window.location.replace("404.html")
-    }
+					function search(){
+						//get the query parameters
+						q = "research"
+						payload = {
+							category: q,
+							contentType: "html",
+              tags: "ui/ux",
+							limit: 5
+						}
+						//do the search via ajax
+						$.ajax(searchHost,{
+							data: payload,
+							// contentType: "text/html",
+							// dataType: "json",
+							success: function(html){
+								$("#results").empty();
+								$("#results").append(html)
+							},
+							error: function(err){
+								window.location.replace = "500.html"
+							},
+							beforeSend: function(){
+								$("#results").empty()
+								$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
+								console.log("Searching.")
+							}
+						})
+					}
 
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-    //enable downloading
-    $("#downloadButton").click(function(e){
-      e.preventDefault()
-      loc = $(this).data('ref')
-      window.location.assign(loc);
-    })
-  })
-  //for parsing the query string
-  function getQueryVariable(variable) {
-      var query = window.location.search.substring(1);
-      var vars = query.split('&');
-      for (var i = 0; i < vars.length; i++) {
-          var pair = vars[i].split('=');
-          if (decodeURIComponent(pair[0]) == variable) {
-              return decodeURIComponent(pair[1]);
-          }
-      }
-  }
-
-
-</script>
+				  //for parsing the query string
+				  function getQueryVariable(variable) {
+				      var query = window.location.search.substring(1);
+				      var vars = query.split('&');
+				      for (var i = 0; i < vars.length; i++) {
+				          var pair = vars[i].split('=');
+				          if (decodeURIComponent(pair[0]) == variable) {
+				              return decodeURIComponent(pair[1]);
+				          }
+				      }
+				  }
+					 function toTitleCase(str)
+					{
+							return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+					}
+				  </script>
 </body>
 </html>

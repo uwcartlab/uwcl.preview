@@ -24,8 +24,19 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+ol li:before{
+	background-color: none !important;
+}
 footer{
 	margin-top: 50px;
+}
+.img-responsive{
+	position: relative;
+	margin-right:0%!important;
+	margin-left:22.5%!important;
+	padding:0px!important;
 }
 
 
@@ -63,60 +74,69 @@ footer{
 	<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-touch-icon-144x144.png">
 
 </head>
-<body>
-	<nav class="navbar navbar-right">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="production.html">Production</a></li>
-      <li ><a href="research.html">Research</a></li>
-      <li><a href="education.html">Education</a></li>
-			<li class="active"><a href="search.html">Search</a></li>
-    </ul>
-  </div>
+<nav class="navbar navbar-right">
+<div class="container-fluid">
+  <ul class="nav navbar-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="production.html">Production</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li class="active"><a href="education.html">Education</a></li>
+    <li ><a href="search.html">Search</a></li>
+  </ul>
+</div>
 </nav>
-    <div class="container">
-        <div class="row">
-            <div class="span4 logo">
-							UW Cartography Lab
-            </div>
+  <div class="container">
+      <div class="row">
+          <div class="span4 logo">
+            UW Cartography Lab
           </div>
-    </div><!--end of header -->
+        </div>
+  </div><!--end of header -->
+<div class='container'>
+	<h2 class='page-header'>Cartography Curriculum in UW Geography</h2>
 
-<!--start search criteria input -->
- 	<div class="container">
- 		<div class="col-md-12 border">
+  <p>
+  The cartography curriculum at UW-Madison dates to 1937 and was expanded rapidly after <a>Arthur Robinson</a> joined the UW Geography faculty following the end of World War II. Today, the cartography curriculum sits within a campus-wide array of courses covering geospatial data, GIS, remote sensing, and spatial statistics. Five of these courses are fully or partially dedicated to cartography instruction.
+  </p>
+  <p>
+  In a recent refresh of the curriculum, we realigned the courses based on two distinctions defining contemporary cartography. The first axis captures the traditional distinction between <i>mapmaking</i> and <i>map use</i> while the second axis captures an emerging distinction between <i>representation</i> and <i>interaction</i> that is increasingly fundamental to cartography and related fields. The refreshed curriculum captures topics ranging from the basics of reference and thematic map design to interactive, web, and mobile map design and visual ethics and critique.
+  </p>
 
-<!-- 		start search button -->
-					<div class="row">
-						<div class="row">
-							<div class="col-md-12">
-										<div id="custom-search-input">
-									<div class="input-group col-xs-12">
-										<input type="text" class="form-control input-lg" id='searchbar' placeholder="Search" />
-										<span class="input-group-btn">
-											<button class="btn btn-info btn-lg" id='searchbutton' type="button">
-												<i class="glyphicon glyphicon-search"></i>
-											</button>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+  <img alt="Roth Cube topics" src="http://lorempixel.com/400/200/sports/1">
 
-					<!-- end search button -->
-		</div>
-</div> <!-- end of search criteria input-->
+  <h3>Which Cartography Course is Right for You?</h3>
+  <p>
+  Interested in maps, geography, or design? We’d love to have you in our cartography classes! Each course balances concept with skills, promoting design thinking with industry-standard technology. Take a look at the topics and technologies covered in each class, and pay particular attention to the beautiful array of final projects from prior offerings:
+  </p
+  <ul>
+  <li><a>Geography 170: Our Digital Globe</a></li>
+  <li><a>Geography 370: Introduction to Cartography</a></li>
+  <li><a>Geography 572: Graphic Design in Cartography</a></li>
+  <li><a>Geography 575: Interactive Cartography & Geovisualization</a></li>
+  <li><a>Geography 970: Seminar in Cartography</a></li>
+  </ul>
+
+
+
 
 <div class='container'>
-	<h2>Search Results</h2>
+	<h2>View recent course projects</h2>
+  <ul>
+    <li>
+      <a href="search.html?category=education&tags=370">370</a>
+    </li>
+    <li>
+      <a href="search.html?category=education&tags=572">572</a>
+    </li>
+    <li>
+      <a href="search.html?category=education&tags=575">575</a>
+    </li>
+    <li>
+      <a href="search.html?category=education&tags=970">970</a>
+    </li>
+  </ul>
 </div>
 
-<div class='col-xs-9'>
- <div id='results'>
-   <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
- </div>
 </div>
 
 <footer class="footer navbar-fixed-bottom">
@@ -191,115 +211,5 @@ footer{
         "text/javascript">
         </script>
 
-<script>
-  globals = {}
-  globals.pageSize = 1
-  searchHost = "http://cartlabserver.shc.wisc.edu:8080/search"
-  $(document).ready(function(){
-    //check if there is a query in the works right now
-    q = getQueryVariable("q")
-    if (q){
-      $("#searchbar").val(q)
-      search() //automatically do a search if there is a URI variable
-    }
-
-    //bind UI components
-    $("#searchbutton").click(function(){
-      search()
-    })
-    $("input[type=radio]").change(function(){
-      console.log("Clicked")
-      if ($("#searchbar").val != ""){
-        search();
-      }
-    })
-    $("#searchbar").pressEnter(function(){
-      search();
-    })
-
-    function search(){
-      //get the query parameters
-      q = $("#searchbar").val()
-      sortBy = $("input[name=sortBy]:checked").val()
-      //set the new url
-      uri_query = getQueryVariable('q')
-      if (!uri_query){
-        //only add if the string doesn't yet have the q uri variable
-        url = location.href
-        var loc = location.href;
-        if (loc.indexOf("?") === -1)
-           loc += "?";
-        else
-           loc += "&";
-        location.href = loc + "q=" + q;
-      }
-      page = getQueryVariable('page')
-      if (!isNaN(+page)){
-        offset = globals.pageSize
-        limit = globals.pageSize
-      }
-      payload = {
-        q: q,
-        sortBy: sortBy,
-        contentType: "html"
-      }
-      //do the search via ajax
-      $.ajax(searchHost,{
-        data: payload,
-        // contentType: "text/html",
-        // dataType: "json",
-        success: function(html){
-          $("#results").empty();
-          $("#results").append(html)
-					//convert to proper case for the title
-					// try {
-					// 	titleText = $(".sr-resource-title-link").text()
-					// 	$(".sr-resource-title-link").text(toTitleCase(titleText))
-					// } catch (e) {
-					// 	console.log("Could not convert to proper case.")
-					// }
-
-        },
-        error: function(err){
-          window.location.replace = "500.html"
-        },
-        beforeSend: function(){
-          $("#results").empty()
-					$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
-        }
-      })
-    }
-  })
-
-  //for parsing the query string
-  function getQueryVariable(variable) {
-      var query = window.location.search.substring(1);
-      var vars = query.split('&');
-      for (var i = 0; i < vars.length; i++) {
-          var pair = vars[i].split('=');
-          if (decodeURIComponent(pair[0]) == variable) {
-              return decodeURIComponent(pair[1]);
-          }
-      }
-  }
-
-  //to search on enter
-  $.fn.pressEnter = function(fn) {
-
-      return this.each(function() {
-          $(this).bind('enterPress', fn);
-          $(this).keyup(function(e){
-              if(e.keyCode == 13)
-              {
-                $(this).trigger("enterPress");
-              }
-          })
-      });
-   };
-	 function toTitleCase(str)
-	{
-			return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-	}
-  </script>
 </body>
 </html>
