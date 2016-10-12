@@ -53,14 +53,6 @@ footer{
     </ul>
   </div>
 </nav>
-    <div class="container">
-        <div class="row">
-            <div class="span4 logo">
-              UW Cartography Lab
-            </div>
-          </div>
-    </div><!--end of header -->
-  <a id='indexLink' href="search.html">Resource Search</a>
 <h1 class='page-header'>UWCL Resource Uploading Form <span class='text-success'><i class='beta'>beta</i></span></h1>
   <div id='main' class='container col-xs-offset-2 col-xs-8'>
   <h2 class='page-header'>The Resource</h4>
@@ -77,14 +69,14 @@ footer{
     </div>
     <div id='col-xs-12'>
       <h4>Type of Resource</h4>
-      <input type='radio' name='resourcetype' value='poster' /><label class='form-label'>Poster</label> <br />
+      <input type='radio' name='resourcetype' value='publication' /><label class='form-label'>Publication <span class='text-muted'> journal articles, conference papers, reports, etc</span></label> <br />
       <input type='radio' name='resourcetype' value='slides' /><label class='form-label'>Presentation Slides</label><br />
-      <input type='radio' name='resourcetype' value='publication' /><label class='form-label'>Publication</label><br />
-      <input type='radio' name='resourcetype' value='image' /><label class='form-label'>Image</label><br />
-      <input type='radio' name='resourcetype' value='link' /><label class='form-label'>Link</label><br />
-      <input type='radio' name='resourcetype' value='poster'/><label class='form-label'>Poster</label><br />
-      <input type='radio' name='resourcetype' value='poster'/><label class='form-label'>Poster</label><br />
-      <input type='radio' name='resourcetype' value='uncategorized' checked/><label class='form-label'>Uncategorized</label><br />
+      <input type='radio' name='resourcetype' value='poster' /><label class='form-label'>Poster</label><br />
+      <input type='radio' name='resourcetype' value='map' /><label class='form-label'>Map</label><br />
+      <input type='radio' name='resourcetype' value='dataset' /><label class='form-label'>Dataset</label><br />
+      <input type='radio' name='resourcetype' value='link'/><label class='form-label'>Link</label><br />
+      <input type='radio' name='resourcetype' value='video'/><label class='form-label'>Video</label><br />
+      <input type='radio' name='resourcetype' value='uncategorized' checked/><label class='form-label'>Other</label><br />
     </div>
   <h4>Short Identifier</h4> <label><span class='text-muted'>no spaces</span></label><input type='text' id='resourceID' name='resourceID' class='form-control' placeholder='Roth_2009_CaGIS'/><br />
     <h4>Title</h4><input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map."/><br />
@@ -251,7 +243,8 @@ USA
         email: uploaderEmail
       },
       resourceFilename: resourceFilename,
-      link: link
+      link: link,
+      typeOfResource: resourcetype
     }
     //do form validation
     if ($("#resourceID").hasClass('invalid') || ($("#resourceID").val() == "")){
