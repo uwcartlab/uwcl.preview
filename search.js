@@ -31,6 +31,6 @@ $.fn.pressEnter = function(fn) {
  function redirectToSearch(){
    console.log("Redirecting.")
    q = $("#searchbar").val();
-   url = "http://localhost:8000/?q=" + encodeURIComponent(q);
+   url = "search.html?q=" + encodeURIComponent(q);
    window.location.href=url;
  }
