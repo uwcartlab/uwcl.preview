@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-  <style>
+<style>
   #results{
     min-height: 100%!important;
 		overflow: auto;
@@ -23,9 +23,6 @@
 		display: block;
     margin-left: auto;
     margin-right: auto;
-}
-a{
-	cursor: pointer;
 }
 
 
@@ -41,7 +38,18 @@ footer{
 	margin-left:22.5%!important;
 	padding:0px!important;
 }
+.carousel-inner > .item > img {
+    margin: 0 auto!important;
+}
 
+.edu{
+	max-width: 100%;
+	height: auto;
+}
+
+.course{
+	padding-bottom: 50px;
+}
 
   </style>
 
@@ -79,18 +87,17 @@ footer{
 </head>
 <body>
 	<nav class="navbar navbar-right">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      	<li><a href="production.html">Production</a></li>
-      	<li class="active"><a href="research.html">Research</a></li>
-	    <li ><a href="education.html">Education</a></li>
+	<div class="container-fluid">
+	  <ul class="nav navbar-nav">
+	    <li><a href="production.html">Production</a></li>
+	    <li><a href="research.html">Research</a></li>
+	    <li class="active"><a href="education.html">Education</a></li>
 	    <li><a href="mapChat.html">Map Chat</a></li>
         <li><a href="people.html">People</a></li>
 	    <li ><a href="search.html">Search</a></li>
-    </ul>
-  </div>
-</nav>
-
+	  </ul>
+	</div>
+	</nav>
     <div class="container">
         <div class="row">
             <div class="span4 logo">
@@ -99,18 +106,48 @@ footer{
         </div>
     </div><!--end of header -->
 
+
 <div class='container'>
-  <h2>
-		User Experience & User Interface (UX/UI) Design
-	</h2>
-	<p>
-	Increasingly, cartographers need both to <i>encode</i> geographic information as well as <i>code</i> a useful and usable interface for exploring the resulting maps. But interface design is much more than pushing 0s and 1s, and few time-tested principles exist to inform design of the user experience. Increasingly, we contribute to interaction science, approaching topics such as cartographic interaction primitives (i.e., the building blocks of an interactive map), interface flexibility versus constraint, user expertise and motivation, coordinated multiview geovisualization, and applications of interactive mapping to support geography.
-	</p>
+	<h2 class='page-header'>Education <i>Cartography Courses at UW Geography</i></h2>
 
+	<div class='container'>
+		<div class='row'>
 
-	<h3>Recent projects in <i>UI/UX Design</i></h2>
+			<div class='col-md-8'>
+
+			<div class='course'>
+
+				<h2>Geography 572: Graphic Design in Cartography</h2>
+				
+					<p>Geography 572 (G572) provides an extended examination of advanced topics regarding <em>cartographic representation</em>, or the graphics, sounds, haptics, etc., constituting maps that are employed to encode geographic information.  G572 is a direct extension of the <a href="...">G370</a> course, but with a focus on cartographic design for the web rather than print, and draws upon research and practice on graphic design, information visualization, and semiotics. Specifically, G572 emphasizes mapmaking over map use (compared to G170) and the design of web-delivered maps themselves, rather than the design of interfaces to these maps (compared to <a href="...">G575</a>).</p>
+
+				<h3><a href="assets/syllabi/G572_fall2015.pdf">Fall 2015 Syllabus</a> | <a href="">Final Projects</a></h3>
+			</div>
+
+		</div>
+
+			<div class='col-md-4'>
+				<h3>COURSES</h3>
+
+		 		<div>
+			 		<p><a href="eduCourses.html">Curriculum Overview</a><br>
+			 		<a href="eduCourses_G370.html">Geography 370: Introduction to Cartography</a><br>
+					<a href="eduCourses_G572.html">Geography 572: Graphic Design in Cartography</a><br>
+					<a href="eduCourses_G575.html">Geography 575: Interactive Cartography Geovisualization</a><br>
+					<a href="eduCourses_G970.html">Geography 970: Interactive Cartography Geovisualization</a>
+
+					<p>Find this seemster's course offerings at the <a href="https://public.my.wisc.edu/portal/f/u124l1s4/p/CourseGuide-Browse-Courses.u124l1n31/detached/render.uP?pCm=view&pP_action=advancedSearch&pP_form-submit=true">online Course Guide</a></p>
+				</div>
+
+			</div>
+
+			</div>
+		</div>
+	
+<div class='container'>
+	<h2>Recent projects in <i>Education</i></h2>
 	<div id='results'>
-   <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
+ <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
 	</div>
 </div>
 
@@ -189,7 +226,7 @@ footer{
         "text/javascript">
         </script>
         <script>
-				  searchHost = "https://cartlabserver.shc.wisc.edu:8443/search"
+				  searchHost = " http://144.92.235.239:8080/search"
 				  $(document).ready(function(){
 				    //check if there is a query in the works right now
 						search()
@@ -197,12 +234,10 @@ footer{
 
 					function search(){
 						//get the query parameters
-						q = "research"
+						q = "education"
 						payload = {
 							category: q,
-							contentType: "html",
-              tags: "ui/ux",
-							limit: 5
+							contentType: "html"
 						}
 						//do the search via ajax
 						$.ajax(searchHost,{
@@ -239,6 +274,6 @@ footer{
 					{
 							return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 					}
-				  </script>
+		</script>
 </body>
 </html>
