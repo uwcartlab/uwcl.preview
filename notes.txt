@@ -1,0 +1,26 @@
+Log in with Putty - Cart Lab
+
+User: cartlabdaemon
+PW: G30gr4ph
+
+/etc/ssl/certs has private key and certificate
+add paths to options in app.js
+
+GOALS:
+-Restful URLs to all artifacts
+-Password reset feature
+-DOI input on upload form
+-Add resource previews
+-Link artifacts to Google Scholar and ResearchGate
+-Other SEO considerations
+-Featured projects edit interface
+-Responsiveness and CSS
+
+UPDATE FORM: 
+*schema is column headers of uwcl website: artifact metadata google spreadsheet*
+-Search by publication/outlet - autocomplete or dropdown
+-Category changes available types
+-add categories
+-Allow admins to edit inputs
+
+-Deploy front end on server
