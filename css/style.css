@@ -1,3 +1,7 @@
+#navText{
+    color: white;
+}
+
 #caption-light{
     color: white;
 }
@@ -145,8 +149,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-weight: 400;
 	line-height: 1em;
-    /*color: #515151;
-*/
+    color: #515151;
+
     /*header color*/
 }
 
