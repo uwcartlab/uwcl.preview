@@ -1,3 +1,15 @@
+#caption-light{
+    color: white;
+}
+
+#caption-dark{
+    color: gray;
+    text-shadow: 2px 2px 2px white;  
+}
+
+.carousel-caption{
+}
+
 .overview{
     padding-top: 50px;
     margin-right:0%!important;
@@ -133,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-weight: 400;
 	line-height: 1em;
-/*    color: #c5050c;
+    /*color: #515151;
 */
     /*header color*/
 }

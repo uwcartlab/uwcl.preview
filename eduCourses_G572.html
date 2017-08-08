@@ -86,25 +86,31 @@ footer{
 
 </head>
 <body>
-	<nav class="navbar navbar-right">
-	<div class="container-fluid">
-	  <ul class="nav navbar-nav">
-	    <li><a href="production.html">Production</a></li>
-	    <li><a href="research.html">Research</a></li>
-	    <li class="active"><a href="education.html">Education</a></li>
-	    <li><a href="mapChat.html">Map Chat</a></li>
-        <li><a href="people.html">People</a></li>
-	    <li ><a href="search.html">Search</a></li>
-	  </ul>
-	</div>
-	</nav>
-    <div class="container">
-        <div class="row">
-            <div class="span4 logo">
-        		<a href="index.html">UW Cartography Lab</a>
-            </div>
+<!--Collapsing NavBar --> 
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="actual_images/CartLab_logo4.png" alt="UW Cartography Lab" style="width:300px;height:auto;"></a>
         </div>
-    </div><!--end of header -->
+
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="production.html">Production</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="mapChat.html">Map Chat</a></li>
+                <li><a href="people.html">People</a></li>
+                <li class="active"><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+<!--end of header --> 
 <div class='container'>
 	<div class='col-md-12'>
 
@@ -117,7 +123,6 @@ footer{
 		    <li data-target="#productionCarousel" data-slide-to="0" class="active"></li>
 		    <li data-target="#productionCarousel" data-slide-to="1"></li>
 		    <li data-target="#productionCarousel" data-slide-to="2"></li>
-		    <li data-target="#productionCarousel" data-slide-to="3"></li>
 		  </ol>
 
 		  <!-- Wrapper for slides -->
@@ -129,10 +134,6 @@ footer{
 			
 			<div class="item">
 		      <img src="actual_images/slideshow/education_slides/formatted/Fall2013_Abplanalp.jpg" class='img-responsive' alt="...">
-		    </div>
-
-		    <div class="item">
-		      <img src="actual_images/slideshow/education_slides/formatted/Fall2016_JosieSajbel.png" class='img-responsive' alt="...">
 		    </div>
 
 		    <div class="item">
@@ -153,29 +154,42 @@ footer{
 	</div>
 </div>
 
-
-<div class='container'>
 	<div class='container'>
 		<div class='overview'>
 
 			<div class='col-md-8'>
 
-			<div class='course'>
+				<div class='course'>
 
-				<h2>Geography 572: Graphic Design in Cartography</h2>
-				
-					<p>Geography 572 (G572) provides an extended examination of advanced topics regarding <em>cartographic representation</em>, or the graphics, sounds, haptics, etc., constituting maps that are employed to encode geographic information.  G572 is a direct extension of the <a href="...">G370</a> course, but with a focus on cartographic design for the web rather than print, and draws upon research and practice on graphic design, information visualization, and semiotics. Specifically, G572 emphasizes mapmaking over map use (compared to G170) and the design of web-delivered maps themselves, rather than the design of interfaces to these maps (compared to <a href="...">G575</a>).</p>
+					<h2>Geography 572: Graphic Design in Cartography</h2>
+					
+						<p>Geography 572 (G572) provides an extended examination of advanced topics regarding <em>cartographic representation</em>, or the graphics, sounds, haptics, etc., constituting maps that are employed to encode geographic information.  G572 is a direct extension of the <a href="...">G370</a> course, but with a focus on cartographic design for the web rather than print, and draws upon research and practice on graphic design, information visualization, and semiotics. Specifically, G572 emphasizes mapmaking over map use (compared to G170) and the design of web-delivered maps themselves, rather than the design of interfaces to these maps (compared to <a href="...">G575</a>).</p>
 
-				<h3><a href="assets/syllabi/G572_fall2015.pdf">Fall 2015 Syllabus</a> | <a href="">Final Projects</a></h3>
+						<p>Check out past syllabi and finals projects below!</p>
+
+						<h2>Fall 2016</h2>
+						<p>Instructor: Robert Roth<br>
+						TA: Nick Lally</p>
+
+						<!-- Still need Fall 2016 syllabus -->
+						<h3 class='page-header'><a href="assets/syllabi/G572_fall2015.pdf">Fall 2016 Syllabus</a> | <a href="">Final Projects</a></h3>
+
+						<h2>Fall 2015</h2>
+						<p>Instructor: Robert Roth<br>
+						TA: Chelsea Nestel</p>
+
+						<h3 class='page-header'><a href="assets/syllabi/G572_fall2015.pdf">Fall 2015 Syllabus</a> | <a href="">Final Projects</a></h3>
+
+
+				</div>
 			</div>
-
-		</div>
 
 			<div class='col-md-4'>
 				<h3>COURSES</h3>
 
 		 		<div>
 			 		<p><a href="eduCourses.html">Curriculum Overview</a><br>
+			 		<a href="eduCourses_G170.html">Geography 170: Our Digital Globe</a><br>
 			 		<a href="eduCourses_G370.html">Geography 370: Introduction to Cartography</a><br>
 					<a href="eduCourses_G572.html">Geography 572: Graphic Design in Cartography</a><br>
 					<a href="eduCourses_G575.html">Geography 575: Interactive Cartography Geovisualization</a><br>
@@ -183,18 +197,19 @@ footer{
 
 					<p>Find this seemster's course offerings at the <a href="https://public.my.wisc.edu/portal/f/u124l1s4/p/CourseGuide-Browse-Courses.u124l1n31/detached/render.uP?pCm=view&pP_action=advancedSearch&pP_form-submit=true">online Course Guide</a></p>
 				</div>
-
-			</div>
-
 			</div>
 		</div>
-	
-<div class='container'>
-	<h2>Recent projects in <i>Geography 572</i></h2>
-	<div id='results'>
- <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
 	</div>
-</div>
+	
+	<div class='container'>
+		<div class='col-md-12'>
+			<h2>Recent projects in <i>Geography 572</i></h2>
+			<div id='results'>
+	 		<!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
+			</div>
+		</div>
+	</div>
+
 
 </div>
 

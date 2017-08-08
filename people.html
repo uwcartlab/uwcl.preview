@@ -87,26 +87,31 @@ footer{
 
 </head>
 <body>
-	<nav class="navbar navbar-right">
-	<div class="container-fluid">
-	  <ul class="nav navbar-nav">
-	    <li><a href="production.html">Production</a></li>
-	    <li><a href="research.html">Research</a></li>
-	    <li><a href="education.html">Education</a></li>
-	    <li><a href="mapChat.html">Map Chat</a></li>
-        <li class="active"><a href="people.html">People</a></li>
-	    <li ><a href="search.html">Search</a></li>
-	  </ul>
-	</div>
-	</nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="span4 logo">
-        		<a href="index.html">UW Cartography Lab</a>
-            </div>
+<!--Collapsing NavBar --> 
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="actual_images/CartLab_logo4.png" alt="UW Cartography Lab" style="width:300px;height:auto;"></a>
         </div>
-    </div><!--end of header -->
+
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="production.html">Production</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="mapChat.html">Map Chat</a></li>
+                <li><a href="people.html">People</a></li>
+                <li class="active"><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+<!--end of header --> 
 
 	<div class='container'>
 		<div class='row'>
@@ -128,7 +133,7 @@ footer{
 
 				<h3><a href="TanyaBuckingham.html">Tanya Buckingham</a></h3>				
 				<p><i>Creative Director</i><br>
-				Email: <br>
+				Email: tanya.buckingham@wisc.edu<br>
 				Twitter: <a href="https://twitter.com/tanmabuck">@tanmabuck  </a><br>
 				</p>
 
@@ -142,9 +147,9 @@ footer{
 
 				<h3><a href="RobertERoth.html">Robert Roth</a></h3>
 				
-				<p><i>Academic Director</i><br>
+				<p><i>Faculty Director</i><br>
 
-				Email: <br>
+				Email: reroth@wisc.edu<br>
 				Twitter: <a href="https://twitter.com/RobertERoth ">@RobertERoth </a><br>
 				</p>
 
@@ -191,9 +196,8 @@ footer{
 
 				<h3>Alicia Iverson </h3>
 				<p><i>Masters Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/AliciaAIverson">@AliciaAIverson </a><br>
-				Portfolio <br>
+				<!-- Portfolio <br> -->
 				</p>
 
 			</div>
@@ -206,7 +210,6 @@ footer{
 
 				<h3>Leanne Abraham </h3>
 				<p><i>Masters Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/LeanneFaybraham">@LeanneFaybraham</a><br>
 				<a href="https://leanneabraham.github.io/">Portfolio </a><br>
 				</p>
@@ -223,7 +226,6 @@ footer{
 
 				<h3>Ross Thorn </h3>
 				<p><i>Masters Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/RealRossThorn">@RealRossThorn</a><br>
 				<a href="https://rossthorn.github.io/">Portfolio</a><br>
 				</p>
@@ -237,7 +239,6 @@ footer{
 
 				<h3>Carl Sack </h3>
 				<p><i>Ph.D. Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/northlandiguana">@northlandiguana</a><br>
 				<a href="http://www.northlandia.com/">Portfolio</a><br>
 				</p>
@@ -254,7 +255,6 @@ footer{
 
 				<h3>Chelsea Nestel </h3>
 				<p><i>Ph.D. Student</i><br>
-				Email: <br>
 				<a href="http://nestelmaps.azurewebsites.net/">Portfolio</a><br>
 				</p>
 			</div>
@@ -283,7 +283,6 @@ footer{
 
 				<h3>Heather Rosenfeld </h3>
 				<p><i>Ph.D. Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/brainvom">@brainvom</a><br>	<!-- Portfolio <br> -->
 				</p>
 			</div>
@@ -296,7 +295,6 @@ footer{
 
 				<h3>Nick Lally </h3>
 				<p><i>Ph.D. Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/nicklally">@nicklally</a><br>	
 				<a href="http://www.nicklally.com/">Portfolio </a><br>
 				</p>
@@ -313,23 +311,49 @@ footer{
 
 				<h3>Eric Nost </h3>
 				<p><i>Ph.D. Student</i><br>
-				Email: <br>
 				Twitter: <a href="https://twitter.com/ericnost">@ericnost</a><br>	
-				Portfolio <br>
+<!-- 				Portfolio <br> -->
 			</div>
 
 			<div class='col-md-2'>
-<!-- 		 		<img src="actual_images/people/current_students/nick_lally.jpg" alt="..." class="profile-thumbnail"> -->
+		 		<img src="actual_images/people/default.jpg" alt="..." class="profile-thumbnail">
 			</div>
 		 	
 			<div class='col-md-3'>
-<!-- 
-				<h3>Nick Lally </h3>
-				<p>Ph.D. Student<br>
-				Email: <br>
-				Twitter: <br>
-				Portfolio <br>
-				</p> -->
+
+				<h3>Soren Walljasper<h3>
+				<p><i>Undergraduate</i><br>
+				Twitter: <a href="https://twitter.com/snwalljasper">@snwalljasper ‏</a><br>
+				<a href="http://swalljasper.github.io/index.html">Portfolio</a><br>
+				</p>
+			</div>
+
+		</div>@snwalljasper ‏
+
+		<div class='row'>
+			<div class='col-md-2'>
+		 		<img src="actual_images/people/default.jpg" alt="..." class="profile-thumbnail">
+			</div>
+		 	
+			<div class='col-md-3'>
+
+				<h3>Jacob Sanchez</h3>
+				<p><i>Undergraduate</i><br>
+<!-- 				Twitter: <a href="https://twitter.com/ericnost">@ericnost</a><br>	
+ --><!-- 				Portfolio <br> -->
+			</div>
+
+			<div class='col-md-2'>
+		 		<img src="actual_images/people/default.jpg" alt="..." class="profile-thumbnail">
+			</div>
+		 	
+			<div class='col-md-3'>
+
+				<h3>Josie Sajbel<h3>
+				<p><i>Undergraduate</i><br>
+<!-- 				Twitter: <br> -->
+<!-- 				Portfolio <br> -->
+				</p>
 			</div>
 
 		</div>
@@ -406,7 +430,7 @@ footer{
 
 		<div class='row'>
 			<div class='col-md-2'>
-		 		<img src="actual_images/people/current_students/arthur_robinson.jpg" alt="..." class="profile-thumbnail">
+		 		<img src="actual_images/people/default.jpg" alt="..." class="profile-thumbnail">
 			</div>
 		 	
 			<div class='col-md-3'>
@@ -421,7 +445,7 @@ footer{
 			</div>
 
 			<div class='col-md-2'>
-		 		<img src="actual_images/people/current_students/arthur_robinson.jpg" alt="..." class="profile-thumbnail">
+		 		<img src="actual_images/people/default.jpg" alt="..." class="profile-thumbnail">
 			</div>
 		 	
 			<div class='col-md-3'>

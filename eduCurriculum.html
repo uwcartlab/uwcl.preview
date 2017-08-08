@@ -86,29 +86,40 @@ footer{
 
 </head>
 <body>
-	<nav class="navbar navbar-right">
-	<div class="container-fluid">
-	  <ul class="nav navbar-nav">
-	    <li><a href="production.html">Production</a></li>
-	    <li><a href="research.html">Research</a></li>
-	    <li class="active"><a href="education.html">Education</a></li>
-	    <li><a href="mapChat.html">Map Chat</a></li>
-        <li><a href="people.html">People</a></li>
-	    <li ><a href="search.html">Search</a></li>
-	  </ul>
-	</div>
-	</nav>
-    <div class="container">
-        <div class="row">
-            <div class="span4 logo">
-        		<a href="index.html">UW Cartography Lab</a>
-            </div>
+<!--Collapsing NavBar --> 
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="actual_images/CartLab_logo4.png" alt="UW Cartography Lab" style="width:300px;height:auto;"></a>
         </div>
-    </div><!--end of header -->
+
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="production.html">Production</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="mapChat.html">Map Chat</a></li>
+                <li><a href="people.html">People</a></li>
+                <li class="active"><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+<!--end of header --> 
 
 
-<div class='container'>
-	<h2 class='page-header'>Education <i>Cartography Courses at UW Geography</i></h2>
+	<div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				<h2 class='page-header'>Education</h2>
+			</div>
+		</div>
+	</div>
 
 	<div class='container'>
 		<div class='row'>
@@ -121,10 +132,6 @@ footer{
 				<p>
 				In a recent refresh of the curriculum, we realigned the courses based on two distinctions defining contemporary cartography. The first axis captures the traditional distinction between <i>mapmaking</i> and <i>map use</i> while the second axis captures an emerging distinction between <i>representation</i> and <i>interaction</i> that is increasingly fundamental to cartography and related fields. The refreshed curriculum captures topics ranging from the basics of reference and thematic map design to interactive, web, and mobile map design and visual ethics and critique.
 				</p>
-
-		<!-- 		<div>
-		 			<img src="actual_images/education/eduCourse_cube.jpg" alt="..." class="edu">
-		 		</div> -->
 
 				<h2>Which Cartography Course is Right for You?</h2>
 
