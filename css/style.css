@@ -1,3 +1,9 @@
+.logo{
+    width: auto;
+    height: auto;
+    padding-bottom: 25px;
+}
+
 #navText{
     color: white;
 }
