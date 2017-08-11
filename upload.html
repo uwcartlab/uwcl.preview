@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <title>CartLab File Uploader</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -36,6 +37,23 @@ margin-left: 10px;
 #indexLink{
   float:right;
 }
+
+.form-label {
+    margin-left: 5px;
+}
+
+.author-row, .ref-row {
+  padding-top: 10px;
+}
+
+.resource-type li {
+  display: block;
+}
+
+.changefields {
+  width: 100%;
+}
+
 footer{
   text-align: center;
 }
@@ -53,9 +71,15 @@ footer{
     </ul>
   </div>
 </nav>
-<h1 class='page-header'>UWCL Resource Uploading Form <span class='text-success'><i class='beta'>beta</i></span></h1>
-  <div id='main' class='container col-xs-offset-2 col-xs-8'>
-  <h2 class='page-header'>The Resource</h4>
+
+<div id='main' class='container col-xs-offset-2 col-xs-8'>
+  <h1 class='page-header'>
+    UWCL Resource Uploading Form <span class='text-success'><i class='beta'>beta</i></span>
+  </h1>
+  <div id='the-resource'>
+    <h2 class='page-header'>The Resource</h2>
+      
+    <!-- File upload or link text input -->
     <div class='col-xs-5'>
       <label>File</label>
       <input id='fileUpload' type='file' /><i class='invalid' id='file-error' style='display:none'>File Type Not Allowed</i><br / />
@@ -67,54 +91,213 @@ footer{
       <label>Link</label>
       <input type='text' id='link' name='link' placeholder='http://myawesomewebsite.com/myproject' class='form-control' /><br/>
     </div>
+
+  </div> <!-- end of The Resource div -->
+
+  <div id='the-metadata'>
+    <h2 class='page-header'>The Metadata</h2>
+
+    <!-- Category dropdown -->
+    <h4>Category</h4>
+    <select id='resourceCategory' class='form-control'></select><br />
+
+    <!-- Type radio list -->
     <div id='col-xs-12'>
       <h4>Type of Resource</h4>
-      <input type='radio' name='resourcetype' value='publication' /><label class='form-label'>Publication <span class='text-muted'> journal articles, conference papers, reports, etc</span></label> <br />
-      <input type='radio' name='resourcetype' value='slides' /><label class='form-label'>Presentation Slides</label><br />
-      <input type='radio' name='resourcetype' value='poster' /><label class='form-label'>Poster</label><br />
-      <input type='radio' name='resourcetype' value='map' /><label class='form-label'>Map</label><br />
-      <input type='radio' name='resourcetype' value='dataset' /><label class='form-label'>Dataset</label><br />
-      <input type='radio' name='resourcetype' value='link'/><label class='form-label'>Link</label><br />
-      <input type='radio' name='resourcetype' value='video'/><label class='form-label'>Video</label><br />
-      <input type='radio' name='resourcetype' value='uncategorized' checked/><label class='form-label'>Other</label><br />
-    </div>
-  <h4>Short Identifier</h4> <label><span class='text-muted'>no spaces</span></label><input type='text' id='resourceID' name='resourceID' class='form-control' placeholder='Roth_2009_CaGIS'/><br />
-    <h4>Title</h4><input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map."/><br />
-    <h4>Date</h4><input type='date' id='resourceCreationDate' name='resourceDate' class='form-control' val="1/1/2016" /><br />
-    <h4>Category</h4><select id='resourceCategory' class='form-control'>
-    </select> <br / />
-    <h4>Description</h4><textarea id='resourceDesc' placeholder='A really cool paper by @roberteroth.' class='form-control' ></textarea><br / />
-    <h4>Tags </h4><label><span class='text-muted'>comma separated list</span></label><input type="text" id='tags' name='tags' placeholder="maps, research, cool stuff" class='form-control' /><br / />
+      <span class='text-muted type-placeholder'>Select a category above</span>
+      <ul class='resource-type' style="display: none;">
+        <!-- Research options -->
+        <li class='Research'>
+          <input type='radio' name='resourcetype' value='journal' />
+          <label class='form-label'>Journal Article</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='chapter' />
+          <label class='form-label'>Book Section</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='conference' />
+          <label class='form-label'>Conference Proceedings</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='slides' />
+          <label class='form-label'>Conference Presentation (slides)</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='poster' />
+          <label class='form-label'>Conference Poster</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='thesis' />
+          <label class='form-label'>Thesis or Dissertation</label>
+        </li><li class='Research'>
+          <input type='radio' name='resourcetype' value='research-other' />
+          <label class='form-label'>Other:</label>
+          <input type='text' name='research-other'>
+        </li>
+        <!-- Education options -->
+        <li class='Education'>
+          <input type='radio' name='resourcetype' value='project' />
+          <label class='form-label'>Final Project</label>
+        </li><li class='Education'>
+          <input type='radio' name='resourcetype' value='tutorial' />
+          <label class='form-label'>Tutorial</label>
+        </li><li class='Education'>
+          <input type='radio' name='resourcetype' value='education-other' />
+          <label class='form-label'>Other:</label>
+          <input type='text' name='education-other'>
+        </li>
+        <!-- Production options -->
+        <li class='Production'>
+          <input type='radio' name='resourcetype' value='map' />
+          <label class='form-label'>Map</label>
+        </li><li class='Production'>
+          <input type='radio' name='resourcetype' value='interactive' />
+          <label class='form-label'>Interactive</label>
+        </li><li class='Production'>
+          <input type='radio' name='resourcetype' value='video'/>
+          <label class='form-label'>Video Demonstration</label>
+        </li><li class='Production'>
+          <input type='radio' name='resourcetype' value='dataset' />
+          <label class='form-label'>Dataset</label>
+        </li><li class='Production'>
+          <input type='radio' name='resourcetype' value='production-other' />
+          <label class='form-label'>Other:</label>
+          <input type='text' name='production-other'>
+        </li>
+        <!-- Map Chat options -->
+        <li class='Map-Chat'>
+          <input type='radio' name='resourcetype' value='blog' />
+          <label class='form-label'>Blog Post</label>
+        </li><li class='Map-Chat'>
+          <input type='radio' name='resourcetype' value='news' />
+          <label class='form-label'>News</label>
+        </li><li class='Map-Chat'>
+          <input type='radio' name='resourcetype' value='map-chat-other' />
+          <label class='form-label'>Other:</label>
+          <input type='text' name='map-chat-other'>
+        </li>
+      </ul>
+    </div><br/>
 
-    <!-- <label>Primary URL <span class='text-muted'>The URL is the primary artifact I'm uploading</span></label> -->
-  </br/>
-  </br/>
-  <h2 class='page-header'>The Authors
-    <button id='addAuthor' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus'></span></button>
-    <button id='removeAuthor' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus'></span></button>
-  </h2>
+    <!-- Short Title text field -->
+    <h4>Short Title</h4>
+    <label><span class='text-muted typechange shorttitlelabel'></span></label>
+    <input type='text' id='resourceID' name='resourceID' class='form-control'/><br />
+    
+    <!-- Full Title text field -->
+    <h4>Full Title</h4>
+    <label><span class='text-muted'>Complete document title only; No author, year, outlet, etc.</span></label>
+    <input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Title of the resource"/><br />
+
+    <!-- Tags text area -->
+    <h4>Tags</h4>
+    <label><span class='text-muted'>Provide a comma-separated list</span></label>
+    <textarea id='tags' name='tags' placeholder="tag1, tag2, tag3..." class='form-control'></textarea><br />
+
+    <!-- Authors -->
+    <h4>Authors
+      <button id='addAuthor' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus'></span></button>
+      <button id='removeAuthor' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus'></span></button>
+    </h4>
+    <label><span class='text-muted'>Full first name, middle initial(s), full last name</span></label>
+
+    <!-- authors container div -->
     <div id='authors'>
+      <div id='authorRow1'>
+        <label>First Author: </label>
+        <input type='text' id='authorFirst' class='authorFirst form-control' placeholder='Buck' />
+        <input type='text' id='authorMiddle' class='authorMiddle form-control' placeholder="E." />
+        <input type='text' id='authorLast' class='authorLast form-control' placeholder="Badger" />
+      </div>
+    </div><br/>
 
-    <label>First Author: </label><input type='text' id='authorFirst' class='authorFirst form-control' placeholder='Robert' />
-    <input type='text' id='authorMiddle' class='authorMiddle form-control' placeholder="E." />
-    <input type='text' id='authorLast' class='authorLast form-control' placeholder="Roth" />
-  </div>
-    <br />
+    <!-- Description paragraph input -->
+    <h4>General Description</h4>
+    <textarea id='resourceDesc' placeholder='Describe the resource' class='form-control' ></textarea><br />
 
-  <h2 class='page-header'>The References
-    <button id='addReference' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus' ></span></button>
-    <button id='removeReference' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus' ></span></button>
-  </h2>
-  <div id='refs'>
-      <label>Published Reference</label><input type='text' class='form-control' id='ref1' placeholder='Roth, Robert E., and Mark Harrower. "Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map." Cartographic Perspectives 60 (2008): 46-66.' />
-  </div>
-  <br / />
+    <!-- Publication Date field -->
+    <h4 class='typechange dateheader'>Date</h4>
+    <label><span class='text-muted'>If no date is supplied, work will be tagged with today's date</span></label>
+    <input type='date' id='publicationDate' name='publicationDate' class='form-control' placeholder='DD/MM/YYYY' /><br />
+    
+    <span class="changefields Research">
+      <!-- Outlet text field -->
+      <h4 class="Publication">Publication Outlet</h4>
+      <input type='text' id='outlet' name='outlet' class='form-control' placeholder="Cartographic Perspectives"/><br />
+
+      <!-- Volume text field -->
+      <h4>Volume</h4>
+      <input type='text' id='volume' name='volume' class='form-control' placeholder="1"/><br />
+
+      <!-- Issue text field -->
+      <h4>Issue</h4>
+      <input type='text' id='issue' name='issue' class='form-control' placeholder="1"/><br />
+
+      <!-- Pages text field -->
+      <h4>Pages</h4>
+      <input type='text' id='pages' name='pages' class='form-control' placeholder="1-10"/><br />
+
+      <!-- Conference Location text field -->
+      <h4>Conference Location</h4>
+      <input type='text' id='location' name='location' class='form-control' placeholder="Madison, WI, USA"/><br />
+
+      <!-- DOI text field -->
+      <h4>DOI</h4>
+      <input type='text' id='doi' name='doi' class='form-control' placeholder="10.1234/56789012.2017.3456789"/><br />
+
+      <!-- External URL text field -->
+      <h4>External URL</h4>
+      <input type='text' id='url' name='url' class='form-control' placeholder="Only use if resource is being uploaded as a file"/><br />
+    </span>
+
+    <span class="changefields Production">
+      <!-- Data Sources text area -->
+      <h4>Data Sources</h4>
+      <textarea id='sources' class="form-control" placeholder="Describe the data sources used"/></textarea><br />
+
+      <!-- Data Quality text area -->
+      <h4>Data Quality</h4>
+      <textarea id='quality' class="form-control" placeholder="Describe the accuracy, completeness, consistency, and lineage of the data used, including creation dates"/></textarea><br />
+
+      <!-- Spatial Data Organization text area -->
+      <h4>Spatial Data Organization</h4>
+      <textarea id='organization' class="form-control" placeholder="For datasets, describe whether the data is raster, vector, or 3D and the types and numbers of elements"/></textarea><br />
+
+      <!-- Spatial Reference text area -->
+      <h4>Spatial Reference</h4>
+      <textarea id='reference' class="form-control" placeholder="Describe the projection, grid system, datum, and/or coordinate system"/></textarea><br />
+
+      <!-- Feature and Attribute Information text area -->
+      <h4>Feature and Attribute Information</h4>
+      <textarea id='attributes' class="form-control" placeholder="Describe the number and types of features and the included attributes and value ranges"/></textarea><br />
+
+      <!-- Distribution Information text area -->
+      <h4>Distribution Information</h4>
+      <textarea id='distribution' class="form-control" placeholder="Describe the formats and media in which the product is distributed, including any relevant URLs"/></textarea><br />
+    </span>
+
+    <span class="changefields Education">
+      <!-- Completion Date input -->
+      <h4>Completion Date</h4>
+      <input type='date' id='completionDate' name='completionDate' class='form-control' placeholder='1-1-2017'/><br />
+
+      <!-- Course Abbreviation text input -->
+      <h4>Course Abbreviation</h4>
+      <input type='text' id='courseAbbr' name='courseAbbr' class='form-control' placeholder='GEOG 572' /><br />
+
+      <!-- Course Name text input -->
+      <h4>Course Name</h4>
+      <input type='text' id='courseName' name='courseName' class='form-control' placeholder='Graphic Design in Cartography' /><br />
+    </span>
+
+  </div> <!-- end of The Metadata div -->
+
+  <!-- The Uploader div -->
+  <div id='the-uploader'>
     <h2 class='page-header'>The Uploader</h4>
-  <label>Uploader Name</label><input type='text' class='form-control' id='uploaderName' placeholder="Your Name" /><br / />
-  <label>Uploader Email</label><input type='text' id='uploaderEmail' class='form-control' placeholder='you@wisc.edu' /><br / />
+    <label>Uploader Name</label>
+    <input type='text' class='form-control' id='uploaderName' placeholder="Your Name" /><br / />
+    <label>Uploader Email</label>
+    <input type='text' id='uploaderEmail' class='form-control' placeholder='you@wisc.edu' />
+  </div> <!-- end of The Uploader div -->
 
 
-  <br / />
   <button id='submit' class='btn btn-primary btn-large'>Submit Form</button>
 </div>
 <footer class='col-xs-12'>
@@ -132,11 +315,11 @@ USA
   <script>
   globals = {}
   globals.hosts = {
-    categories : "http://144.92.235.239:8080/categories",
-    search : "http://144.92.235.239:8080/search",
-    post : "http://144.92.235.239:8080/upload",
-    mediaTypes : "http://144.92.235.239:8080/mediatypes",
-    upload : "http://144.92.235.239:8080/upload"
+    categories : "https://cartlabserver.shc.wisc.edu:8443/categories",
+    search : "https://cartlabserver.shc.wisc.edu:8443/search",
+    post : "https://cartlabserver.shc.wisc.edu:8443/upload",
+    mediaTypes : "https://cartlabserver.shc.wisc.edu:8443/mediatypes",
+    upload : "https://cartlabserver.shc.wisc.edu:8443/upload"
   }
   globals.authorCount = 1;
   globals.refCount = 1;
@@ -151,7 +334,7 @@ USA
     $("#addAuthor").click(function(){
       //add another set of author fields
       globals.authorCount += 1
-      html = "<div id='authorRow" + globals.authorCount + "''<label>Author " + globals.authorCount + ": </label><input type='text' id='authorFirst" + globals.authorCount + "' class='authorFirst form-control' placeholder='Robert' /><input type='text' id='authorMiddle" + globals.authorCount + "' class='authorMiddle form-control' placeholder='E.'' /> <input type='text' id='authorLast" + globals.authorCount + "' class='authorLast form-control' placeholder='Roth' />"
+      var html = "<div id='authorRow" + globals.authorCount + "' class='author-row'><label>Author " + globals.authorCount + ": </label><input type='text' id='authorFirst" + globals.authorCount + "' class='authorFirst form-control' placeholder='Buck' /><input type='text' id='authorMiddle" + globals.authorCount + "' class='authorMiddle form-control' placeholder='E.'' /> <input type='text' id='authorLast" + globals.authorCount + "' class='authorLast form-control' placeholder='Badger' />"
       $("#authors").append(html)
     })
     $("#removeAuthor").click(function(){
@@ -165,7 +348,7 @@ USA
     $("#addReference").click(function(){
       //add another reference field
       globals.refCount += 1;
-      html = "<div id='refRow" + globals.refCount + "'><label>Published Reference " + globals.refCount + "</label><input type='text' id='ref" + globals.refCount + "' class='form-control'/></div>"
+      var html = "<div id='refRow" + globals.refCount + "' class='ref-row'><label>Published Reference " + globals.refCount + "</label><input type='text' id='ref" + globals.refCount + "' class='form-control'/></div>"
       $("#refs").append(html)
     })
     $("#removeReference").click(function(){
@@ -177,11 +360,9 @@ USA
     })
   })
 
-
-
   function submit(){
     //get the form values
-    var resourceID = $("#resourceID").val()
+    var resourceID = $("#resourceID").val().replace(/ |'|"/g, '_')
     var resourceName = $("#resourceName").val()
     //get the first author, (required)
     var firstAuthor = {
@@ -361,19 +542,80 @@ USA
     })
   }
 
+  function resetTypes(){
+    $("input[name=resourcetype]:checked").removeAttr("checked"); //uncheck checked resource type
+    $(".resource-type").show();
+    //only show types that match the current category
+    $(".resource-type li, .changefields").hide();
+    var cat = $("#resourceCategory").val();
+    $("."+cat).slideDown(200);
+    $(".resource-type li:visible").length > 0 ? $('.type-placeholder').hide() : $('.type-placeholder').show();
+  };
+
+  function applyTypes(e){
+    console.log(e.target.value);
+    var typechange = {
+      dateheader: {
+        journal: "Preprint Date",
+        chapter: "Preprint Date",
+        conference: "Presentation Date",
+        slides: "Presentation Date",
+        poster: "Presentation Date",
+        thesis: "Submission Date",
+        "research-other": "Date",
+        project: "Project Date",
+        tutorial: "Publication Date",
+        "education-other": "Date",
+        map: "Map Date",
+        interactive: "Date",
+        video: "Date",
+        dataset: "Compilation Date",
+        "production-other": "Date"
+      },
+      shorttitlelabel: {
+        journal: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Kelly (2017) CP",
+        chapter: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Roth (2017) GIS&T BoK",
+        conference: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Nestel (2017) ICC",
+        slides: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Sack et al. (2017) NACIS Slides",
+        poster: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Sack et al. (2017) NACIS Poster",
+        thesis: "<em>Format: Author (YYYY) Type; e.g.,</em> Sack (2013) Thesis",
+        "research-other": "<em>Format: Author (YYYY) Type</em>",
+        project: "<em>Format: Author (YYYY) Type</em>",
+        tutorial: "<em>Format: Author (YYYY) Type</em>",
+        "education-other": "<em>Format: Author (YYYY) Type</em>",
+        map: "<em>Format: Author (YYYY) Abbreviated Title</em>",
+        interactive: "<em>Format: Author (YYYY) Type</em>",
+        video: "<em>Format: Author (YYYY) Type</em>",
+        dataset: "<em>Format: Author (YYYY) Type</em>",
+        "production-other": "<em>Format: Author (YYYY) Type</em>"
+      }
+    };
+    for (var el in typechange){
+      $(".typechange."+el).html(typechange[el][e.target.value]);
+    }
+  }
+
   function getCategories(populate){
+    //populate the dropdown menu
+    $("#resourceCategory").empty()
+    var html = "<option selected='true' disabled='disabled'>Pick a Category</option>"
+    $("#resourceCategory").append(html);
+
     $.getJSON(globals.hosts.categories, function(data){
-      globals.categories = data
+      globals.categories = data;
       if (populate){
-        //populate the dropdown menu
-        $("#resourceCategory").empty()
-        categoryData = data['data']
+        categoryData = data['data'].sort(function(a, b){
+          return a.categoryid - b.categoryid;
+        });
         for (var i = 0; i < categoryData.length; i++){
-          html = "<option value='" +categoryData[i]['categorytext'] + "'>" + categoryData[i]['categorytext'] + "</option>"
-          $("#resourceCategory").append(html)
+          var txt = categoryData[i]['categorytext'].replace(/ /g, '-');
+          var html = "<option value='" + txt + "'>" + categoryData[i]['categorytext'] + "</option>"
+          $("#resourceCategory").append(html);
         }
       }
-    })
+    });
+
+    resetTypes();
   }
 
   function setDate(){
@@ -398,7 +640,10 @@ $("#fileUpload").change(function(){
     $("#fileUpload").removeClass("invalid").addClass('valid')
     $("#file-error").hide();
   }
-})
+});
+
+$("#resourceCategory").change(resetTypes);
+$("input[name=resourcetype]").on("input", applyTypes);
 
 //do all of the form validation
 $("#resourceID").on("input", function(){

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"change",
+				"changefields"
+			],
+			[
+				"padding-",
+				"padding-bottom"
+			],
+			[
 				"paddi",
 				"padding-top"
 			],
@@ -154,10 +162,6 @@
 			[
 				"InteractionD",
 				"InteractionDataLayersModel"
-			],
-			[
-				"change",
-				"changeNClasses"
 			],
 			[
 				"mod",
@@ -510,10 +514,6 @@
 			[
 				"setTechn",
 				"setTechnique"
-			],
-			[
-				"leafletDa",
-				"leafletDataLayers"
 			]
 		]
 	},
@@ -523,63 +523,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 6404,
+				"buffer_size": 6519,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "category.html",
+			"file": "/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/backend/conf.js",
 			"settings":
 			{
-				"buffer_size": 6558,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "design.html",
-			"settings":
-			{
-				"buffer_size": 8552,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "education.html",
-			"settings":
-			{
-				"buffer_size": 13559,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mobileMapping.html",
-			"settings":
-			{
-				"buffer_size": 7653,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "production.html",
-			"settings":
-			{
-				"buffer_size": 9649,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "project.html",
-			"settings":
-			{
-				"buffer_size": 6896,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "research-paper.html",
-			"settings":
-			{
-				"buffer_size": 6242,
+				"buffer_size": 613,
 				"line_ending": "Windows"
 			}
 		},
@@ -587,23 +539,23 @@
 			"file": "research.html",
 			"settings":
 			{
-				"buffer_size": 13615,
+				"buffer_size": 18452,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "search.html",
+			"file": "upload.html",
 			"settings":
 			{
-				"buffer_size": 9193,
+				"buffer_size": 22836,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "UI_UX.html",
+			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 7860,
+				"buffer_size": 40199,
 				"line_ending": "Windows"
 			}
 		}
@@ -632,8 +584,23 @@
 	},
 	"file_history":
 	[
-		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/js/custom.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/backend/app.js",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/js/main.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/category.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/design.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/education.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/mobileMapping.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/production.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/project.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/research-paper.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/research.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/UI_UX.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/search.html",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/js/custom.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/uwcl.preview/js/npm.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/backend/conf.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/.gitignore",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/README.md",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/setup/setup.js",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/js/modules/m-section.js",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/doc/README.md",
@@ -744,22 +711,7 @@
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/doc/usage.md",
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/lib/VERSIONS.md",
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/CONFIG.json",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/main.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/lib/leaflet/leaflet.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/lib/jquery.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/project_files/mbtiles/Senegal.tm2/project.xml",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/lib/mapboxgl/mapbox-gl.js",
-		"/C/Users/Carl/Downloads/leaflet/leaflet.js",
-		"/C/Users/Carl/Downloads/mapbox-gl-js-master/mapbox-gl-js-master/js/mapbox-gl.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/lib/plugins.js",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/robots.txt",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/humans.txt",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/css/main.css",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/doc/html.md",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/img/.gitignore",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/js/plugins.js",
-		"/C/Users/Carl/Downloads/html5-boilerplate_v5.2.0/js/main.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/php/query.php"
+		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy/js/main.js"
 	],
 	"find":
 	{
@@ -777,6 +729,45 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"resourceCreationDate",
+			"slidedown",
+			"resource-type",
+			"resetTypes",
+			"html",
+			"change",
+			"resourceCategory",
+			"map",
+			"author-row",
+			"authors",
+			"categories",
+			"http://144.92.235.239:8080",
+			"globals",
+			"resourceCategory",
+			"resourceID",
+			"=========================",
+			"user",
+			"label",
+			"form-label",
+			"results",
+			"http://144.92.235.239:8080/search\"",
+			"http://144.92.235.239:8080/search",
+			"search",
+			"URI",
+			"conf",
+			"PORT",
+			"credentials",
+			"PORT",
+			"app",
+			"createServer",
+			"express",
+			"app",
+			"request",
+			"server",
+			"http",
+			"app",
+			"createServer",
+			"conf.application.servePort",
+			"http",
 			"http://144.92.235.239:8080/search",
 			"http",
 			"classification",
@@ -865,46 +856,7 @@
 			".reset",
 			"leafletView.trigger",
 			"toggle",
-			"resetButton",
-			"reset",
-			"refreshmap",
-			"reset-control",
-			"reset",
-			"legend",
-			"textAnchor",
-			"text-anchor",
-			"text",
-			"techniquesObj",
-			"Label",
-			"Leaflet",
-			"layerOptions",
-			"console",
-			"label",
-			"removeLayer",
-			"addLayer",
-			"minZoom",
-			".show",
-			"minZoom",
-			"Label",
-			"checkLayerZoom",
-			"console",
-			"checkLayerZoom",
-			"offLayer",
-			"addLayer",
-			"layerChange",
-			"setBaseLayer",
-			"Leaflet",
-			"map.on",
-			"console",
-			"zoomend",
-			"zoomstart",
-			"\"zoom\"",
-			"'zoom'",
-			"Label",
-			"console",
-			"yOffset",
-			"'label",
-			"\"label"
+			"resetButton"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -912,6 +864,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"https://cartlabserver.shc.wisc.edu:8443",
+			"https://cartlabserver.shc.wisc.edu:8443/search",
 			"https://144.92.235.239:8080/search",
 			"legLayerA",
 			"orderLayers",
@@ -1037,8 +991,6 @@
 			"layerDiv",
 			".layer-name",
 			"leafletLayer",
-			"displayAttributes",
-			"dataLayers",
 			"displayAttributes"
 		],
 		"reverse": false,
@@ -1050,7 +1002,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1058,15 +1010,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 6404,
+						"buffer_size": 6519,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3848,
-								3848
+								667,
+								667
 							]
 						],
 						"settings":
@@ -1076,275 +1028,118 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1716.0,
+						"translation.y": 858.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "category.html",
+					"file": "/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/cartlabdb/backend/conf.js",
 					"settings":
 					{
-						"buffer_size": 6558,
+						"buffer_size": 613,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5165,
-								5131
+								113,
+								101
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3344.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "design.html",
+					"file": "research.html",
 					"settings":
 					{
-						"buffer_size": 8552,
+						"buffer_size": 18452,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6917,
-								6917
+								573,
+								573
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3926.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "education.html",
+					"file": "upload.html",
 					"settings":
 					{
-						"buffer_size": 13559,
+						"buffer_size": 22836,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12125,
-								12125
+								9854,
+								9854
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6412.0,
+						"translation.y": 5390.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "mobileMapping.html",
+					"file": "css/style.css",
 					"settings":
 					{
-						"buffer_size": 7653,
+						"buffer_size": 40199,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6173,
-								6173
+								31367,
+								31367
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3926.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "production.html",
-					"settings":
-					{
-						"buffer_size": 9649,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8214,
-								8214
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 4916.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "project.html",
-					"settings":
-					{
-						"buffer_size": 6896,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5549,
-								5549
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3662.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "research-paper.html",
-					"settings":
-					{
-						"buffer_size": 6242,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5122,
-								5122
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3288.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "research.html",
-					"settings":
-					{
-						"buffer_size": 13615,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12165,
-								12165
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 6786.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "search.html",
-					"settings":
-					{
-						"buffer_size": 9193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6252,
-								6218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4058.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "UI_UX.html",
-					"settings":
-					{
-						"buffer_size": 7860,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6381,
-								6381
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3992.0,
+						"translation.y": 2860.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
