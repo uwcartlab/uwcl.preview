@@ -104,7 +104,7 @@ footer{
     <!-- Type radio list -->
     <div id='col-xs-12'>
       <h4>Type of Resource</h4>
-      <span class='text-muted type-placeholder'>Select a category above</span>
+      <span class='type-placeholder' style="color: #f00;">Select a category above</span>
       <ul class='resource-type' style="display: none;">
         <!-- Research options -->
         <li class='Research'>
@@ -181,7 +181,7 @@ footer{
     <input type='text' id='resourceID' name='resourceID' class='form-control'/><br />
     
     <!-- Full Title text field -->
-    <h4>Full Title</h4>
+    <h4 class="typechange fulltitleheader">Full Title</h4>
     <label><span class='text-muted'>Complete document title only; No author, year, outlet, etc.</span></label>
     <input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Title of the resource"/><br />
 
@@ -218,8 +218,9 @@ footer{
     
     <span class="changefields Research">
       <!-- Outlet text field -->
-      <h4 class="Publication">Publication Outlet</h4>
-      <input type='text' id='outlet' name='outlet' class='form-control' placeholder="Cartographic Perspectives"/><br />
+      <h4 class="typechange outletheader">Publication Outlet</h4>
+      <label><span class='text-muted typechange outletlabel'></span></label>
+      <input type='text' id='outlet' name='outlet' class='form-control'/><br />
 
       <!-- Volume text field -->
       <h4>Volume</h4>
@@ -239,7 +240,7 @@ footer{
 
       <!-- DOI text field -->
       <h4>DOI</h4>
-      <input type='text' id='doi' name='doi' class='form-control' placeholder="10.1234/56789012.2017.3456789"/><br />
+      <input type='text' id='doi' name='doi' class='form-control' placeholder="Include full link, e.g., http://dx.doi.org/10.1234/56789012.2017.3456789"/><br />
 
       <!-- External URL text field -->
       <h4>External URL</h4>
@@ -543,11 +544,13 @@ USA
   }
 
   function resetTypes(){
+
     $("input[name=resourcetype]:checked").removeAttr("checked"); //uncheck checked resource type
     $(".resource-type").show();
     //only show types that match the current category
     $(".resource-type li, .changefields").hide();
     var cat = $("#resourceCategory").val();
+    if (cat != null){ $("#resourceCategory").removeAttr("style"); }; //remove red border
     $("."+cat).slideDown(200);
     $(".resource-type li:visible").length > 0 ? $('.type-placeholder').hide() : $('.type-placeholder').show();
   };
@@ -570,24 +573,90 @@ USA
         interactive: "Date",
         video: "Date",
         dataset: "Compilation Date",
-        "production-other": "Date"
+        "production-other": "Date",
+        blog: "Date of Post",
+        news: "Article Date",
+        "map-chat-other": "Date"
       },
       shorttitlelabel: {
-        journal: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Kelly (2017) CP",
-        chapter: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Roth (2017) GIS&T BoK",
-        conference: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Nestel (2017) ICC",
-        slides: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Sack et al. (2017) NACIS Slides",
-        poster: "<em>Format: Author et al. (YYYY) Abbreviated Outlet; e.g.,</em> Sack et al. (2017) NACIS Poster",
-        thesis: "<em>Format: Author (YYYY) Type; e.g.,</em> Sack (2013) Thesis",
-        "research-other": "<em>Format: Author (YYYY) Type</em>",
-        project: "<em>Format: Author (YYYY) Type</em>",
-        tutorial: "<em>Format: Author (YYYY) Type</em>",
-        "education-other": "<em>Format: Author (YYYY) Type</em>",
-        map: "<em>Format: Author (YYYY) Abbreviated Title</em>",
-        interactive: "<em>Format: Author (YYYY) Type</em>",
-        video: "<em>Format: Author (YYYY) Type</em>",
-        dataset: "<em>Format: Author (YYYY) Type</em>",
-        "production-other": "<em>Format: Author (YYYY) Type</em>"
+        journal: "Format: Author et al. (YYYY) Abbreviated Outlet; e.g., <em>Kelly (2017) CP</em>",
+        chapter: "Format: Author et al. (YYYY) Abbreviated Outlet; e.g., <em>Roth (2017) GIS&T BoK</em>",
+        conference: "Format: Author et al. (YYYY) Abbreviated Outlet; e.g., <em>Nestel (2017) ICC</em>",
+        slides: "Format: Author et al. (YYYY) Abbreviated Outlet; e.g., <em>Sack et al. (2017) NACIS Slides</em>",
+        poster: "Format: Author et al. (YYYY) Abbreviated Outlet; e.g., <em>Sack et al. (2017) NACIS Poster</em>",
+        thesis: "Format: Author (YYYY) Type; e.g., <em>Sack (2013) Thesis</em>",
+        "research-other": "Format: Author (YYYY) Type",
+        project: "Format: Author (YYYY) Type",
+        tutorial: "Format: Author (YYYY) Type",
+        "education-other": "Format: Author (YYYY) Type",
+        map: "Format: Author (YYYY) Abbreviated Title",
+        interactive: "Format: Author (YYYY) Type",
+        video: "Format: Author (YYYY) Type",
+        dataset: "Format: Author (YYYY) Type",
+        "production-other": "Format: Author (YYYY) Type",
+        blog: "Format: Author (YYYY) Abbreviated Outlet",
+        news: "Format: Author (YYYY) Abbreviated Outlet",
+        "map-chat-other": "Format: Author (YYYY) Abbreviated Outlet"
+      },
+      fulltitleheader: {
+        journal: "Full Article Title",
+        chapter: "Full Book Section Title",
+        conference: "Full Proceedings Paper Title",
+        slides: "Full Presentation Title",
+        poster: "Full Poster Title",
+        thesis: "Full Document Title",
+        "research-other": "Full Title",
+        project: "Full Title",
+        tutorial: "Full Title",
+        "education-other": "Full Title",
+        map: "Full Title",
+        interactive: "Full Title",
+        video: "Full Title",
+        dataset: "Full Title",
+        "production-other": "Full Title",
+        blog: "Full Blog Post Title",
+        news: "Full Headline",
+        "map-chat-other": "Full Title"
+      },
+      outletheader: {
+        journal: "Journal",
+        chapter: "Book Title",
+        conference: "Conference",
+        slides: "Conference or Meeting",
+        poster: "Conference",
+        thesis: "Degree",
+        "research-other": "Publication Outlet",
+        project: "Class",
+        tutorial: "Publication Outlet",
+        "education-other": "Publication Outlet",
+        map: "Publication Outlet",
+        interactive: "Publication Outlet",
+        video: "Publication Outlet",
+        dataset: "Publication Outlet",
+        "production-other": "Publication Outlet",
+        blog: "Blog Name",
+        news: "News Outlet",
+        "map-chat-other": "Publication Outlet"
+      },
+      outletlabel: {
+        journal: "Full journal name, e.g., <em>Cartographic Perspectives</em>",
+        chapter: "Complete book title only; No author, year, outlet",
+        conference: "Full conference name, e.g., <em>American Association of Geographers</em>",
+        slides: "Full conference name, e.g., <em>American Association of Geographers</em>",
+        poster: "Full conference name, e.g., <em>American Association of Geographers</em>",
+        thesis: "e.g., <em>GIS Certificate, B.S., M.S., Ph.D.</em>",
+        "research-other": "Full outlet name",
+        project: "",
+        tutorial: "Full outlet name",
+        "education-other": "Full outlet name",
+        map: "Full outlet name, e.g., <em>Atlas of Design</em>",
+        interactive: "Full outlet name, e.g., <em>bl.ocks.org</em>",
+        video: "Full outlet name, e.g., <em>Cartography YouTube Channel</em>",
+        dataset: "Full outlet name, e.g., <em>ArcGIS Online</em>",
+        "production-other": "Full outlet name",
+        blog: "Full blog name, e.g., <em>Something About Maps</em>",
+        news: "Full news outlet name, e.g., <em>The New York Times</em>",
+        "map-chat-other": "Full outlet name"
       }
     };
     for (var el in typechange){
@@ -599,7 +668,11 @@ USA
     //populate the dropdown menu
     $("#resourceCategory").empty()
     var html = "<option selected='true' disabled='disabled'>Pick a Category</option>"
-    $("#resourceCategory").append(html);
+    $("#resourceCategory").append(html)
+      .css({
+        border: "1px solid #f00",
+        "border-radius": "5px"
+      });
 
     $.getJSON(globals.hosts.categories, function(data){
       globals.categories = data;
