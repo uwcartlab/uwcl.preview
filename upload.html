@@ -1,9 +1,14 @@
 <html>
 
 <head>
-  <title>CartLab File Uploader</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+
+    <title>UWCL CartLab File Uploader</title>
+    <meta content="" name="description">
+    <meta content="" name="author">
+
 <style>
 input.invalid, textarea.invalid{
   border: 2px solid red;
@@ -36,95 +41,225 @@ margin-left: 10px;
 #indexLink{
   float:right;
 }
+
+.form-label{
+  margin-left: 2%;
+}
+
 footer{
   text-align: center;
 }
 </style>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name=
+    "viewport"><!-- CSS
+  ================================================== -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="css/slider.css" rel="stylesheet" type="text/css">
+    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css"> -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel=
+    'stylesheet' type='text/css'>
+    <link href=
+    'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700,400,300,200'
+    rel='stylesheet' type='text/css'><!-- Javascript
+    ================================================== -->
+
+    <script src="js/modernizr.custom.79639.js" type="text/javascript">
+    </script><!-- Favicons
+    ================================================== -->
+    <link href="../img/favicon.ico" rel="shortcut icon">
+    <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../img/apple-touch-icon-57x57.png" rel="apple-touch-icon"
+    sizes="57x57">
+    <link href="../img/apple-touch-icon-72x72.png" rel="apple-touch-icon"
+    sizes="72x72">
+    <link href="../img/apple-touch-icon-114x114.png" rel="apple-touch-icon"
+    sizes="114x114">
+    <link href="../img/apple-touch-icon-144x144.png" rel="apple-touch-icon"
+    sizes="144x144">
 </head>
+
 <body>
-  <nav class="navbar navbar-right">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="production.html">Production</a></li>
-      <li class="active"><a href="research.html">Research</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="search.html">Search</a></li>
-    </ul>
-  </div>
-</nav>
-<h1 class='page-header'>UWCL Resource Uploading Form <span class='text-success'><i class='beta'>beta</i></span></h1>
-  <div id='main' class='container col-xs-offset-2 col-xs-8'>
-  <h2 class='page-header'>The Resource</h4>
-    <div class='col-xs-5'>
-      <label>File</label>
-      <input id='fileUpload' type='file' /><i class='invalid' id='file-error' style='display:none'>File Type Not Allowed</i><br / />
+
+<!--Collapsing NavBar --> 
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="actual_images/CartLab_logo_white_short.png" alt="UW Cartography Lab" style="width:80px;height:auto;"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav navText">
+                <li><a href="production.html" id="navText">Production</a></li>
+                <li><a href="research.html" id="navText">Research</a></li>
+                <li><a href="education.html" id="navText">Education</a></li>
+                <li><a href="mapChat.html" id="navText">Map Chat</a></li>
+                <li><a href="people.html" id="navText">People</a></li>
+                <li class="active"><a href="search.html" id="navText">Search</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+<!--end of NavBar--> 
+
+    <div class='container'>
+        <div class='col-md-12'>
+            <h1 class='page-header'>Resource Upload Form</h1>
+        </div>
     </div>
-    <div class='col-xs-2'>
-      OR
+
+    <div class='container'>
+        <div class='col-md-5'>
+            <h2>File</h2>
+            <input id='fileUpload' type='file' /><i class='invalid' id='file-error' style='display:none'>File Type Not Allowed</i><br / />
+        </div>
+
+        <div class='col-md-2'>
+            <p>OR</p>
+        
+        </div>
+
+        <div class='col-md-5'>
+            <h2>Link</h2>
+
+            <input type='text' id='link' name='link' placeholder='http://myawesomewebsite.com/myproject' class='form-control' /><br/>
+        </div>
     </div>
-    <div class='col-xs-5'>
-      <label>Link</label>
-      <input type='text' id='link' name='link' placeholder='http://myawesomewebsite.com/myproject' class='form-control' /><br/>
+
+    <div class='container'>
+        <div class='col-md-12'>
+            <h2>Type of Resource</h2>
+
+            <input type='radio' name='resourcetype' value='publication' /><label class='form-label'>Publication (journal articles, conference papers, reports, etc.)</span></label> <br />
+
+            <input type='radio' name='resourcetype' value='slides' /><label class='form-label'>Presentation Slides</label><br />
+
+            <input type='radio' name='resourcetype' value='poster' /><label class='form-label'>Poster</label><br />
+            <input type='radio' name='resourcetype' value='map' /><label class='form-label'>Map</label><br />
+            <input type='radio' name='resourcetype' value='dataset' /><label class='form-label'>Dataset</label><br />
+            <input type='radio' name='resourcetype' value='link'/><label class='form-label'>Link</label><br />
+            <input type='radio' name='resourcetype' value='video'/><label class='form-label'>Video</label><br />
+            <input type='radio' name='resourcetype' value='uncategorized' checked/><label class='form-label'>Other</label><br />
+        </div>
     </div>
-    <div id='col-xs-12'>
-      <h4>Type of Resource</h4>
-      <input type='radio' name='resourcetype' value='publication' /><label class='form-label'>Publication <span class='text-muted'> journal articles, conference papers, reports, etc</span></label> <br />
-      <input type='radio' name='resourcetype' value='slides' /><label class='form-label'>Presentation Slides</label><br />
-      <input type='radio' name='resourcetype' value='poster' /><label class='form-label'>Poster</label><br />
-      <input type='radio' name='resourcetype' value='map' /><label class='form-label'>Map</label><br />
-      <input type='radio' name='resourcetype' value='dataset' /><label class='form-label'>Dataset</label><br />
-      <input type='radio' name='resourcetype' value='link'/><label class='form-label'>Link</label><br />
-      <input type='radio' name='resourcetype' value='video'/><label class='form-label'>Video</label><br />
-      <input type='radio' name='resourcetype' value='uncategorized' checked/><label class='form-label'>Other</label><br />
+
+    <div class='container'>
+        <div class='col-md-12'>
+          <br /><h2>Short Identifier (no spaces)</h2>
+
+          <label><span class='text-muted'> </span></label><input type='text' id='resourceID' name='resourceID' class='form-control' placeholder='Roth_2009_CaGIS'/><br />
+        </div>
     </div>
-  <h4>Short Identifier</h4> <label><span class='text-muted'>no spaces</span></label><input type='text' id='resourceID' name='resourceID' class='form-control' placeholder='Roth_2009_CaGIS'/><br />
-    <h4>Title</h4><input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map."/><br />
-    <h4>Date</h4><input type='date' id='resourceCreationDate' name='resourceDate' class='form-control' val="1/1/2016" /><br />
-    <h4>Category</h4><select id='resourceCategory' class='form-control'>
-    </select> <br / />
-    <h4>Description</h4><textarea id='resourceDesc' placeholder='A really cool paper by @roberteroth.' class='form-control' ></textarea><br / />
-    <h4>Tags </h4><label><span class='text-muted'>comma separated list</span></label><input type="text" id='tags' name='tags' placeholder="maps, research, cool stuff" class='form-control' /><br / />
 
-    <!-- <label>Primary URL <span class='text-muted'>The URL is the primary artifact I'm uploading</span></label> -->
-  </br/>
-  </br/>
-  <h2 class='page-header'>The Authors
-    <button id='addAuthor' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus'></span></button>
-    <button id='removeAuthor' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus'></span></button>
-  </h2>
-    <div id='authors'>
+    <div class='container'>
+        <div class='col-md-12'>
+          <h2>Title</h2><input type='text' id='resourceName' name='resourceName' class='form-control' placeholder="Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map."/><br />
+        </div>
+    </div>
 
-    <label>First Author: </label><input type='text' id='authorFirst' class='authorFirst form-control' placeholder='Robert' />
-    <input type='text' id='authorMiddle' class='authorMiddle form-control' placeholder="E." />
-    <input type='text' id='authorLast' class='authorLast form-control' placeholder="Roth" />
-  </div>
-    <br />
+    <div class='container'>
+        <div class='col-md-12'>
+          <h2>Date</h2><input type='date' id='resourceCreationDate' name='resourceDate' class='form-control' val="1/1/2016" /><br />
+        </div>
+    </div>
 
-  <h2 class='page-header'>The References
-    <button id='addReference' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus' ></span></button>
-    <button id='removeReference' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus' ></span></button>
-  </h2>
-  <div id='refs'>
-      <label>Published Reference</label><input type='text' class='form-control' id='ref1' placeholder='Roth, Robert E., and Mark Harrower. "Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map." Cartographic Perspectives 60 (2008): 46-66.' />
-  </div>
-  <br / />
-    <h2 class='page-header'>The Uploader</h4>
-  <label>Uploader Name</label><input type='text' class='form-control' id='uploaderName' placeholder="Your Name" /><br / />
-  <label>Uploader Email</label><input type='text' id='uploaderEmail' class='form-control' placeholder='you@wisc.edu' /><br / />
+    <div class='container'>
+        <div class='col-md-12'>
+            <h2>Category</h2><select id='resourceCategory' class='form-control'>
+            </select> <br />
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='col-md-12'>
+            <h2>Description</h2><textarea id='resourceDesc' placeholder='A really cool paper by @roberteroth.' class='form-control' ></textarea><br / />
+        </div>
+    </div>
 
 
-  <br / />
-  <button id='submit' class='btn btn-primary btn-large'>Submit Form</button>
-</div>
-<footer class='col-xs-12'>
-  <address>
-Cartography Laboratory<br />
-University of Wisconsin-Madison<br />
-Madison, Wisconsin<br>
-USA
-</address>
+    <div class='container'>
+        <div class='col-md-12'>
+            <h2>Tags (comma separated list)</h2>
+            <label><span class='text-muted'> </span></label><input type="text" id='tags' name='tags' placeholder="maps, research, cool stuff" class='form-control' />
+        </div>
+    </div>
+
+      <!-- <label>Primary URL <span class='text-muted'>The URL is the primary artifact I'm uploading</span></label> -->
+
+    <div class='container'>
+        <div class='col-md-12'>
+            
+            <h2 class='page-header'>The Authors
+              <button id='addAuthor' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus'></span></button>
+              <button id='removeAuthor' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus'></span></button>
+            </h2>
+            
+            <div id='authors'>
+
+                <label>First Author: </label><input type='text' id='authorFirst' class='authorFirst form-control' placeholder='Robert' />
+                <input type='text' id='authorMiddle' class='authorMiddle form-control' placeholder="E." />
+                <input type='text' id='authorLast' class='authorLast form-control' placeholder="Roth" />
+          </div>
+        
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='col-md-12'>
+
+            <h2 class='page-header'>The References
+              <button id='addReference' class='btn btn-success btn-sm'><span class='glyphicon glyphicon-plus' ></span></button>
+              <button id='removeReference' class='btn btn-alert btn-sm'><span class='glyphicon glyphicon-minus' ></span></button>
+            </h2>
+            <div id='refs'>
+                <label>Published Reference</label><input type='text' class='form-control' id='ref1' placeholder='Roth, Robert E., and Mark Harrower. "Addressing map interface usability: learning from the Lakeshore Nature Preserve interactive map." Cartographic Perspectives 60 (2008): 46-66.' />
+            </div>
+            <br / />
+              <h2 class='page-header'>The Uploader</h2>
+            <label>Uploader Name</label><input type='text' class='form-control' id='uploaderName' placeholder="Your Name" /><br / />
+            <label>Uploader Email</label><input type='text' id='uploaderEmail' class='form-control' placeholder='you@wisc.edu' />
+            <br / />
+            <br / />
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='col-md-12'>
+
+            <button id='submit' class='btn btn-primary btn-large'>Submit Form</button>
+
+        </div>
+    </div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="align-center">
+                <br>
+                <img src="actual_images/footerLogo.jpg">
+
+                <p>Copyright 2015&copy; All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+    
 
 </footer>
+
 <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
