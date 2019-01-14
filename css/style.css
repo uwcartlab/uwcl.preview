@@ -1,3 +1,13 @@
+.thumb{
+    object-fit: contain;
+}
+
+.profile-thumbnail{
+    max-width: auto !important;
+    height: auto !important;
+}
+
+
 .logo{
     width: auto;
     height: auto;

@@ -1,0 +1,798 @@
+# Translation of the WordPress theme TimeTurner 1.0 by Tomas Toman.
+# This file is distributed under the same license as the TimeTurner package.
+# Tomas Toman <webdesign@tomastoman.cz>, 2013.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TimeTurner 1.0\n"
+"POT-Creation-Date: 2013-10-23 18:09+0100\n"
+"PO-Revision-Date: 2014-05-10 23:16+0200\n"
+"Last-Translator: Abdullah Manaz <abdullahmanaz@gmail.com>\n"
+"Language-Team: Dr Abdullah Manaz <abdullahmanaz@yahoo.com>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: 404.php:16 search.php:49
+msgid "Nothing Found"
+msgstr ""
+"Bu sayfa silinmiş veya değiştirilmiş olabilir. AnaSayfaya gidebilirsiniz."
+
+#: 404.php:24
+msgid ""
+"Apologies, but no results were found for your request. Perhaps searching "
+"will help you to find a related content."
+msgstr ""
+"Üzgünüz, bu sayfa silinmiş veya değiştirilmiş olabilir. AnaSayfaya dönerek "
+"aradığınızı bulabilirsiniz."
+
+#: archive.php:19
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Günlük Arşivler: %s"
+
+#: archive.php:21
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Aylık Arşivler: %s"
+
+#: archive.php:23
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Yıllık Arşivler: %s"
+
+#: archive.php:25
+msgid "Archives"
+msgstr "Arşiv"
+
+#: author.php:18
+#, php-format
+msgid "Author Archives: %s"
+msgstr "Yazar Arşivleri: %s"
+
+#: author.php:34
+#, php-format
+msgid "About %s"
+msgstr "Hakkında %s"
+
+#: class-tgm-plugin-activation.php:156 functions.php:438
+msgid "Install Required Plugins"
+msgstr "Gerekli Eklentileri Kurun"
+
+#: class-tgm-plugin-activation.php:157 functions.php:439
+msgid "Install Plugins"
+msgstr "Eklenti Kurma"
+
+#: class-tgm-plugin-activation.php:158 functions.php:443
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Eklenti Kuruluyor: %s"
+
+#: class-tgm-plugin-activation.php:159
+msgid "Something went wrong."
+msgstr "Bir sorun oldu."
+
+#: class-tgm-plugin-activation.php:170 functions.php:449
+msgid "Return to Required Plugins Installer"
+msgstr "Gerekli Eklenti Kurgusuna Dönün"
+
+#: class-tgm-plugin-activation.php:171
+msgid "Return to the dashboard"
+msgstr "Başlangıç bölümüne dön"
+
+#: class-tgm-plugin-activation.php:172 class-tgm-plugin-activation.php:1840
+msgid "Plugin activated successfully."
+msgstr "Eklenti başarıyla aktifleştirildi."
+
+#: class-tgm-plugin-activation.php:173
+msgid "The following plugin was activated successfully:"
+msgstr "Takibeden eklenti başarıyla aktif ettirildi."
+
+#: class-tgm-plugin-activation.php:174
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Bütün eklentiler kuruldu ve başarıyla aktifleştirildi. %1$s"
+
+#: class-tgm-plugin-activation.php:175
+msgid "Dismiss this notice"
+msgstr "Bu notu dikkate almayın"
+
+#: class-tgm-plugin-activation.php:1085
+msgid "External Link"
+msgstr "Harici Bağlantı"
+
+#: class-tgm-plugin-activation.php:1090
+msgid "Private Repository"
+msgstr "Özel Alan"
+
+#: class-tgm-plugin-activation.php:1093
+msgid "Pre-Packaged"
+msgstr "Paketlendi"
+
+#: class-tgm-plugin-activation.php:1097
+msgid "WordPress Repository"
+msgstr "WordPress Alanı"
+
+#: class-tgm-plugin-activation.php:1100
+msgid "Required"
+msgstr "Gerekli"
+
+#: class-tgm-plugin-activation.php:1100
+msgid "Recommended"
+msgstr "Tavsiye Edilen"
+
+#: class-tgm-plugin-activation.php:1103
+msgid "Not Installed"
+msgstr "Kurulamadı"
+
+#: class-tgm-plugin-activation.php:1105
+msgid "Installed But Not Activated"
+msgstr "Kuruldu fakat aktifleştirilmedi"
+
+#: class-tgm-plugin-activation.php:1275
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"Kurulacak veya Aktifleştirilecek eklenti yok. <a href=\"%1$s\" title="
+"\"Başlangıç Bölümüne Dön\">Başlangıç Bölümüne Dön</a>"
+
+#: class-tgm-plugin-activation.php:1291
+msgid "Plugin"
+msgstr "Eklenti"
+
+#: class-tgm-plugin-activation.php:1292
+msgid "Source"
+msgstr "Kaynak"
+
+#: class-tgm-plugin-activation.php:1293
+msgid "Type"
+msgstr "Türü"
+
+#: class-tgm-plugin-activation.php:1294
+msgid "Status"
+msgstr "Durum"
+
+#: class-tgm-plugin-activation.php:1312
+msgid "Install"
+msgstr "Kur"
+
+#: class-tgm-plugin-activation.php:1313
+msgid "Activate"
+msgstr "Aktifleştir"
+
+#: class-tgm-plugin-activation.php:1823
+msgid "Install package not available."
+msgstr "Kurgu dosyası yok."
+
+#: class-tgm-plugin-activation.php:1824
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+"Kurgu dosyası şuradan indirilecek <span class=\"code\">%s</span>&#8230;"
+
+#: class-tgm-plugin-activation.php:1825
+msgid "Unpacking the package&#8230;"
+msgstr "Kurgu paketi açılıyor&#8230;"
+
+#: class-tgm-plugin-activation.php:1826
+msgid "Installing the plugin&#8230;"
+msgstr "Eklenti kurgulanıyor&#8230;"
+
+#: class-tgm-plugin-activation.php:1827
+msgid "Plugin install failed."
+msgstr "Eklenti kurma hata verdi."
+
+#: class-tgm-plugin-activation.php:1828
+msgid "Plugin installed successfully."
+msgstr "Eklenti başarıyla kuruldu."
+
+#: class-tgm-plugin-activation.php:1839
+msgid "Plugin activation failed."
+msgstr "Eklenti Aktifleştirilmesi hata verdi."
+
+#: class-tgm-plugin-activation.php:1949
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Kurma ve Aktivasyon süreci başlıyor. Bazı sunucularda bu zaman alabilir, "
+"lütfen sabırlı olunuz."
+
+#: class-tgm-plugin-activation.php:1950
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s kuruldu ve başarıyla aktifleştirildi."
+
+#: class-tgm-plugin-activation.php:1950 class-tgm-plugin-activation.php:1959
+msgid "Show Details"
+msgstr "Detayları Göster"
+
+#: class-tgm-plugin-activation.php:1950 class-tgm-plugin-activation.php:1959
+msgid "Hide Details"
+msgstr "Detayları Gizli"
+
+#: class-tgm-plugin-activation.php:1951
+msgid "All installations and activations have been completed."
+msgstr "Bütün Kurgular ve Aktivasyonlar tamamlandı."
+
+#: class-tgm-plugin-activation.php:1952
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Kurulan ve Aktiflenen Eklenti %1$s (%2$d/%3$d)"
+
+#: class-tgm-plugin-activation.php:1956
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Kurma süreci başlıyor. Bu süreç bazı sunucularda zaman alabilir, lütfen "
+"sabırlı olunuz."
+
+#: class-tgm-plugin-activation.php:1957
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Kurulurken bir hata verdi %1$s: <strong>%2$s</strong>."
+
+#: class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Kurulurken %1$s hata verdi."
+
+#: class-tgm-plugin-activation.php:1959
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s başarıyla kuruldu."
+
+#: class-tgm-plugin-activation.php:1960
+msgid "All installations have been completed."
+msgstr "Bütün kurgular tamamlandı."
+
+#: class-tgm-plugin-activation.php:1961
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklenti Kuruluyor %1$s (%2$d/%3$d)"
+
+#: class-tgm-plugin-activation.php:2052
+msgid "Return to the Dashboard"
+msgstr "Başlangıç Bölümüne Dön"
+
+#: comments.php:29
+msgid "Comment navigation"
+msgstr "Yorumlarda Gezinti"
+
+#: comments.php:30
+msgid "&larr; Older Comments"
+msgstr "&larr; Eski Yorumlar"
+
+#: comments.php:31
+msgid "Newer Comments &rarr;"
+msgstr "EnYeni Yorumlar &rarr;"
+
+#: comments.php:36
+msgid "Comments are closed."
+msgstr "Yorumlar kapatıldı."
+
+#: comments.php:41
+msgid "Your name"
+msgstr "Adınız"
+
+#: comments.php:42
+msgid "Website"
+msgstr "WebSite"
+
+#: comments.php:43
+msgid "Comment..."
+msgstr "Yorum..."
+
+#: comments.php:47
+msgid "Leave a Comment"
+msgstr "Bir Yorum Yapın"
+
+#: comments.php:18
+msgid "Comment (1)"
+msgid_plural "Comments (%1$s)"
+msgstr[0] "Yorum (%1$s)"
+msgstr[1] "Yorumlar (%1$s)"
+
+#: content-archives.php:10 index.php:221
+msgid "Author"
+msgstr "Yazar"
+
+#: content-archives.php:10 index.php:221
+msgid "Category"
+msgstr "Kategori"
+
+#: content-archives.php:10 index.php:221
+msgid " | Tags: "
+msgstr " | Etiketler: "
+
+#: content-archives.php:21 index.php:232
+msgid " | Comments: "
+msgstr " | Yorumlar: "
+
+#: functions.php:108
+msgid "Header Menu"
+msgstr "Tavan Menü"
+
+#: functions.php:109
+msgid "Sidebar Menu"
+msgstr "Taban Menü"
+
+#: functions.php:121
+msgid "Index-blog Sidebar"
+msgstr "Blog Fihrist Sütunu"
+
+#: functions.php:123
+msgid "Right sidebar which appears on index page in Blog section."
+msgstr "Blog bölümünde Fihrist Sütunu"
+
+#: functions.php:130
+msgid "Main Sidebar"
+msgstr "Ana Yan Sütun"
+
+#: functions.php:132
+msgid "Right sidebar which appears on posts and pages."
+msgstr "Postalar ve Sayfalarda görünecek Sağ Sütun"
+
+#: functions.php:139
+msgid "Footer left widget area"
+msgstr "Taban Sol Bileşen Alanı"
+
+#: functions.php:141
+msgid "Left column with widgets in footer."
+msgstr "Tabanda Sol Sütün Bileşen Alanı"
+
+#: functions.php:148
+msgid "Footer middle widget area"
+msgstr "Taban Orta Bileşen Alanı"
+
+#: functions.php:150
+msgid "Middle column with widgets in footer."
+msgstr "Tabanda Orta Sütun Bileşen Alanı"
+
+#: functions.php:157
+msgid "Footer right widget area"
+msgstr "Taban Sağ Bileşen Alanı"
+
+#: functions.php:159
+msgid "Right column with widgets in footer."
+msgstr "Tabanda Sağ Sütun Bileşen Alanı"
+
+#: functions.php:166
+msgid "Footer notices"
+msgstr "EnAlt Taban Bilgi Alanı"
+
+#: functions.php:168
+msgid ""
+"The line for copyright and other notices below the footer widget areas. "
+"Insert here one Text widget. The \"Title\" field at this widget should stay "
+"empty."
+msgstr ""
+"Bu alana Copright haklarınızı ve diğer notları girebilirsiniz. Veya Bir "
+"Bileşen ekleyebilirsiniz. Ancak bileşenin \"Başlık\"-bölümü boş "
+"bırakılmalıdır."
+
+#: functions.php:175
+msgid "Homepage slideshow"
+msgstr "AnaSayfa Kayan Resim Gösterisi"
+
+#: functions.php:177
+msgid ""
+"The area for Cyclone Slider Widget which displays a slideshow on your "
+"homepage."
+msgstr "AnaSayfanıza Cylone Slider Bileşeni ekleme alanı."
+
+#: functions.php:184
+msgid "About Section boxes on homepage"
+msgstr "AnaSayfa Özel Bölümler Alanı Kutuları"
+
+#: functions.php:186
+msgid ""
+"Insert here as many Text widgets as you want for displaying boxes in About "
+"Section on your homepage."
+msgstr ""
+"Sayfanızdaki özel bölümleri, özel sayfaları Metin olarak HTML koduyla buraya "
+"girebilir ya da bir Bileşen ekleyebilirsiniz."
+
+#: functions.php:205 functions.php:219
+msgid "Post navigation"
+msgstr "Posta Gezintisi"
+
+#: functions.php:206
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eski Postalar"
+
+#: functions.php:207
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "EnYeni Postalar <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:220
+msgid "&larr; Previous post"
+msgstr "&larr; Evvelki Posta"
+
+#: functions.php:221
+msgid "Next post &rarr;"
+msgstr "Gelecek Posta &rarr;"
+
+#: functions.php:237
+msgid "Pingback:"
+msgstr "BirGeri:"
+
+#: functions.php:237
+msgid "(Edit)"
+msgstr "(Düzelt)"
+
+#: functions.php:250
+msgid "(Post author)"
+msgstr "(Posta Yazarı)"
+
+#: functions.php:256
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s um %2$s"
+
+#: functions.php:262
+msgid "Your comment is awaiting moderation."
+msgstr "Yorumunuz onay bekliyor."
+
+#: functions.php:267
+msgid "Edit"
+msgstr "Düzelt"
+
+#: functions.php:271
+msgid "Reply"
+msgstr "Cevapla"
+
+#: functions.php:334
+msgid "Read more"
+msgstr "Daha Fazla"
+
+#: functions.php:440
+#, php-format
+msgid ""
+"The %1$s plugin is required for this theme. Click on the big blue button "
+"below to install and activate %1$s."
+msgstr ""
+"Bu Tema için %1$s Eklentisi gereklidir. Aşağıdaki büyük mavi ikona "
+"tıklayarak kurun ve aktifleştirin %1$s."
+
+#: functions.php:441
+#, php-format
+msgid ""
+"The %1$s is installed but currently inactive. Please go to the <a href=\"%2$s"
+"\">plugin administration page</a> page to activate it."
+msgstr ""
+" %1$s kuruldu fakat henüz Aktif değil. Lütfen <a href=\"%2$s\"> Eklenti "
+"Yönetim Sayfasına</a> gidin ve aktifleştirin."
+
+#: functions.php:442
+#, php-format
+msgid "Install %s Now"
+msgstr "%s Kurun"
+
+#: functions.php:444
+msgid "Something went wrong with the plugin API."
+msgstr "API Eklentisi bir hata verdi."
+
+#: functions.php:445
+#, php-format
+msgid ""
+"This theme requires the %1$s plugin. <a href=\"%2$s\"><strong>Click here to "
+"begin the installation process</strong></a>. You may be asked for FTP "
+"credentials based on your server setup."
+msgstr ""
+"Bu Tema %1$s Eklentisi gerektiriyor. <a href=\"%2$s\"><strong> Tıklayın ve "
+"kurma sürecini başlatın</strong></a>. Sunucunuz sizden FTP Giriş Bilgileri "
+"isteyebilir."
+
+#: functions.php:446
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgstr ""
+"Üzgünüz %s eklentisini kurma izniniz yok. Lütfen kurdurmak için Site "
+"yöneticinizden yardım isteyiniz."
+
+#: functions.php:447
+#, php-format
+msgid ""
+"This theme requires the %1$s plugin. That plugin is currently inactive, so "
+"please go to the <a href=\"%2$s\">plugin administration page</a> to activate "
+"it."
+msgstr ""
+"Bu Tema %1$s eklentisini gerektiriyor. Eklenti halen Aktifleştirilmemiş, "
+"Lütfen <a href=\"%2$s\">Eklenti Yönetim Bölümüne</a> giderek Aktifleştiriniz."
+
+#: functions.php:448
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgstr ""
+"Üzgünüz, %s eklentisini Aktifleştirme izniniz yok. Lütfen eklentiyi "
+"Aktifleştirmek için Site yöneticinizden yardım isteyiniz."
+
+#: index.php:30
+msgid "How to edit these boxes?"
+msgstr "Bu bölümlerde nasıl düzeltme yapılabilir?"
+
+#: index.php:32
+msgid ""
+"For editing these boxes, go to the Appearance > Widgets menu and insert as "
+"many Text widgets as you like into \"About Section boxes on homepage\" "
+"widget area."
+msgstr ""
+"Bu bölümleri düzeltmek için Görünüm > Bileşenler bölümüne gidiniz. "
+"İstediğiniz bileşenleri  \"AnaSayfa Özel Bölümleri\" alanına "
+"ekleyebilirsiniz."
+
+#: index.php:33 index.php:48 index.php:63
+msgid "READ MORE"
+msgstr "DAHA FAZLASI"
+
+#: index.php:45
+msgid "Useful shortcodes"
+msgstr "Faydalı KısaKodlar"
+
+#: index.php:47
+msgid ""
+"To insert a picture or \"Read more\" button, you can use these shortcodes:"
+"<br />[image src=\"<em>image URL</em>\"]<br />[more-button link=\"<em>URL "
+"address</em>\"]<em>READ MORE</em>[/more-button]"
+msgstr ""
+"Bir Resim veya  \"Daha Fazlası\" butonu eklemek için şu KısaKodları "
+"kullanabilirsiniz:<br />[image src=\"<em>Resim Adresi</em>\"]<br />[more-"
+"button link=\"<em>Hedef Link Adresi</em>\"]<em>Daha FAZLASI</em>[/more-"
+"button]"
+
+#: index.php:60
+msgid "How to remove this area?"
+msgstr "Bu bölüm nasıl kaldırılır?"
+
+#: index.php:62
+msgid ""
+"If you do not want to display this area, go to the \"Theme Options\" panel. "
+"In \"Homepage Settings\", you can hide this area. Same way you can rename or "
+"hide the other areas, too."
+msgstr ""
+"Bu bölümün görünmesini istemiyorsanız \"Tema Seçenekleri\" kurgusuna "
+"gidiniz.  \"AnaSayfa Seçenekleri\" bölümünde bu alanı gizleyebilirsiniz. "
+"Alanları isimlerini değiştirebilir veya tümden gizleyebilirsiniz."
+
+#: index.php:125
+msgid "Portfolio Item 1"
+msgstr "Kategori Alanı 1"
+
+#: index.php:136
+msgid "Portfolio Item 2"
+msgstr "Kategori Alanı 2"
+
+#: index.php:147
+msgid "Portfolio Item 3"
+msgstr "Kategori Alanı 3"
+
+#: index.php:158
+msgid "Portfolio Item 4"
+msgstr "Kategori Alanı 4"
+
+#: index.php:169
+msgid "Portfolio Item 5"
+msgstr "Kategori Alanı 5"
+
+#: index.php:180
+msgid "Portfolio Item 6"
+msgstr "Kategori Alanı 6"
+
+#: searchform.php:9
+msgid "Search..."
+msgstr "Arama Yap..."
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Arama Sonuçları: %s"
+
+#: search.php:25
+msgid "Number of Results: "
+msgstr "Bulunan Sonuç Sayısı: "
+
+#: search.php:38
+msgid "Search results navigation"
+msgstr "Arama Sonuçları Gezintisi"
+
+#: search.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Previous results"
+msgstr "<span class=\"meta-nav\">&larr;</span> Evvelki Sonuçlar"
+
+#: search.php:40
+msgid "Next results <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Sonraki Sonuçlar <span class=\"meta-nav\">&rarr;</span>"
+
+#: search.php:57
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Üzgünüz, Arama kriterlerinize uygun bir sonuç yok. Farklı arama "
+"kelimeleriyle yeniden deneyebilirsiniz."
+
+#: sidebar.php:11
+msgid "Navigation"
+msgstr "Gezinti"
+
+#: single.php:30
+msgid "Pages:"
+msgstr "Sayfalar:"
+
+#: tag.php:17
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Etiket Arşivleri: %s"
+
+#: cycloneslider/dark/slider.php:43
+msgid "View Larger Image"
+msgstr "Resmi Büyük Göster"
+
+#: cycloneslider/dark/slider.php:46 cycloneslider/dark/slider.php:48
+msgid "Learn More"
+msgstr "Fazlasını Öğren"
+
+#: cycloneslider/default/slider.php:62 cycloneslider/default/slider.php:66
+#: cycloneslider/default/slider.php:70 cycloneslider/standard/slider.php:70
+msgid "Slide type not supported."
+msgstr "Gösteri türü desteklenmiyor."
+
+#: functions/be/fw-options.php:1204 functions/be/cz/fw-options.php:1905
+msgid "settings reset."
+msgstr "Kurguları temizle."
+
+#: functions/be/fw-setup.php:51
+msgid "Theme Options"
+msgstr "Tema Seçenekleri"
+
+#: functions/fe/library.php:38
+msgid "<strong>Posted</strong>: "
+msgstr "<strong>Kaydedildi</strong>: "
+
+#: functions/fe/library.php:41 functions/fe/library.php:58
+#: functions/fe/library.php:61
+msgid " | "
+msgstr " | "
+
+#: functions/fe/library.php:48
+msgid "<strong>Category</strong>: "
+msgstr "<strong>Kategori</strong>: "
+
+#: functions/fe/library.php:55
+msgid "<strong>Author</strong>: "
+msgstr "<strong>Yazar</strong>: "
+
+#: functions/fe/social-widget.php:12
+msgid "A Social widget by TimeTurner"
+msgstr "TimeTurner'dan Bir Sosyal Bileşen"
+
+#: functions/fe/social-widget.php:14
+msgid "TimeTurner Social Widget"
+msgstr "TimeTurner Sosyal Bileşeni"
+
+#: functions/fe/social-widget.php:86 functions/fe/twitter-widget.php:39
+msgid "Title:"
+msgstr "Başlık:"
+
+#: functions/fe/social-widget.php:93
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: functions/fe/social-widget.php:97
+msgid "Insert the full URL of your Twitter profile."
+msgstr "Twitter-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:103
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: functions/fe/social-widget.php:107
+msgid "Insert the full URL of your Facebook profile, page or group."
+msgstr " Facebook-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:113
+msgid "RSS:"
+msgstr "RSS:"
+
+#: functions/fe/social-widget.php:117
+msgid "Insert the Url of your RSS. You may include your RSS from Feedburner."
+msgstr "RSS adresinizin tam URL bilgisini giriniz."
+
+#: functions/fe/social-widget.php:123
+msgid "Google Plus:"
+msgstr "Google Plus:"
+
+#: functions/fe/social-widget.php:127
+msgid "Insert the full URL of your Google Plus profile"
+msgstr "Google Plus-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:133
+msgid "You Tube:"
+msgstr "You Tube:"
+
+#: functions/fe/social-widget.php:137
+msgid "Insert the full URL of your YouTube profile."
+msgstr "YouTube-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:143
+msgid "Linkedin:"
+msgstr "Linkedin:"
+
+#: functions/fe/social-widget.php:147
+msgid "Insert the full URL of your Linkedin profile."
+msgstr "Linkedin-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:153
+msgid "Delicious:"
+msgstr "Delicious:"
+
+#: functions/fe/social-widget.php:157
+msgid "Insert the full URL of your Delicious profile."
+msgstr "Delicious-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:163
+msgid "Pinterest:"
+msgstr "Pinterest:"
+
+#: functions/fe/social-widget.php:167
+msgid "Insert the full URL of your Pinterest profile."
+msgstr "Pinterest-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/social-widget.php:173
+msgid "Flickr:"
+msgstr "Flickr:"
+
+#: functions/fe/social-widget.php:177
+msgid "Insert the full URL of your Flickr profile."
+msgstr "Flickr-Profilinizin tam URL adresini giriniz."
+
+#: functions/fe/twitter-widget.php:13
+msgid "Twitter widget by TimeTurner"
+msgstr "TimeTurner Twitter-Bileşeni"
+
+#: functions/fe/twitter-widget.php:15
+msgid "TimeTurner Twitter Widget"
+msgstr "TimeTurner Twitter-Bileşeni"
+
+#: functions/fe/twitter-widget.php:25
+msgid "Join us on Twitter"
+msgstr "Twitter'a giriş yapın."
+
+#: functions/fe/twitter-widget.php:46
+msgid "Twitter Username:"
+msgstr "Twitter KullanıcıAdı:"
+
+#: functions/fe/twitter-widget.php:50
+msgid "Insert your Twitter username. (ex: timeturner)."
+msgstr "Twitter-Kullanıcı Adınızı girin. (Örnek: timeturner)."
+
+#: index.php:232 content-archives.php:21
+msgid "Published: "
+msgstr "Yayınlandı: "
+
+#: template-logged-in.php:30
+msgid "You must be logged in to view this page."
+msgstr "Bu sayfayı görmek için Giriş yapmalısınız."
+
+#: functions.php:247 search.php:28
+msgid "&larr; Previous"
+msgstr "&larr; Evvelki"
+
+#: functions.php:248 search.php:29
+msgid "Next &rarr;"
+msgstr "Sonraki &rarr;"

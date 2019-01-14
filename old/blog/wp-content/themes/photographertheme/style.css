@@ -1,0 +1,87 @@
+/*
+Theme Name: Photographer Theme
+Theme URI: http://www.dessign.net/photographertheme
+Description: Photographer Theme for WordPress is stylish, customizable, simple, and readable. Perfect for amature and profesional photographers. 
+Version: 2.0
+Author: Marios Lublinski
+Author URI: http://www.dessign.net
+Tags: 2 column theme
+*/
+
+/* Global */
+
+* { margin: 0; padding: 0; }
+body { font-size: 12px; /*background-color: #ccc;*/ background: url('images/bg.jpg') repeat; font-family: arial, verdana, georgia; color: #393939; }
+a { color: #4f4f4f; text-decoration: none; }
+h1,h2,h3,h4,h5,p { margin: 10px 0; }
+h1 { font-size: 22px; }
+#main_container { width: 1018px; margin: 0 auto; }
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right; }
+img { border: none; }
+
+/* Header */
+
+#header { padding-top: 2px; }
+.logo { float: left; margin-top: 13px; }
+#header ul { list-style-type: none; float: right; }
+#header ul li { float: left; font-size: 12px; }
+#header ul li a { display: block; color: #fff; background-color: #4F4F4F; padding: 3px 20px; margin-left: 3px; text-decoration: none; }
+#header ul li a:hover { background-color: #292828; }
+#header ul li.current-menu-item a { background-color: #292828; }
+
+#menu_container { margin: 15px 0 20px 0; background-color: #4F4F4F; position: relative; }
+#menu_container ul { list-style-type: none; }
+#menu_container ul li { float: left; font-size: 12px; }
+#menu_container ul li a { display: block; padding: 10px 15px; border-right: 1px solid #CECECE; color: #cecece; text-decoration: none; }
+#menu_container ul li a:hover { background-color: #2A2828; }
+#menu_container ul li.current-menu-item a { background-color: #292828; }
+#menu_container input[type=text] { width: 138px; height: 27px; border: 1px solid #767676; float: right; margin-top: 3px; margin-right: 5px; color: #707070; padding: 0 25px 0 5px; background-color: #4F4F4F; }
+.search_icon { position: absolute; right: 12px; top: 12px; }
+
+/* Content */
+
+.featured_text { font-size: 22px; color: #999999; margin-bottom: 25px; text-align: center; }
+
+.home_post_box { width: 498px; margin-bottom: 13px; }
+.home_post_box h3 { margin-top: 0; }
+.home_post_box h3 a { color: #393939; text-decoration: none; padding: 25px 0; display: block; text-align: center; font-weight: normal; background-color: #fff; }
+.home_post_box h3 a:hover { color:#999; }
+.home_post_box img { width: 498px; height: 285px; opacity:1.0; filter:alpha(opacity=100); }
+.home_post_box img:hover { opacity:0.8; filter:alpha(opacity=80); }
+
+.navigation .left, .navigation .right { padding: 10px 35px; background-color: #fff; }
+.navigation a:hover { color:#999; }
+
+#content_left { width: 687px; float: left; }
+.blog_post_box { margin-bottom: 25px; background-color: #fff; padding-bottom: 10px; }
+.blog_post_box h3 { padding: 0 10px; }
+.blog_post_box p { padding: 0 10px; }
+.blog_post_box img { width: 687px; height: 331px; opacity:1.0; filter:alpha(opacity=100); }
+.blog_post_box img:hover { opacity:0.8; filter:alpha(opacity=80); }
+.single_content { background-color: #fff; padding: 10px 10px; }
+.single_content h1 { margin-top: 0; font-size: 18px; }
+.footer_inside_box { margin-bottom: 25px; }
+.footer_inside_box a:hover { color:#999; }
+
+#submit { background-color: #000; color: #fff; border: none; padding: 5px; }
+
+/* Sidebar */
+
+#sidebar { width: 268px; float: right; }
+.side_featured { list-style-type: none; }
+.side_featured li { margin-bottom: 25px; }
+
+.side_featured li img { width: 268px; height: 153px; opacity:1.0; filter:alpha(opacity=100); }
+.side_featured li img:hover { opacity:0.8; filter:alpha(opacity=80); }
+
+/* Footer */
+
+#footer { margin-top: 25px; padding: 5px 23px 15px; background-color: #fff; }
+.footer_box { width: 220px; float: left; border-right: 1px solid #DDDDDD; margin-right: 10px; }
+.footer_box h3 { font-size: 16px; font-weight: normal; }
+.footer_box ul { list-style-type: none; margin-left: 0px; }
+.footer_box ul li { margin-bottom: 3px; }
+.footer_box_last { border-right: none; }
+.bottom_footer { color: #8f8f8f; text-align: right; padding: 10px 10px; background-color: #333; font-size: 11px; }

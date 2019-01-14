@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gallery>
+<album id="markIce" title="UWCL" description="" lgPath="images/" tnPath="thumbs/" tn="">
+	<img src="map1.jpg" caption="" />
+	<img src="map2.jpg" caption="" />
+	<img src="map3.jpg" caption="" />
+	<img src="map4.jpg" caption="" />
+	<img src="map5.jpg" caption="" />
+	<img src="map6.jpg" caption="" />
+	<img src="map7.jpg" caption="" />
+	<img src="map8.jpg" caption="" />
+	<img src="map9.jpg" caption="" />
+	<img src="map10.jpg" caption="" />
+	<img src="map11.jpg" caption="" />
+</album>
+</gallery>
