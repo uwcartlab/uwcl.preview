@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ActiveMetal-Europe</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta NAME="author" CONTENT="Wes Gillman" />
+    <meta NAME="keywords" CONTENT="metal-archives, metal, cartography, google maps" />
+	<link href="../styles/reset.css" rel="stylesheet" type="text/css" />
+	<!-- [if !IE 8] maybe something for those NOT supporting @media-->
+
+    <link href="../styles/screen.css" rel="stylesheet" type="text/css" />
+	<link href="../styles/media-queries.css" rel="stylesheet" media="screen" type="text/css" />
+
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+	<!-- <script src="https://www.googleapis.com/fusiontables/v1/tables/10acmmfQwbSzOQHO2StvuWm57eBd9aJPYtOQz1qs/templates?callback=handler&key=AIzaSyCC6vD9kn-zOIlWdM8H_29_we31XEz4UWg"></script>-->
+	<script type="text/javascript" src="../scripts/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="../scripts/lightbox/js/scriptaculous.js?load=effects"></script>
+	<link rel="stylesheet" href="../scripts/lightbox/css/lightbox.css" type="text/css" media="viewport" />
+	<script type="text/javascript" src="../scripts/lightbox/js/lightbox.js"></script>
+	
+	
+	<script type="text/javascript">
+	function initialize (){
+	
+	
+       
+	
+	
+	
+		var infoWindow = new google.maps.InfoWindow();
+
+	
+	
+		var defStyle = [
+			{
+				featureType: 'road',
+				elementType: 'all',
+				stylers: [
+					{visibility: 'off'}
+				]
+			}, {
+				featureType: 'road.arterial',
+				stylers: [
+					{hue: 149},
+					{saturation: -78},
+					{lightness: 0}
+				]
+			}, {
+				featureType: 'road.highway',
+				stylers: [
+					{hue: -31},
+					{saturation: -40},
+					{lightness: 2.8}
+				]
+			}, {
+				featureType: 'poi',
+				elementType: 'label',
+				stylers: [{visibility: 'off'}]
+			}, {
+				featureType: 'landscape',
+				elementType: 'all',
+				//stylers: [
+				//	{hue: 163},
+				//	{saturation: -26},
+				//	{lightness: -1.1}
+				//]
+				stylers: [
+					{saturation: 0},
+					{color: '#999999'},
+					//{gamma: .5},
+					//{hue: .5},
+					//{lightness: -70}
+					{invert_lightness:'true'}
+				]
+			},
+			/*{
+				featureType: 'landscape.natural',
+				elementType: 'all',
+				stylers:[
+					{visibility: 'off'}
+				]
+			},*/
+			{
+				featureType: 'transit',
+				stylers: [{visibility: 'off'}]
+			}, {
+				featureType: 'water',
+				stylers: [
+					////{hue: 3},
+					////{saturation: -24.24},
+					////{lightness: -38.57},
+					//{lightness: 20},
+					//{invert_lightness:'true'}
+					{color: '#003C59'}
+				]
+			},
+			{
+				featureType: 'water',
+				elementType: 'labels',
+				stylers: [
+					{visibility: 'off'}
+				]
+			},
+		{
+				featureType: 'administrative',
+				elementType: 'geometry',
+				stylers: [
+					{visibility: 'off'},
+				]
+			},{
+				featureType: 'administrative.country',
+				elementType: 'labels',
+				stylers: [
+					{visibility: 'on'},
+				]
+			},{
+				featureType: 'administrative.country',
+				elementType: 'labels.text.stroke',
+				stylers: [
+					{visibility:'off'}
+				]
+			},{
+				featureType: 'administrative.country',
+				elementType: 'labels.text.fill',
+				stylers: [
+					{hue: 163},
+					{saturation: -26},
+					{lightness: -1.1},
+					{invert_lightness:'true'}
+				]
+			},{
+				featureType: 'administrative.locality',
+				elementType: 'labels',
+				stylers: [
+					{visibility: 'off'},
+				]
+			}
+		];
+		
+		var map = new google.maps.Map(document.getElementById('map'), {
+			styles: defStyle,
+			zoom:4, 
+			center: new google.maps.LatLng(52.895652,6.364848),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			minZoom:4,
+			maxZoom:6,
+			panControl: false,
+			mapTypeControl: false,
+			streetViewControl: false,
+			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL,
+				position: google.maps.ControlPosition.RIGHT_TOP
+			},
+			//overviewMapControl: true,
+			//backgroundColor: "#999999" //land
+			backgroundColor: "#003C59" //water
+			
+		});
+		
+		// bounds of the desired area
+		var allowedBounds = new google.maps.LatLngBounds(
+			 //new google.maps.LatLng(30, -10),
+			 new google.maps.LatLng(35, -25),
+			 new google.maps.LatLng(70.8512, 55.3404)
+		);
+		var lastValidCenter = map.getCenter();
+
+		google.maps.event.addListener(map, 'center_changed', function() {
+			if (allowedBounds.contains(map.getCenter())) {
+				// still within valid bounds, so save the last valid position
+				lastValidCenter = map.getCenter();
+				return;
+			}
+
+			// not valid anymore => return to last valid position
+			map.panTo(lastValidCenter);
+		});
+		
+		var legend = document.createElement('div');
+		legend.id = 'legend';
+        var content = [];
+        //content.push('<h3>Mapping Influence of Metal-SubGenres in active metal bands across Europe in 2012</h3>');
+        content.push('<div id="descript"><h4 class="genLabel"><span style="color:#4c4c35">Black Metal</span></h4><h5 class="sub">+viking</h5>');
+		content.push('<p align="center">Common traits include fast tempos, shrieked vocals, highly distorted guitars played with tremolo picking, blast beat drumming, raw recording and unconventional song structures. his so-called "first wave" included bands such as Venom, Bathory, Hellhammer and Celtic Frost. A "second wave" arose in the early 1990s, spearheaded by Norwegian bands such as Mayhem, Burzum, Darkthrone, Immortal and Emperor. The early Norwegian black metal scene developed the style of their forebears into a distinct genre. Norwegian-inspired black metal scenes emerged throughout Europe and North America, although some other scenes developed their own styles with no connection to the Norwegian one.</p></div>');
+		content.push('<div id="legendBottom">');
+		content.push('<img src="../images/legends/_legend-black.png" height="150"/>')
+		content.push('</div><span style="font-size:.6em; line-height:.8em">Value given for maximum in each category. Plotted colors normalized against active metal scene (total bands)</span>');
+		
+        //content.push('<label>GenreSelect</label><select id="genre-select"><option value="ALL">ALL Genres</option><option value="Black">Black</option><option value="Death">Death</option><option value="Doom">Doom</option><option value="Folk">Folk</option><option value="Gothic">Gothic</option><option value="Heavy">Heavy</option><option value="Industrial">Industrial</option><option value="Power">Power</option><option value="Progressive">Progressive</option><option value="Symphonic">Symphonic</option><option value="Thrash">Thrash</option></select>');
+        legend.innerHTML = content.join('');
+        legend.index = 1;
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
+		
+		
+		
+		
+		
+		
+		
+		var about = document.createElement('div');
+		about.id = 'about';
+		about.innerHTML = '<img src="../images/logo.png" height="50" title="All band count records ActiveMetal collected from Metal-Archives.com in late 2012. Polygons generated from NaturalEarth 50m country boundaries. Descriptive text collected from Wikipedia, and AllMusic.">'
+		about.index=1;
+		
+		map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(about);
+		
+		/*
+		google.maps.event.addListener(about, 'clicked', function() {
+			var aboutWin = document.createElement('div');
+			aboutWin.id = 'aboutWin';
+			aboutWin.innerHTML = '<h3>ABOUT</h3></br><img src="../images/logo.png">'
+			aboutWin.index = 1;
+			map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutWin);
+			
+		});
+		*/
+		
+		
+		//var styledMapType = new google.maps.StyledMapType(styles['metal'], {name: 'metal'});
+		//map.mapTypes.set('metal', styledMapType);
+		
+		//var tableID = '1VLJCLt6eogviSghzNXgCcDleuY2byPquNbzxiTI'
+		var tableID = '1yvjM-dtz2a-DuLil4cmqhcKJn7r5PaKl2baBs_I'
+		
+		var locationColumn = 'KML'
+		//listen for a change in the menu
+		
+		
+		
+		
+		layer = new google.maps.FusionTablesLayer({
+			query: {
+				select: locationColumn,
+				from: tableID //ALL_data_3
+			},
+			/*styles: [
+				{
+					polygonOptions: {
+						//fillColor: '#ba7060',
+						//black metal
+						//fillColor: '#e5e5a1',
+						fillColor: '#b2b27d',
+						//fillColor: '#7f7f59',
+						//fillColor: '#4c4c35',
+						//fillColor: '#191911',
+
+						strokeColor: "#E2D8CF",
+						strokeWeight: .5, //this will round to 1 it seems
+						fillOpacity: .8
+					}
+				}
+				
+			]*/
+			styleId: 3,
+			suppressInfoWindows:true
+		});
+		layer.setMap(map);
+		
+		google.maps.event.addDomListener(document.getElementById('genre-select'),'change', function() {
+              updateMap(layer, tableID, locationColumn);
+		});
+		google.maps.event.addListener(layer, "click", function(e) {
+			//var content = "<b>"+e.row['country'].value+"</b><br><br>";
+			var infoWinCont = [];
+			infoWinCont.push('<div id="infoWin"><table id="infoTable"><tr><td><h1>'+e.row["country"].value+'</h1></td></tr>');
+			infoWinCont.push('<tr class="infoHead"><td><b>Total Bands:</b></td><td class="infoVal">'+e.row["ctry_total"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Black:</b></td><td class="infoVal">'+e.row["Bla_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Death:</b></td><td class="infoVal">'+e.row["Dea_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Doom:</b></td><td class="infoVal">'+e.row["Doo_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Folk:</b></td><td class="infoVal">'+e.row["Fol_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Gothic:</b></td><td class="infoVal">'+e.row["Got_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Heavy:</b></td><td class="infoVal">'+e.row["Hea_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Industrial:</b></td><td class="infoVal">'+e.row["Ind_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Power:</b></td><td class="infoVal">'+e.row["Pow_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Progressive:</b></td><td class="infoVal">'+e.row["Pro_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Symphonic:</b></td><td class="infoVal">'+e.row["Sym_raw"].value+'</td></tr>');
+			infoWinCont.push('<tr><td><b>Thrash:</b></td><td class="infoVal">'+e.row["Thr_raw"].value+'</td></tr></table>');
+			infoWinCont.push('</div>');
+			
+			infoWindow.setContent(infoWinCont.join(''));
+			infoWindow.setPosition(e.latLng);
+			infoWindow.open(map);
+		});
+		
+	}//end init
+
+	function updateMap(layer, tableId, locationColumn) {
+		var genSelect = document.getElementById('genre-select').value;
+		
+		// set currGenreCol with the name of the column for the color
+		//var currGenreCol=genSelect.substr(0,3) + "_hex";
+		var genDesc = document.getElementById('descript')
+		var legendSpace = document.getElementById('legendBottom')
+		var stylID = 2//('<img src="../images/legends/_legend-black.png" height="150"/>')
+		switch (genSelect){
+			case "ALL":
+				stylID=2
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#6c6c6c">All Genres</span></h4><h5 class="sub"></h5><p>As a complex entity, any single composition of music within the genre of metal often contains influences from several different sub-genres styles. Metal can only be expressed in terms of the different variations in style which define what become recognized as sub-genres. As a result, one band may be recognized as being influenced by these style variations, which in turn allows us to ascribe one or more sub-genres to that band. It is important to emphasize the potential for sub-genre cross-overs, and how any one band or artist is capable of producing vastly different material between releases. The temporal resolution of the map is not restricted to periods and the sub-genres exhibited by releases in those periods, but rather expanded to look at the presently active bands, and their ascribed locations.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-all.png" height="150"/>'
+				break;
+			case "Black":
+				stylID=3
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#393741">Black Metal</span></h4><h5 class="sub">+Viking</h5><p>Common traits include fast tempos, shrieked vocals, highly distorted guitars played with tremolo picking, blast beat drumming, raw recording and unconventional song structures. his so-called "first wave" included bands such as Venom, Bathory, Hellhammer and Celtic Frost. A "second wave" arose in the early 1990s, spearheaded by Norwegian bands such as Mayhem, Burzum, Darkthrone, Immortal and Emperor. The early Norwegian black metal scene developed the style of their forebears into a distinct genre. Norwegian-inspired black metal scenes emerged throughout Europe and North America, although some other scenes developed their own styles with no connection to the Norwegian one.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-black.png" height="150"/>'
+				break;
+			case "Death":
+				stylID=4
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#335d4a">Death Metal</span></h4><h5 class="sub">+deathcore</h5><p>It typically employs heavily distorted guitars, tremolo picking, deep growling vocals, blast beat drumming, minor keys or atonality, and complex song structures with multiple tempo changes. Death metal vocals are often guttural roars, grunts, snarls, and low growls colloquially known as death growls. Death growling is mistakenly thought to be a form of screaming using the lowest vocal register known as vocal fry, however vocal fry is actually a form of overtone screaming, and while growling can be performed this way by experienced vocalists who use the fry screaming technique, "true" death growling is in fact created by an altogether different technique.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-death.png" height="150"/>'
+				break;
+			case "Doom":
+				stylID=5
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#5f5d6d">Doom Metal</span></h4><h5 class="sub">+sludge, drone, stoner</h5><p>Guitarists and bassists often downtune their instruments to very low notes and make use of large amounts of distortion. This produces a very "thick" or "heavy" guitar tone, which is one of the defining characteristics of the genre.Another defining characteristic is the consistent focus on slow tempos, and minor tonality with much use of dissonance.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-doom.png" height="150"/>'
+				break;
+			case "Folk":
+				stylID=6
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#596f34">Folk Metal</span></h4><h5 class="sub"></h5><p>Folk metal feature the same typical instruments found in heavy metal music: guitars, bass, drums and vocalist. The diverse range of music styles and instruments is matched by a variety of vocal styles in the genre. Lyrics in the genre commonly deal with fantasy, mythology, paganism, history and nature.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-folk.png" height="150"/>'
+				break;
+			case "Gothic":
+				stylID=7
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#7d4039">Gothic Metal</span></h4><h5 class="sub"></h5><p>The music of gothic metal is generally characterised by its dark atmospheres. The adjective "dark" is commonly used to describe gothic music in general while other terms that are less frequently used include deep, romantic, passionate and intense. Gothic metal has also sometimes been viewed as "a combination of the darkness and melancholy of goth rock with heavy metal"</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-gothic.png" height="150"/>'
+				break;
+			case "Heavy":
+				stylID=8
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#405869">Heavy Metal</span></h4><h5 class="sub">+traditional heavy,stoner</h5><p>Heavy metal is traditionally characterized by loud distorted guitars, emphatic rhythms, dense bass-and-drum sound, and vigorous vocals. Heavy metal is usually based on riffs created with three main harmonic traits: modal scale progressions, tritone and chromatic progressions, and the use of pedal points. Brief, abrupt, and detached rhythmic cells are joined into rhythmic phrases with a distinctive, often jerky texture. These phrases are used to create rhythmic accompaniment and melodic figures called riffs, which help to establish thematic hooks.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-heavy.png" height="150"/>'
+				break;
+			case "Industrial":
+				stylID=9
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#7e5a31">Industrial Metal</span></h4><h5 class="sub"></h5><p>Some industrial metal bands base their songs around metal-style guitar riffs, while others use the instrument more for the harsh, abrasive textures it can create. Either way, industrial metal generally possesses greater aggressive force than straight-ahead industrial, which helped the style cross over to metal and alternative audiences accustomed to guitar-driven music. Industrial metal lyrics also mirror the darkness and aggression of standard heavy metal, although the sensibility is filtered through the personal alienation of punk and alternative rock.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-industrial.png" height="150"/>'
+				break;
+			case "Power":
+				stylID=10
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#466963">Power Metal</span></h4><h5 class="sub"></h5><p>combining characteristics of traditional metal with speed metal, often within symphonic context. Generally, power metal is characterized by a more uplifting sound, in contrast to the heaviness and dissonance prevalent in styles such as doom metal and death metal. Power metal bands usually have anthem-like songs with fantasy-based subject matter and strong choruses, thus creating a theatrical, dramatic and emotionally "powerful" sound.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-power.png" height="150"/>'
+				break;
+			case "Progressive":
+				stylID=11
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#897b5a">Progressive Metal</span></h4><h5 class="sub">+avant-garde</h5><p>Originating in the United Kingdom and North America in the late 1980s. Progressive metal blended elements of heavy metal and progressive rock music, taking the loud "aggression", amplified electric guitar-driven sound of the former, with the more experimental, complex and "pseudo-classical" compositions of the latter. Progressive metal often utilises the conceptual themes associated with progressive rock. Throughout the years, progressive metal has borrowed influences from several other genres, including classical and jazz fusion music.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-prog.png" height="150"/>'
+				break;
+			case "Symphonic":
+				stylID=12
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#466963">Symphonic Metal</span></h4><h5 class="sub"></h5><p>Songs are often highly atmospheric, though more upbeat than those of other metal subgenres; even songs with morbid themes routinely feature prominent major-key fanfares. Particularly central to creating mood and atmosphere is the choice of keyboard sounds. Lyrics cover a broad range of topics. As with two of symphonic metal\'s otherwise most dissimilar influences, power metal and opera, fantasy and mythological themes are common. Concept albums styled after operas or epic poems are not uncommon. Bands in this genre often feature a female lead vocalist, most commonly a mezzo-soprano. There is sometimes a second, male vocalist, as is also common in gothic metal. Growling, death metal style vocals are rare, but not unknown. Further backup up to and including a full choir is sometimes employed. Male vocalists are more common in the symphonic power metal category.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-symphonic.png" height="150"/>'
+				break;
+			case "Thrash":
+				stylID=13
+				genDesc.innerHTML = '<h4 class="genLabel"><span style="color:#5e405e">Thrash Metal</span></h4><h5 class="sub">+thrashcore,speed,groove</h5><p>generally features fast tempos, low-register, complex guitar riffs, high-register guitar solos and double bass drumming.Vocally, thrash metal can employ anything from melodic singing to shouted vocals. Most thrash guitar solos are played at high speed, as they are usually characterized by shredding, and use techniques such as sweep picking, legato phrasing, alternate picking, tremolo picking, string skipping, and two-hand tapping.</p>'
+				legendSpace.innerHTML = '<img src="../images/legends/_legend-thrash.png" height="150"/>'
+				break;
+			default:
+			break;
+		}
+		
+
+		layer.setOptions({
+			query: {
+				select: locationColumn,
+				from: tableId,
+			},
+			/*styles: [{
+				polygonOptions : {
+					fillColor: layer.row[currGenreCol]
+				},
+			
+			}]*/
+			styleId: stylID
+			
+		});
+	}
+	
+	
+	
+	
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+  </head>
+  <body onload="initialize()">
+    <div id="wrapper">
+	  
+		<!--[if IE]>
+		
+	<!--[if IE]>
+	<div id="IE-head-container">
+	<![endif]-->
+	  <header id="head-container">
+		<!-- <a href="../index.html">-->
+			<img src="../images/header-metal_beta+.png" width="786">
+		<!-- </a>-->
+	  </header>
+	<!--[if IE]>
+	</div>
+	<![endif]-->
+	  
+	  
+		<nav id="nav-container">
+		  <!-- horizontal by default; vertical at reduced res-->
+		  <!-- nav items should be non-prog PNGs with transparancy-->
+			<div id="topInfo">Mapping Influence of Metal-SubGenres in active metal bands across Europe in 2012</div>
+		</nav>
+		
+		
+		<div id="content">
+		<!-- main content area-->
+		<!-- this space is unique to the page -->
+		<!-- index-full:slideshow; index-slim: single image? -->
+			<label></label><select id="genre-select"><option value="">Select Genre</option><option value="ALL">All Genres</option><option value="Black">Black</option><option value="Death">Death</option><option value="Doom">Doom</option><option value="Folk">Folk</option><option value="Gothic">Gothic</option><option value="Heavy">Heavy</option><option value="Industrial">Industrial</option><option value="Power">Power</option><option value="Progressive">Progressive</option><option value="Symphonic">Symphonic</option><option value="Thrash">Thrash</option></select>
+			<img id="thumb-space-bkd" src="" alt="" />
+			<div id="map"></div>
+			
+			
+		</div>
+		
+		<footer>
+			<div id="footLinkContainer">
+				<!--<img class="foot-link active-map act-op"  id="foot-map" src="../images/foot-siteMap.png" width="112" height="24" alt="site Map" />
+				<a href="http://www.box.com/wesgillman" target="_blank"><img class="foot-link" src="../images/foot-box.png" width="76" height="24" alt="box.com" /></a>
+				<a href="http://www.linkedin.com/in/wesgillman" target="_blank"><img class="foot-link" src="../images/foot-linkedIn.png" width="128" height="24" alt="" /></a>
+				<a href="http://www.about.me/wesgillman" target="_blank"><img class="foot-link" src="../images/foot-aboutMe.png" width="153" height="24" alt="about.me"></a>
+				<a href="mailto:wes.gillman@gmail.com"><img class="foot-link" src="../images/foot-contact.png" width="113" height="24" alt="contact"></a>--->
+				<br />Wes Gillman, 2012 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></br>
+			<img src="../images/ornements_c2b8af_10.png"/>
+				
+			</div>
+			<div id="footTextContainer">
+			<noscript>
+			<p>This site is best viewed with javascript enabled.</p>
+			</noscript>
+			
+			<!--[if IE]>
+				<p>This site is currently not optimized for your browser.</p>
+			<![endif] -->
+			</div>
+			
+		</footer>
+
+    </div>
+
+
+  </body>
+</html>

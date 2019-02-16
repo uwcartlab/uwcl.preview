@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>  
+		
+		<title>Adventure Sports</title>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<style type="text/css">
+			body {
+				background-color: white;
+			}
+			h1 {
+				
+			}
+			h2 {
+				font-size: 18pt;
+				background-color: black;
+				color: white;
+				font-family:"Agency FB"
+			}
+			p {
+				font-size: 14pt;
+				background-color: white;
+				color: black;
+				font-family:"Agency FB"
+			}
+			
+			h3{
+			margin: 20px 0px 0px 0px;
+			}
+			
+			#wrapper2{
+				font-family:"Agency FB"
+				width:100%;
+				margin:auto;
+				background-color:#050505;
+				font-color:#b53f61;
+				
+			}
+			#info{
+				font-size:30px;
+				font-family:"Agency FB";
+				margin-left: 150px;
+				margin-top:20px;
+			
+			}
+			
+			#image{
+			margin-left: 120px;
+			}
+			
+			#map {
+				width: 960px;
+				height: 550px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				border-style: groove;
+				border-color: black;
+				border-width: 4px;
+			}
+			#content{
+				margin:0 150px 0 0;
+				width: 100%;
+				
+			}
+			#wrapper{
+				width:960px;
+				margin-left: auto;
+				margin-right: auto;
+				background-color:#BEEB9F;
+				background-repeat:no-repeat;
+				border: 8px solid #050505;
+			}
+			
+			
+			nav{
+				
+				margin-bottom: 0px;
+				font-family: "Agency FB";
+				font-size: 20px;
+				margin-left:100px;
+				color:white;
+
+				}
+
+			nav ul li{
+				display: inline;
+				}
+				
+			body {
+				background-color:#FF6138;
+
+			}
+			
+			
+			footer{
+				background-color:#00A388;
+				font-family:"Agency FB";
+				font-size: 24px;
+				text-align:center;
+			}
+			
+			
+			
+			a:link {color:#060606;}    /* unvisited link */
+			a:visited {color:#FFFFFF;} /* visited link */
+			a:hover {color:#00f9aa;}   /* mouse over link */
+			a:active {color:#060606;}  /* selected link */
+	
+			
+			
+		</style>
+	</head>
+	
+	<div id="wrapper">
+	<body onload="initialize();">
+		
+	
+		
+		
+		<div id="content">
+		<img src="adventure5.png"/>
+		</div>
+		
+		<div id="content">
+		<img src="finalMap2.png"/>
+		</div>
+		
+		
+	
+		
+		
+		
+		
+		<img src="map3Title4.png"/>
+		
+		<div id="image">
+		<img src="rockLegend2.png"/>
+		<img src="iceLegend2.png"/>
+		<img src="mountainLegend5.png"/>
+		<img src="skydiveLegend.png"/>
+		<img src="baseLegend.png"/>
+		<img src="surfLegend2.png"/>
+		<img src="diveLegend.png"/>
+		</div>
+
+		<div id="map"></div>
+
+		<script type="text/javascript">
+
+			
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 2,
+				center: new google.maps.LatLng(16.497893,2.912607),
+				mapTypeId: google.maps.MapTypeId.TERRAIN
+ 			});
+  
+ 
+			
+	
+			
+			var locations=[
+				["Mountain",49.145434,87.818504,"Mount Khuiten","Located at the corners of China, Russia and Mongolia in one of the most remote regions on earth"],
+				["Mountain",-3.066363,37.350564,"Mount Kilimanjaro","Africa's highest mountain located at Tanzania's northern border with Kenya, it is made up of 3 extinct volcanoes"],
+				["Mountain",-13.163721,-72.545943,"Machu Picchu","The famed lost city of the Inca that was discovered in 1911 by Hiram Bingham is the highlight of the Andes"],
+				["Mountain",27.985818,86.923596,"Mount Everest","Located in Nepal, abd with an elevation of more than 29000 feet, Mt Everest is the highest mountain on earth"],
+				["Mountain",45.976507,7.658350,"Matterhorn","Located in the Swiss Alps, Matterhorn is the most regonized mountain in the continent of Europe"],
+				["Mountain",43.355000,42.439167,"Mount Elbrus","Located in the Caucasus mountains in Russia, Mt Elbrus is a large, double-coned volcano"],
+				["Mountain",19.030013,-97.270678,"Citlaltepetl and Iztaccihuatl","The third and seventh highest mountains in North America, these two volcanoes are located in Mexico not too far from the US border"],
+				["Mountain",63.069396,-151.007432,"Mount McKinley","Located in Denali National Park in Alaska, standing at above 20000 feet, it is the highest mountain in North America"],
+				["Mountain",28.596122,83.820139,"Annapurna","It is located in Nepal, most visitors will climb over the famous Thorung La"],
+				["Mountain",35.717778,52.065000,"Damavand","Located in Iran, the Damavand mountains lean against the Caspian Sea northeast of Tehran"],
+				["Dive",4.120068,118.629438,"Barracuda Point","Located off of Sipaldan Island in Malaysia,where you can find hammerheads, sea turtles, and amazing fishes"],
+				["Dive",-19.244239,146.853734,"Yongala","Considered the best wreck dive on the planet, the  SS Yongala shipwreck is 110 meters in size and sank after a tropical cyclone in 1911 with 124 passengers onboard."],
+				["Dive",27.906300,34.372352,"SSThislegorm","One of the most popular wreck dives in the world, the SS Thistlegorm was a 128-meter-long British transport ship, which was attacked and sunk in 1941 on its way from Glasgow to Alexandria"],
+				["Dive",7.161633,134.227216,"Blue Corner Wall","Reef sharks, big eye jacks,soft coral,gorgonian sea whips, eagle rays, snappers...you name it"],
+				["Dive",9.362543,98.022090,"Richelieu Rock","This is the spot to find whale sharks"],
+				["Dive",-0.967906,-90.258727,"Gordon Rocks","Here you will find sea lions, fur seals, hammerhead sharks,tropical fish, manta rays, octopi, marine tortoises and moray eels!"],
+				["Dive",17.315029,-87.534287,"Great Blue Hole","Formed during the last ice age, this submarine sinkhole is 300 meters wide, and a scary 124 meters deep."],
+				["Dive",8.852233,119.909885,"Tubbataha","The water is exceptionally clean, so the marine life lives much longer, making it grow to great proportions. There are more than 300 different types of coral and 379 species of fish."],
+				["Dive",27.191468,34.042904,"Big Brother","Beneath the waters surrounding the small island of Big Brother you’ll be greeted by Aida II, a 75-meter ship that crashed into the land in 1957, en route to deliver lighthouse staff to the island. It is surrounded by huge shoals of fish and covered in an explosion of colored coral"],
+				["Dive",4.074972,72.886907,"Maaya Thila","Dubbed the White Tip Reef Shark Capital of the Maldives. Its diverse range of tropical fish include angel, butterfly, clown, parrot and trigger fish."],
+				["Ice",51.088041,-115.344860,"Canmore","Yamnuska Mountains in the Canadian Rockies offcers a lot of opportunities for ice climbing"],
+				["Ice",38.022744,-107.672102,"Ouray","The most accessible, fun, and user-friendly place to get really good at vertical ice climbing."],
+				["Ice",59.880081,8.614122,"Rjukan","This area in Norway offers many routes and so much unexplored terrain"],
+				["Ice",46.493513,7.672758,"Kandersteg","The Kandersteg Ice Climbing Festival takes place every year as the place offers amazing routes and terrain"],
+				["Ice",51.958896,-120.167407,"Helmcken","Helmcken Falls in BC, Canada, is said to be the best ice climbing in the world, also one of the most dangerous"],
+				["Climb",40.657294, 22.955208,"Meteora","The name of this elevated region sums up to “suspended rock”. Located between the Peneios River and Pindus Mountains, these monasteries have a spectacular series of natural sandstone rock pillars in their background."],
+				["Climb",38.509423,-109.733509,"Dead Horse Point","Situated next to the Colorado River this mountain has some of the most interesting topographical features"],
+				["Climb",46.469669, 11.623574,"Torri Del Vajolet","The Delago arete route remains the most convenient climbing route to score this mountain"],
+				["Climb",37.764092,-119.667662,"El Capitan","Situated in the northern side of Yosemite National Park, this 900 m granite monolith has baffled cliff climbers of the world. Its altitude is not as challenging as is its vertical ascent."],
+				["Climb",36.144079,-109.336474,"Spider Rock","This is an amazing tall red sandstone monolith found in the National Park of Arizona."],
+				["Climb",36.687943,-108.837433,"Shiprock","Shiprock was formed by a volcanic eruption that dates back to 30 million years and now remains as a matchless basalt exhibit of the central feeder pipe of a volcano"],
+				["Climb",5.143333,-60.762500,"Mt Roraima","It is situated in the Canaima National Park of Venezuela and is one of the most ancient geological formations you will find."],
+				["Climb",50.745000,-116.788333,"Bugaboo Spire","This is one of the famous Alpine rock climbing spots of Canada. The word Bugaboo means ‘an object of obsessive, usually exaggerated fear or anxiety."],
+				["Climb",-46.711161,-72.946799,"Las Torres","You will find the Torres del Paine National Park of Chile full of the natural wonders like mountains, glaciers, rivers and lakes that makes it a spot of tourist interest. "],
+				["Climb",35.802582,75.491353,"Nameless Tower","This is the other name of the majestic Trango Towers located on the Baltoro Glacier in Baltistan, Northern Pakistan. Its large size and vast ridgeline expanding up to 1000 m has fascinated rock climbers over years. "],
+				["Surf",21.664019, -158.053852,"Pipeline","It is one of the heaviest waves in the world, scaling over six meters over a shallow base of razor blade table reef."],
+				["Surf",-34.048829,24.926755,"Supertubes","Expert surfers flock here for rides up to 300 meters long."],
+				["Surf",-8.722946,115.168160,"Uluwatu and Kuta","Bali attracts the gnarliest surfers from Australia and Hawaii plus beginners from across the globe; all of whom can enjoy these perfect glassy faces."],
+				["Surf",-28.164550,153.532501,"Superbanks","Another of the world’s finest breaks, you may well have the ride of your life on this section, which will produce tubes and solid walls."],
+				["Surf",37.477472,-122.552613,"Mavericks","The wave of legends has been surfed by only the most gutsy board riders; this mammoth peak forms due to hair-raising storms out to sea and reaches bone-chilling heights of 25 meters"],
+				["Surf",-12.091273,-77.108680,"Lima","To the right of Miraflores shopping center (and the pier) a few locals rent surfboards to brave backpackers"],
+				["Surf",43.670494,-1.445449,"Hassegore","Located on the Atlantic, this expert surfing spot has been dubbed the Surfing capital of Europe, so naturally the rich and the famous have mansions and holiday homes near the beach "],
+				["Surf",9.789361,126.170999,"Cloud Nine","This dramatic and powerful reef break, which crashes onto shallow razor sharp coral, offers right and left death rides to those who dare"],
+				["Surf",4.180568,73.511075,"Sultan","A consistent reef wave that’s absolutely pumping in the spring. "],
+				["Surf",21.014288,-156.640009,"Honalua Bay","A right-hand squeaky-clean point break should keep you occupied"],
+				["Base",5.967500,-62.535556,"Angel Falls","The world's highest waterfall, found in the depths of the Venezualan jungle, have a vertical drop of 2,600 feet. The falls are found in a national park, so a permit is required to jump off."],
+				["Base",37.734089,-119.637657,"El Capitan","The southwest face of this epic rock formation in the Yosemite National Park is 3,000 feet from base to summit, and it is a hugely popular destination for climbers. BASE jumping is, however, banned by the US National Parks Service"],
+				["Base",66.533333,-65.316667,"Mount Thor","Found in the Auyuittuq National Park on Baffin Island, Canada, Mount Thor is famous for possessing the greatest purely vertical drop on Earth (4,101 feet). The twin peaked Mount Asgard, also on Baffin Island, is equally impressive."],
+				["Base",-33.949751,18.403666,"Table Mountain","Renowned BASE jumper Jeb Corliss, who has leaped from Angel Falls, the Eiffel Tower, and the Golden Gate Bridge, nearly died when he attempted to jump from Table Mountain "],
+				["Base",35.907547,74.653590,"Trango Towers","The Trango Towers are a group of granite spires found in the Gilgit-Baltistan region of Pakistan. The east face of the Great Trango Tower features the world's greatest nearly vertical drop, of 4,396ft."],
+				["Base",62.488609,7.718801,"Troll Wall","The Troll Wall, in Norway's Romsdalen valley, has long been a favourite haunt of BASE jumpers, although the practice has been banned here since 1986, due to the difficulty of rescuing injured jumpers, or retrieving the bodies of deceased ones. Eight have lost their lives leaping from the Troll Wall."],
+				["Base",46.577523, 8.005413,"Eiger","The Eiger lies in the Bernese Alps in Switzerland and is popular with BASE jumpers. "],
+				["Base",42.599969,-114.454859,"Perrine Bridge","This 457-metre bridge, which sits 148 metres above Idaho's Snake River, is the only manmade structure in the US where BASE jumping is allowed all year, without a permit. In September 2005, Miles Daisher set a world record by jumping off the bridge 57 times over a 24-hour period."],
+				["Base",59.021897,6.582015,"Kjerag","The Kjerag is a Norwegian mountain, whose northern face features a 984-metre drop to picturesque Lysefjorden, making its understandable popular with BASE jumpers. Between 1994 and 2008, 29,000 jumps were performed here."],
+				["Base",38.064809,-81.082577,"New River Gorge Bridge","Each year, on the third Saturday in October, the New River Gorge Bridge plays host to hundreds thrill-seeking BASE jumpers, and thousands more interested onlookers. Bridge Day began in 1980, and sees around 400 daredevils hurl themselves towards West Virginia's New River, 267 metres below."],
+				["Sky",43.183333,13.8,"Porto San Giorgio","Le Marche is located in Central Italy on side of Adriatic Sea, with the centre for skydiving two minutes away from the beach near Porto san Giorgio"],
+				["Sky",27.985818,86.923596,"Mount Everest","It’s called as Sagarmatha, Goddess of the sky in Nepal. In Tibet, people call her Chomolungma, Goddess Mother of the Earth, Mount Everest stands at over 29000 feet above sea level"],
+				["Sky",-43.565742,170.234276,"Skydive New Zealand","It is one of the most varied terrain in the world. World’s most imperial landscapes collide here: sleek glaciers, craggy mountains, dark waters and ancient rainforests are few of them. "],
+				["Sky",28.220509,-82.150032,"Zephyrhills","Zephyrhills in Florida is home to “Skydive City”. Skydive City is the most known parachuting centers across the globe. Adventure lovers from all over the world come here especially to enjoy the thrill of parachuting."],
+				["Sky",-23.296265,-47.688300,"Sao Paolo Paraquedismo Boituva","Boituva is an ideal location fo skydiving; it’s considered as one of the best places to jump in the whole of Latin America."],
+				["Sky",35.072932,24.768621,"Tympaki","Crete’s southern coast offers an infinite sunny, North African climate with crystal-clear Mediterranean waters. Skydiving at Tympaki can be a memorable experience carved in the memories for an entire life."],
+				["Sky",32.652545,-116.860308,"Skydive San Diego","San Diego, surrounded by Mexico, the Pacific Ocean, the Laguna Mountains and the Anza-Borrego Desert presents a breathtaking and magical skydiving experience."],
+				["Sky",21.578446,-158.207372,"Skydive Hawaii","Overall, it promises one a spectacular and thrilling skydiving experience."],
+				["Sky",37.295615,-6.164016,"Skydive Spain","Situated in the southern part of Spain in the Andalusia region, Seville offers landscape of fine beaches, nature reserves, marshlands, Guadalquivir River dunes and beautiful mountain ranges. "],
+				["Sky",48.200531,-114.315102,"Kalispell","Kalispell lays in the heart of Rocky Mountains.. Both Flathead Lake and Glacier National Park are nearby. People come to Kalispell to skydive with Rocky Mountains in the backdrop"],
+				
+				
+			];
+			
+			
+
+			var infowindow = new google.maps.InfoWindow();
+
+			var marker, i;
+			var iconImage, heading;
+			for (i = 0; i < locations.length; i++)
+			{
+				switch(locations[i][0]){
+				
+					case "Mountain":
+					iconImage="mt3.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					
+					case "Dive":
+					iconImage="dive6.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					case "Ice":
+					iconImage="ice3.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					case "Climb":
+					iconImage="climb5.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					case "Surf":
+					iconImage="surf2.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					case "Base":
+					iconImage="base5.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					case "Sky":
+					iconImage="sky4.png";
+					heading= "<h2><img src='"+iconImage+"'/>"+locations[i][3];
+				    break;
+					
+					
+				}
+				
+				marker = new google.maps.Marker({
+				icon:iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+				});
+				
+				google.maps.event.addListener(marker, 'click', (function(marker, i,heading) {
+					return function() {
+						markerContent=heading+"</h2><p><b>Description:</b>"+locations[i][4]+"</p>";
+						infowindow.setContent(markerContent);
+						infowindow.open(map, marker);
+					}
+				})(marker, i, heading));
+			
+			};
+			
+			
+									
+		</script>
+		
+		
+		<div id="content">
+		<img src="world8.png"/>
+		</div>
+		
+		
+		<h3>
+		<img src="metaData2.png"/>
+		</h3>
+		
+		
+		
+		
+		
+		
+	<footer>
+	
+	Julia Janicki 2012
+	
+	</footer>	
+		
+		
+	</body>
+	</div>
+	
+</html>

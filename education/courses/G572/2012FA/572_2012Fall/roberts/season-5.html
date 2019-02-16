@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Season 5 Map</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	<div id="wrapper">
+	<header></header>
+	
+	
+		<h1>Season 5</h1>
+	
+	<p>Series creator Chris Carter continues to pen one of the most creative -- and consistent -- shows on television. Throughout season five's 20 thrilling episodes, Agents Mulder and Scully unravel one dark, paranormal mystery after another -- and reveal more about themselves, their pasts and their fears. Of course, it wouldn't be the X-Files without a healthy dose of conspiracy in each episode.
+		</p>
+	
+		<b></b>
+			<nav>
+  		<ul>
+    		<li><a href="index.html">Home</a>  |  </li>
+			<li><a href="season-1.html">Season 1</a>  |  </li>
+    		<li><a href="season-2.html">Season 2</a>  |  </li>
+			<li><a href="season-3.html">Season 3</a>  |  </li>
+			<li><a href="season-4.html">Season 4</a>  |  </li>
+			<li><a href="season-5.html">Season 5</a>  |  </li>
+			<li><a href="season-6.html">Season 6</a>  |  </li>
+			<li><a href="season-7.html">Season 7</a>  |  </li>
+			<li><a href="world-map.html">World Map</a>  |  </li>
+			<li><a href="about.html">About the Maps</a>  |  </li>
+  		</ul>
+     </nav>
+	 
+	 
+		<div id="map"></div>  <!-- map is placed within this div -->
+	
+	
+	<footer> 
+		<a href="https://mywebspace.wisc.edu/jmroberts3/web/index.html">&copy;Jane Roberts, 2012</a> 
+	</footer>
+	</div><!-- end wrapper -->	
+	
+	
+	
+	<script type="text/javascript">
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: new google.maps.LatLng(32.67514,-96.064453),
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// populate an array with our data
+		var locations = [
+		
+			["Season 5",38.893269,-77.044716,"'Redux: Part 1' 5x1","Scully helps Mulder to fake his own death in an effort to discover which members of the FBI they can trust before the agents individually search for an answer to Scully's cancer. "],
+			["Season 5",38.889394,-77.028408,"'Redux: Part 2' 5x2","With Scully hospitalized, Mulder is offered a deal to join the Cigarette-Smoking Man and is told by Section Chief Blevins to name Assistant Director Skinner as the man responsible for Scully's cancer at a forthcoming FBI hearing. When Mulder instead names Blevins, both the Section Chief and the Cigarette-Smoking Man are shot, before Scully begins to recover. "],
+			["Season 5",39.290433,-76.624146,"'Unusual Suspects' 5x3","Two salesmen and a federal employee join forces when they meet Susanne Modeski, a woman who claims that she is being pursued by her violent ex-boyfriend, Fox Mulder. "],
+			["Season 5",30.490618,-84.185711,"'Detour' 5x4","While traveling to a conference with Scully and two other FBI agents, Mulder stops at a roadblock to join a nearby inspection of attacks by an unidentified predator. "],
+			["Season 5",40.971051,-93.032227,"'The Post-Modern Prometheus' 5x5","In some midwestern town...filmed in black-and-white, The Post-Modern Prometheus chronicles Mulder and Scully's investigation when a letter from a single mother leads them to a small mid-Western town where a modern-day Frankenstein lurks, Jerry Springer is an obsession, and Cher plays a significant part. "],
+			["Season 5",32.713119,-117.16198,"'Christmas Carol' 5x6","While Scully and her mother stay with Dana's brother and his pregnant wife at Christmas time, Scully recieves several weird phone calls that she thinks might be from her deceased sister. She also becomes involved in an investigation of a woman's alleged suicide, believing that the victim was actually murdered, and learns that the departed woman's young adopted daughter is apparently her own offspring. "],
+			["Season 5",32.714636,-117.149277,"'Emily' 5x7","Scully comes to terms with the shocking revelation that a mysterious little girl is her daughter, although the details surrounding her creation are horrifically sinister and unforgiving. "],
+			["Season 5",38.704282,-77.22776,"'Kitsunegari' 5x8","When an influential former killer who was arrested by Mulder and Scully escapes, the agents search for him but discover that he is not their only concern. "],
+			["Season 5",38.83397,-77.197173,"'Kitsunegari' 5x8","When an influential former killer who was arrested by Mulder and Scully escapes, the agents search for him but discover that he is not their only concern. "],
+			["Season 5",45.253783,-69.445469,"'Schizgeny' 5x9","Mulder and Scully investigate a case involving the deaths of several fathers who seem to have been murdered by their son or daughter but the agents learn that the real killer may in fact have an ability to control nature itself. "],
+			["Season 5",41.415818,-71.608887,"'Chinga' 5x10","Scully tries to take a weekend vacation to Maine but ends up investigating a strange case in which a seemingly murderous doll has apparently caused several victims to inflict wounds upon themselves. "],
+			["Season 5",38.913939,-76.994591,"'Kill Switch' 5x11","The brutal murder of a reknowned computer programmer leads Mulder and Scully to investigate an artificial intelligence program loose on the internet that has begun evolving on its own. "],
+			["Season 5",32.391371,-98.823011,"'Bad Blood' 5x12","After Mulder kills a teenage boy who he believed was a vampire, he and Scully recount the events that led to the killing. "],
+			["Season 5",48.019573,66.923684,"'Patient X' 5x13","As a rebel alien race secretly attacks several groups of former abductees, the agents meet Cassandra Spender, a woman who claims to be a multiple abductee and wants to deliver a positive message about aliens, but Mulder, now skeptical about extraterrestrial activity and suspecting that the government is behind the abduction phenomena, is disturbed when Scully forms a special bond with the woman. "],
+			["Season 5",37.431573,-78.656894,"'Patient X' 5x13","As a rebel alien race secretly attacks several groups of former abductees, the agents meet Cassandra Spender, a woman who claims to be a multiple abductee and wants to deliver a positive message about aliens, but Mulder, now skeptical about extraterrestrial activity and suspecting that the government is behind the abduction phenomena, is disturbed when Scully forms a special bond with the woman. "],
+			["Season 5",41.203322,-77.194525,"'The Red and the Black' 5x14","After Scully and Cassandra Spender disappeared, Scully is recovered, having survived an attack on a group of abductees, and is placed under hypnosis to discover what really happened while Cassandra Spender remains missing. "],
+			["Season 5",38.915845,-77.033386,"'The Red and the Black' 5x14","After Scully and Cassandra Spender disappeared, Scully is recovered, having survived an attack on a group of abductees, and is placed under hypnosis to discover what really happened while Cassandra Spender remains missing. "],
+			["Season 5",42.807796,-87.924248,"'Travelers' 5x15","A young Fox Mulder visits retired FBI Agent Arthur Dales, who tells him about one of the first X-Files, a case that his father was involved in. "],
+			["Season 5",38.994915,-77.077205,"'Travelers' 5x15","A young Fox Mulder visits retired FBI Agent Arthur Dales, who tells him about one of the first X-Files, a case that his father was involved in. "],
+			["Season 5",39.745833,-75.546667,"'Mind's Eye' 5x16","Mulder and Scully investigate a murder for whom the primary suspect is a woman who has been blind from birth, and who may have a strange connection to the real killer. "],
+			["Season 5",38.807258,-77.042913,"'All Souls' 5x17","Scully is forced to fall back on her Catholic faith and confront the loss of her daughter Emily after her priest asks her to assist a family whose adopted daughter died. "],
+			["Season 5",38.884699,-77.002646,"'The Pine Bluff Variant' 5x18","Scully fears that Mulder has committed treason when she witnesses him aiding the escape of a suspected terrorist. In reality, he has gone undercover to infiltrate a terrorist organization that has gotten its hands on a deadly biological weapon. "],
+			["Season 5",40.417287,-82.907123,"'The Pine Bluff Variant' 5x18","Scully fears that Mulder has committed treason when she witnesses him aiding the escape of a suspected terrorist. In reality, he has gone undercover to infiltrate a terrorist organization that has gotten its hands on a deadly biological weapon. "],
+			["Season 5",38.669338,-75.187637,"'The Pine Bluff Variant' 5x18","Scully fears that Mulder has committed treason when she witnesses him aiding the escape of a suspected terrorist. In reality, he has gone undercover to infiltrate a terrorist organization that has gotten its hands on a deadly biological weapon. "],
+			["Season 5",41.839787,-87.953553,"'Folie a Deux' 5x19","Mulder, along with several other people, is held hostage by an office employee who is convinced that his boss is a monster who has turned several of his co-workers into zombies. When the ordeal ends, Mulder also believes, despite his initial skepticism, that the man was not simply crazy, and that the boss actually is a monster. "],
+			["Season 5",49.261226,-123.113927,"'The End' 5x20","Investigating the murder of a chess player, Mulder and Scully meet a boy who may be the embodiment of everything in the X-Files. "],
+			["Season 5",47.316667,-70.833333,"'The End' 5x20","Investigating the murder of a chess player, Mulder and Scully meet a boy who may be the embodiment of everything in the X-Files. "],
+			["Season 5",39.151558,-77.191315,"'The End' 5x20","Investigating the murder of a chess player, Mulder and Scully meet a boy who may be the embodiment of everything in the X-Files. "],
+		
+			
+		];
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+					
+		for (i = 0; i < locations.length; i++) 
+		{
+			var iconImage, heading;
+			
+			switch(locations[i][0]) {
+			
+				case "Season 5":
+					iconImage = "img/season-5.png";
+					heading = "<h2 class='season-5'><img src="+iconImage+" />"+locations[i][3]+"</h2>";
+					break;
+			
+			}
+			marker = new google.maps.Marker({
+				icon: iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function(marker, i, heading) {
+				return function() {
+					markerContent =	heading+"</h2><p><b>Description:</b> "+ locations[i][4]+"</p>";
+					infowindow.setContent(markerContent);
+					infowindow.open(map, marker);
+				}
+			})(marker, i, heading));  // end marker click function
+		}; // end for loop		
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+body {  height: 100%; width: 100%; margin: 0; padding: 0; border: 0;  background-image: url('img/background.jpg'); background-repeat: none; background-color: #000; }
+
+#controls-outer { position: absolute; bottom: 30px; width: 100%; margin: 0; padding: 0; height: 40px; z-index: 5; }
+#controls-inner { border:3px solid black; border-radius: 15px; -moz-border-radius: 15px; position: relative; background-color: #a5a5a5; width: 200px; height: 40px; margin-left: auto; margin-right: auto; font-family: Lato, "Lucida Grande", sans-serif; font-weight: 900; font-size: 2.0em; }
+#back-button { width: 46px; margin: 0 0 0 4px; float: left; cursor: pointer; }
+#current-slide { width: 100px; float: left; text-align: center; }
+#forward-button { width: 46px; margin: 0 4px 0 0; text-align: right; float: right; cursor: pointer; }
+
+.slide { text-align: center; height: 500px; width: 900px; margin-left: auto; margin-right: auto; margin-top: 20px; display: none; }
+.video { margin-left: auto; margin-right: auto; margin-top: 20px; width: 480px; }
+.slide-image { border: 0; margin: 0; }
+.backfill { background-color: #fbeed1; text-align: left; }
+
+
+#credits { font-family: Lato, "Lucida Grande", sans-serif; padding: 25px; }
+#credits h2 { font-size: 1.4em; font-weight: normal; text-transform: uppercase; letter-spacing: 0.3em; }
+#credits p { font-size: 0.9em; font-weight: normal; line-height: 1.7em; }
+#credits a { color: #8b7b23; text-decoration: none; }
+#credits a:hover { text-decoration: underline; }
+.reading-list { list-style-type: none; font-size: 0.9em; }
