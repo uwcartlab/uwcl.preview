@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>UWCL</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+  <style>
+  #results{
+    min-height: 100%!important;
+		overflow: auto;
+		margin-bottom: 50px!important;
+		padding-bottom: 50px!important;
+  }
+	#ajaxloader{
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+ol li:before{
+	background-color: none !important;
+}
+footer{
+	margin-top: 50px;
+}
+.img-responsive{
+	position: relative;
+	margin-right:0%!important;
+	margin-left:22.5%!important;
+	padding:0px!important;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto!important;
+}
+
+
+
+  </style>
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Fonts
+	================================================== -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700,400,300,200' rel='stylesheet' type='text/css'>
+
+	<!-- Javascript
+	================================================== -->
+	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="../../../img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../../img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../../img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../../img/apple-touch-icon-144x144.png">
+
+</head>
+<body>
+	
+<!--Collapsing NavBar --> 
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="../../index.html"><img src="../../actual_images/CartLab_logo_white_short.png" alt="UW Cartography Lab" style="width:80px;height:auto;"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav navText">
+                <li><a href="../../production/index.html" id="navText">Production</a></li>
+                <li><a href="../../research/index.html" id="navText">Research</a></li>
+                <li><a href="../../education/index.html" id="navText">Education</a></li>
+<!--                 <li><a href="mapChat.html" id="navText">Map Chat</a></li>
+ -->                <li><a href="../../people/index.html" id="navText">Community</a></li>
+<!--                 <li><a href="search.html" id="navText">Search</a></li>
+ -->            </ul>
+        </div>
+      </div>
+    </nav>
+<!--end of header --> 
+
+<main>
+	<div class='container'>
+		<div class='col-md-12'>
+			<h1 class='page-header'>Visual Content Analysis</h1> <br>
+			<!--Title of Blog Post-->
+
+			<h3><i>By: Meghan Kelly</i></h3>
+			<!--Author of Post here-->
+		</div>
+	</div>
+
+<!--First section of paper-->
+	<section>
+	<div class='container'>
+		<div class='col-md-12'>
+			<h2>Execuive Summary</h3>
+			<!--Name of First section here-->
+		</div>
+	</div>
+		
+
+
+	<div class='container'>
+			<div class='col-md-8'>
+			<h3><i>Definition</i></h3>
+				<p>Content analysis describes the systematic analysis of a corpus of visual artifacts in order to detect
+				quantitative and qualitative patterns and themes from elements within the visuals.</p> <br>
+				
+				<h3><i>Pros for interactive mapping:</i></h3>
+				<ol type="1">
+					<li>1. Quantify and examine visual elements within a single interactive map</li>
+					<li>2. Compare visual elements across a series of interactive maps</li>
+					<li>3. Longitudinally compare changes in map styles and techniques </li>
+					<li>4. Identify minute differences within a series of interactive maps</li>
+					<li>5. Does not require access to expert participants</li>
+					<li>6. Analyze similar or competing interactive maps and tools early in the user design process</li>
+				</ol>
+
+				<h3><i>Cons for interactive mapping:</i></h3>
+				<ol type="1">
+					<li>1. Focuses on the composition of visuals, not their designers or users</li>
+					<li>2. Does not assess the effectiveness or interpretation of a visual</li>
+					<li>3. Does not assess designer’s intention and subjectivity </li>
+					<li>4. Does not deconstruct power within visuals</li>
+					<li>5. Does not require access to expert participants</li>
+					<li>6. Requires time, focus, and potentially more than one researcher for coding process</li>
+				</ol>
+
+
+			</div>
+	</div>
+</section>
+
+<section>
+		<div class='container'>
+			<div class='col-md-12'>
+				<h2>What?</h3>
+				<!--Name of Second section here-->
+			</div>
+		</div>
+			
+	
+	
+		<div class='container'>
+				<div class='col-md-8'>
+				<h3><i>Description</i></h3>
+				<p>
+					Visual content analysis is a systematic coding process that analyzes the composition or visual
+					elements within a series of representations, interactive or otherwise. Cartography, particularly
+					interactive cartography, has only recently utilized visual content analysis to decipher and
+					quantify patterns and trends within a sample of maps. Visual content analysis provides a
+					systematic means to analyze large datasets of maps to reveal similarities or dissimilarities within.
+					Researchers develop and implement a series of codes or variables to evaluate across each map.
+					These codes are geared towards particular research questions and draw on established
+					frameworks in map design and representation. For example, common codes for static maps
+					include the map subject or theme, projection, scale, map type, visual variables, color schemes,
+					information density, labeling, and map elements (Kessler and Slocum 2011; White et al. 2017;
+					Fish and Calvert forthcoming). Meanwhile, researchers interested in assessing interactive maps
+					may code for representation, but also interactive functionality or operators like pan, zoom, or
+					popup retrieval capabilities as well as non-functional requirements such as underlying
+					technology, support for mobile, and general usability. Visual content analysis can assess both 
+					quantitative and qualitative attributes with these codes. The coding process returns numerical
+					data that can then be analyzed to detect relationships and correlations. </p>
+
+					<h3><i>Influential Disciplines</i></h3>
+					<p>
+						Frequently used to analyze texts (i.e. identifying key words, phrases and themes in an interview)
+						content analysis has been extended beyond textual analysis to visual analysis (Cope 2011 and
+						Rose 2012). As society becomes continually ingrained with visuals, there is an increased demand
+						to understand cultural representations. As such, content analysis has been utilized in the fields of
+						media studies, cultural studies, social science, usability engineering and to some extent,
+						cartography. Media studies, for example, has used content analysis to analyze advertisements
+						over time and cultural theorists have utilized content analysis to examine the depiction of women
+						in National Geographic Magazine (Krippendorf 1989 and Lutz and Collins 1993). Visualization
+						and usability engineers have similarly used content analysis or competitive analysis to explore
+						existing standard applications during the first step of the UI/UX design process (Roth et al.
+						2015b). While the influences and applications of content analysis are vast, it is important to note
+						the differential goals in its usage. Usability engineers, for example, might utilize content analysis
+						for quick and practical analysis to inform successful interface design at low cost. Alternatively,
+						content analysis in media studies might appraise and critique contemporary visual culture. 
+					</p>
+
+					<h3><i>Content Analysis in Cartography</i></h3>
+					Content analysis is well-suited for cartographic analysis given the field’s reliance on visual
+					representations. Ian Muehlenhaus (2011) recognizes the method as a highly underutilized, yet
+					advantageous method for cartography. Several cartographers have used content analysis in their
+					scholarly work on static representations. Muehlenhaus (2011 and 2013) has used visual content
+					analysis to temporally explore minute changes in thematic map design in Goode’s World Atlas
+					editions and to better understand the design and composition of persuasive maps. In the former
+					piece, Muehlenhaus provides a detailed methodological account for future work cartographic
+					work. Similarly, Slocum and Kessler (2011) historically examine thematic map design in two
+					prominent geography journals—Annals of the Association of American Geographers and The
+					Geographical Journal. To better understand cartographic conventions and techniques utilized in
+					contemporary media, Kelly (2015) combines content and discourse analysis to understand the
+					composition and power embedded within maps produced by western media. Kelly (2015)
+					demonstrates the effective use of content analysis in combination with additional visual
+					methodologies like discourse analysis.<br>
+					More and more, visual content analysis has also been incorporated into interactive mapping
+					research. Fish and Calvert (forthcoming) have recently utilized content analysis to explore
+					alternative energy management and practice in online interactive applications. In their method
+					design, Fish and Calvert expand static map design codes like the visual variables (hue, size,
+					height, texture, etc.) to interaction design codes like interaction operators (pan, zoom, retrieve,
+					sequence, overlay etc.). Roth et al. (2015a) similarly use a competitive analysis or content
+					analysis of climate management applications, specifically management applications related to 
+					water, to inform early stages of the design process. Parrott et al. (2007) use content analysis to
+					examine both static and interactive maps published within state comprehensive cancer plans. To
+					further examine interactive functionality, Roth et al. (2015b) use content analysis to examine
+					web mapping technology and open web platforms to inform cartographic higher education.
+					</p>
+
+				</div>
+		</div>
+	</section>
+
+	<section>
+		<div class='container'>
+				<div class='col-md-12'>
+					<h2>How to?</h3>
+					<!--Name of Third section here-->
+				</div>
+			</div>
+				
+		
+		
+			<div class='container'>
+					<div class='col-md-8'>
+					<h3><i>Materials</i></h3>
+					<p>
+							Visual content analysis relies on secondary data and not participants. Because of this, sampling
+							of visual data is increasingly important. Muehlenhaus (2011) notes that random sampling is the
+							best practice. Random sampling, however, is often not realistic because it may not directly
+							answer specified research questions. Convenience and selective sampling can then be strategic
+							even with their subjective limitations. Both sampling techniques can alleviate time and
+							redundancy within a sample. Rose (2012) suggests three additional sampling techniques:
+							stratified, systematic, and cluster. The table below defines and details each sampling method.
+							The most important consideration, according to Muehlenhaus (2011), is transparency and
+							acknowledgement of your sampling methods as well as its advantages and limitations. 
+					</p>
+					<table>
+						<tr>
+							<th><i>Sampling Methods</i></th>
+							<th><i>Definition</i></th>
+						</tr>
+						<tr>
+							<td>Random</td>
+							<td>Determine the number of maps needed and then use a random number generator to select final maps (Rose 2012)</td>
+						</tr>
+						<tr>
+							<td>Convenience</td>
+							<td>Select maps that are easily accessible and readily available (Muehlenhaus 2011)</td>
+						</tr>
+						<tr>
+							<td>Selective</td>
+							<td>Subjectively select maps based on defined research questions and purpose of study
+									(Muehlenhaus 2011)</td>
+								
+						</tr>
+						<tr> 
+							<td>Stratified</td>
+							<td>Sample from predetermined subgroups (Rose 2012)</td>
+						</tr>
+						<tr>
+							<td>Systematic</td>
+							<td>Choose maps based on a predetermined interval, every fifth map (Rose 2012)</td>
+						</tr>
+						<tr>
+							<td>Cluster</td>
+							<td>Choose groups at random and sample maps from each group (Rose 2012)</td>
+						</tr>
+
+					</table>
+					
+		</section>
+
+
+
+
+
+
+
+			<div class='col-md-4'>
+				<h3>Featured Map Chat Posts</h3>
+				<!--Fill with most recent blog posts-->
+		 		<div>
+					
+				</div>
+
+<!-- 				<p>Back to <a>MapChat</a></p> -->
+			</div>
+
+		
+	</div>
+
+
+
+
+	<div class='container'>
+		<div class='col-md-12'>
+			<h2>Recent <i>Conversations / Blog Roll</i></h2>
+			<div id='results'>
+		 <!-- RESULTS GET LOADED IN HERE... see server side 'results' view -->
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<footer class="footer navbar-fixed-bottom">
+    <!-- <div class="row darkbackground">
+        <div class="row-fluid">
+            <div class="span3" style="padding-left:5%;">
+                <h6>Site Directory</h6>
+                <ul class="footer-list">
+                    <li>
+                        <a href="#">Innovation</a>
+
+                        <ul>
+                            <li>
+                                <a href="#">History</a>
+                            </li>
+
+
+                            <li>
+                                <a href="#">Research</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="#">Design</a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+		<div class="container">
+		    <div class="row">
+		        <div class="align-center">
+		            <br>
+		            <img src="../../actual_images/footerLogo.jpg">
+
+		            <p>Copyright 2017&copy; All Rights Reserved.</p>
+		        </div>
+		    </div>
+		</div>
+</footer>
+
+
+
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+      <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="../../js/jquery.cookie.js" type="text/javascript">
+        </script>
+        <script src="../../js/jquery.ba-cond.min.js" type="text/javascript">
+        </script>
+        <script src="../../js/jquery.slitslider.js" type="text/javascript">
+        </script>
+        <script src="../../js/jquery.prettyPhoto.js" type="text/javascript">
+        </script>
+        <script src="../../js/custom.js" type="text/javascript">
+        </script>
+        <script src="../../js/main.js" type="text/javascript">
+        </script>
+        <link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"
+        rel="stylesheet" type="text/css">
+        <script charset="utf8" src=
+        "//cdn.datatables.net/1.10.12/js/jquery.dataTables.js" type=
+        "text/javascript">
+        </script>
+        <script>
+				  searchHost = " http://144.92.235.239:8080/search"
+				  $(document).ready(function(){
+				    //check if there is a query in the works right now
+						search()
+				  })
+
+					function search(){
+						//get the query parameters
+						q = "education"
+						payload = {
+							category: q,
+							contentType: "html"
+						}
+						//do the search via ajax
+						$.ajax(searchHost,{
+							data: payload,
+							// contentType: "text/html",
+							// dataType: "json",
+							success: function(html){
+								$("#results").empty();
+								$("#results").append(html)
+							},
+							error: function(err){
+								window.location.replace = "500.html"
+							},
+							beforeSend: function(){
+								$("#results").empty()
+								$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
+								console.log("Searching.")
+							}
+						})
+					}
+
+				  //for parsing the query string
+				  function getQueryVariable(variable) {
+				      var query = window.location.search.substring(1);
+				      var vars = query.split('&');
+				      for (var i = 0; i < vars.length; i++) {
+				          var pair = vars[i].split('=');
+				          if (decodeURIComponent(pair[0]) == variable) {
+				              return decodeURIComponent(pair[1]);
+				          }
+				      }
+				  }
+					 function toTitleCase(str)
+					{
+							return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+					}
+				  </script>
+</body>
+</html>
