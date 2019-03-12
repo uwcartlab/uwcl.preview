@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Season 7 Map</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	<div id="wrapper">
+	<header></header>
+	
+	
+		<h1>Season 7</h1>
+		
+		<p>Scully and Mulder are at it again as they explore the roots of unexplained paranormal events in this seventh season of the popular Fox television series. The mysteries never seems to end and the conspiracies seem only to deepen as each episode brings them closer to the truth -- or sends them reeling further into confusion, danger and the utterly inexplicable.</p>
+		
+		<b></b>
+			<nav>
+  		<ul>
+    		<li><a href="index.html">Home</a>  |  </li>
+			<li><a href="season-1.html">Season 1</a>  |  </li>
+    		<li><a href="season-2.html">Season 2</a>  |  </li>
+			<li><a href="season-3.html">Season 3</a>  |  </li>
+			<li><a href="season-4.html">Season 4</a>  |  </li>
+			<li><a href="season-5.html">Season 5</a>  |  </li>
+			<li><a href="season-6.html">Season 6</a>  |  </li>
+			<li><a href="season-7.html">Season 7</a>  |  </li>
+			<li><a href="world-map.html">World Map</a>  |  </li>
+			<li><a href="about.html">About the Maps</a>  |  </li>
+  		</ul>
+     </nav>
+	 
+	 
+		<div id="map"></div>  <!-- map is placed within this div -->
+	
+	
+	<footer> 
+		<a href="https://mywebspace.wisc.edu/jmroberts3/web/index.html">&copy;Jane Roberts, 2012</a>  
+	</footer>
+	</div><!-- end wrapper -->	
+	
+	
+	
+	<script type="text/javascript">
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: new google.maps.LatLng(32.67514,-96.064453),
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// populate an array with our data
+		var locations = [
+		
+			["Season 7",38.875194,-77.007294,"'The Sixth Extinction: Part 1' 7x1","While Scully tries to piece together the meaning of the symbols on the spaceship beached in Africa, Mulder is imprisoned by his own frenetic brain activity. "], 
+			["Season 7",38.894703,-76.976051,"'The Sixth Extinction II: Amor Fati' 7x2","An unconscious Mulder's dreams lead him astray from the X-Files, but Scully stays the course in her search to find him. "],
+			["Season 7",33.641132,-117.918669,"'Hungry' 7x3","A fast-food worker develops a taste for human brains...and then for murder."],
+			["Season 7",30.438256,-84.280733,"'Millenium' 7x4","An associate of the Millennium Group, which believes the apocalypse will happen on the new year of 2000, resurrects the dead for use in the bringing about of the apocalypse, and Mulder and Scully have to ask the help of criminal profiler Frank Black, a man with former experience with the shadowy group. "],
+			["Season 7",37.301168,-79.987037,"'Rush' 7x5","When a school student becomes the prime suspect in the bizarre murder of a police officer, Mulder and Scully are sent to investigate. They discover that the boy and a couple of friends have been playing with the ability to accelerate their movements to a frequency the human eye can’t perceive."],
+			["Season 7",41.884609,-87.638283,"'The Goldberg Variation' 7x6","After being thrown off a building and surviving, Henry Weems, who appears to be the luckiest man in the world, attracts the attention of Mulder and Scully. But, if he’s so lucky, why is he on the run from the mob, and why is everyone around him so unlucky? "],
+			["Season 7",37.733936,-88.343376,"'Orison' 7x7","Reverend Orison releases Donnie Pfaster, Scully’s former kidnapper, from jail in the hopes of passing judgment on him. What he discovers instead is that he has released pure evil, and it’s headed for Scully. "],
+			["Season 7",34.019454,-118.491191,"'The Amazing Maleeni' 7x8","The Amazing Maleeni, a small-time magician, performs an amazing feat to impress a heckler - he turns his head 360 degrees. So when he is later found without a head at all, Mulder and Scully arrive on the case and discover an angry ex-con, an unimpressed rival, and Maleeni’s twin brother all seem to have something to do with the plan to rob a major bank. "],
+			["Season 7",36.185774,-86.747735,"'Signs & Wonders' 7x9","When a small town church is the site of a number of ritualistic-like murders, fingers are pointed to the Church of God with Signs and Wonders, a church where the Bible is read literally, and punishment is dealt deftly. But soon the agents realise that the difference between the peaceful religious and the fanatics may not be very much at all. "],
+			["Season 7",38.596194,-121.567841,"'Sein und Zeit' 7x10","While investigating the bizarre disappearance of a young girl from her home, Mulder becomes obsessed with the number of children who have vanished in similar ways. Scully’s fears that he is emotionally involved due to his sister’s disappearance 27 years earlier are heightened when Mulder’s mother dies, apparently of suicide. "],
+			["Season 7",38.512427,-121.466217,"'Closure' 7x11","As Mulder is forced to accept that his mother’s death was by her own hand, he is led by a man whose son disappeared years earlier to another truth - that his sister may be among the souls taken by ‘walk-ins’, saving the souls of children doomed to live unhappy lives. Together, they embark on a journey that will reveal to Mulder the truth about his sister’s disappearance."],
+			["Season 7",34.092809,-118.328661,"'X-COPS' 7x12","A filming of an episode of COPS gets in the way of the collaborative effort between the FBI and the local police department. Mulder later finds out that the monster feeds on fear. While Mulder embraces the publicity, Scully is not so sure of it. "],
+			["Season 7",34.959208,-116.419389,"'First Person Shooter' 7x13","The Lone Gunmen summon Mulder and Scully to the headquarters of a video game design company when the new virtual-reality game, which the Gunmen helped design, is taken over by a bizarre female computer character whose power is much more than virtual. "],
+			["Season 7",38.083403,-122.763304,"'Theef' 7x14","After a prominent doctor discovers his father-in-law dead and the word ‘Theef’ written on the wall in blood, Mulder suspects hexcraft may be the source of threats against the doctor's family. "],
+			["Season 7",37.684142,-77.885374,"'En Ami' 7x15","After a young boy with cancer, whose parents don’t believe in medical treatment because it is against God’s will, recovers miraculously, Scully is intrigued. What she soon discovers is that his cure is not miraculous, but scientific. Eager, if wary, to learn of the truth behind his secrets, Scully agrees to travel with the Cigarette Smoking Man to get the cure to all mankind’s diseases. "],
+			["Season 7",44.260893,-72.573998,"'Chimera' 7x16","Mulder investigates what appears to be a missing case of a woman from a small town, but soon turns out to be a murder by a spirit summoned from the underworld. Scully, meanwhile, must endure an uncomfortable stakeout. "],
+			["Season 7",38.908596,-77.069092,"'All Things' 7x17","While Mulder is away in England, Scully is led by coincidences, chance, fate and possibly a higher power to a married man whom she had an affair with during medical school, and a look at the life she didn’t choose, forcing her to make choices about her future. "],
+			["Season 7",36.09986,-80.244216,"'Brand X' 7x18","While protecting a man due to testify against the Morley cigarette company, Skinner is horrified when the witness dies mysteriously. What the agents soon discover is that a new brand of cigarette has a dangerous secret. "],
+			["Season 7",34.101817,-118.349018,"'Hollywood A.D.' 7x19","An entrepreneurial Hollywood producer and college friend of Skinner picks up the idea for a film based on the X-Files, however the agents find that the level of realism in their fictional portrayal is somewhat questionable. "],
+			["Season 7",39.114053,-94.627464,"'Fight Club' 7x20","Mulder and Scully cross paths with a pair of doppelgangers whose close proximity yields unlimited mayhem. Splitting up in two, the agent tries to find out 'why' and 'what' they are doing. "],
+			["Season 7",38.660886,-90.422618,"'Je Souhaite' 7x21","Mulder and Scully's encounter with a man and his wheelchair-bound, mentally-impaired brother leads them to an indifferent genie whose willingness to grant wishes belies a deeper motive."],
+			["Season 7",44.1738,-123.530273,"'Requiem' 7x22","Mulder and Scully return to the site of their first investigation together when a series of abductions take place. However, Scully’s failing health, and Mulder’s concern that she is in danger, cause him to take her off the case. Meanwhile, the Cigarette-Smoking Man - on his deathbed - reunites with Marita Covarrubias and Krycek in an attempt to revive the project. "],
+			["Season 7",33.886917,9.537499,"'Requiem' 7x22","Mulder and Scully return to the site of their first investigation together when a series of abductions take place. However, Scully’s failing health, and Mulder’s concern that she is in danger, cause him to take her off the case. Meanwhile, the Cigarette-Smoking Man - on his deathbed - reunites with Marita Covarrubias and Krycek in an attempt to revive the project. "],
+			
+			
+		];
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+					
+		for (i = 0; i < locations.length; i++) 
+		{
+			var iconImage, heading;
+			
+			switch(locations[i][0]) {
+			
+				case "Season 7":
+					iconImage = "img/season-7.png";
+					heading = "<h2 class='season-7'><img src="+iconImage+" />"+locations[i][3]+"</h2>";
+					break;
+			}
+			marker = new google.maps.Marker({
+				icon: iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function(marker, i, heading) {
+				return function() {
+					markerContent =	heading+"</h2><p><b>Description:</b> "+ locations[i][4]+"</p>";
+					infowindow.setContent(markerContent);
+					infowindow.open(map, marker);
+				}
+			})(marker, i, heading));  // end marker click function
+		}; // end for loop		
+	</script>
+</body>
+</html>

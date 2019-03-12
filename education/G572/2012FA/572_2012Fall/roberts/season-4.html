@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Season 4 Map</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	<div id="wrapper">
+	<header></header>
+	
+	
+		<h1>Season 4</h1>
+		
+		<p>The conspiracies continue to deepen, with original storylines just as sharp and intriguing as the three previous seasons. Join FBI agents Fox Mulder and Dana Scully as they tackle the mysterious and the paranormal among us. Nothing is as it seems and no one can be trusted, sometimes not even each other, when they face the dark mysteries of the universe.
+		</p>
+		
+		<b></b>
+			<nav>
+  		<ul>
+    		<li><a href="index.html">Home</a>  |  </li>
+			<li><a href="season-1.html">Season 1</a>  |  </li>
+    		<li><a href="season-2.html">Season 2</a>  |  </li>
+			<li><a href="season-3.html">Season 3</a>  |  </li>
+			<li><a href="season-4.html">Season 4</a>  |  </li>
+			<li><a href="season-5.html">Season 5</a>  |  </li>
+			<li><a href="season-6.html">Season 6</a>  |  </li>
+			<li><a href="season-7.html">Season 7</a>  |  </li>
+			<li><a href="world-map.html">World Map</a>  |  </li>
+			<li><a href="about.html">About the Maps</a>  |  </li>
+  		</ul>
+     </nav>
+	 
+	 
+		<div id="map"></div>  <!-- map is placed within this div -->
+	
+	
+	<footer> 
+		<a href="https://mywebspace.wisc.edu/jmroberts3/web/index.html">&copy;Jane Roberts, 2012</a>  
+	</footer>
+	</div><!-- end wrapper -->	
+	
+	
+	
+	<script type="text/javascript">
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: new google.maps.LatLng(32.67514,-96.064453),
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// populate an array with our data
+		var locations = [
+		
+			["Season 4",53.933271,-116.576503,"'Herrenvolk' 4x1","To save his dying mother, Mulder must protect the extraterrestrial healer, Jeremiah Smith, from a ruthless alien bounty hunter. "],
+			["Season 4",39.105454,-76.896151,"'Herrenvolk' 4x1","To save his dying mother, Mulder must protect the extraterrestrial healer, Jeremiah Smith, from a ruthless alien bounty hunter."],
+			["Season 4",40.738735,-79.105652,"'Home' 4x2","In a small, otherwise peaceful town, the agents investigate the death of an infant with disturbing birth defects, and the trail leads to a clan of inbred, genetic mutants. "],
+			["Season 4",12.238333,-1.561593,"'Teliko' 4x3","When several black men turn up dead, their bodies are completely devoid of skin pigmentation. Mulder and Scully hunt down an African killer, who must consume human hormones to survive. "],
+			["Season 4",39.94863,-75.173264,"'Teliko' 4x3","When several black men turn up dead, their bodies are completely devoid of skin pigmentation. Mulder and Scully hunt down an African killer, who must consume human hormones to survive. "],
+			["Season 4",44.763057,-85.620632,"'Unruhe' 4x4","To catch a twisted killer, Mulder and Scully attempt to decipher the clues he unwittingly leaves behind; psychic photographs revealing his darkest fears. "],
+			["Season 4",41.832609,-84.786587,"'Unruhe'4x4","To catch a twisted killer, Mulder and Scully attempt to decipher the clues he unwittingly leaves behind; psychic photographs revealing his darkest fears. "],
+			["Season 4",35.0228,-85.024292,"'The Field Where I Die' 4x5","While investigating a religious cult, Mulder encounters a woman whom he may have known in a previous life. "],
+			["Season 4",41.878114,-87.629798,"'Sanuinarium' 4x6","A series of murders at a prestigious hospital lead Mulder and Scully on the trail of a plastic surgeon who may be attempting to extend his own life through black magic. "],
+			["Season 4",34.161552,-118.157766,"'Musings of a Cigarette Smoking Man' 4x7","The secret history of Mulder and Scully's shadowy nemesis reveals the truth behind several historical mysteries"],
+			["Season 4",35.139167,-78.999167,"'Musings of a Cigarette Smoking Man' 4x7","The secret history of Mulder and Scully's shadowy nemesis reveals the truth behind several historical mysteries"],
+			["Season 4",32.78014,-96.800451,"'Musings of a Cigarette Smoking Man' 4x7","The secret history of Mulder and Scully's shadowy nemesis reveals the truth behind several historical mysteries"],
+			["Season 4",35.149534,-90.04898,"'Musings of a Cigarette Smoking Man' 4x7","The secret history of Mulder and Scully's shadowy nemesis reveals the truth behind several historical mysteries"],
+			["Season 4",52.6527,102.78624,"'Tunguska' 4x8","When a deadly, viscous organism is discovered inside a strange rock, the agents race to determine the rock's origin. Part 1 of 2."],
+			["Season 4",21.332898,-157.921418,"Tunguska' 4x8","When a deadly, viscous organism is discovered inside a strange rock, the agents race to determine the rock's origin. Part 1 of 2."],
+			["Season 4",40.765809,-73.833084,"'Tunguska' 4x8","When a deadly, viscous organism is discovered inside a strange rock, the agents race to determine the rock's origin. Part 1 of 2."],
+			["Season 4",26.358689,-80.083098,"'Terma' 4x9","To gain tangible proof the organism inside the rock is an alien entity, Mulder joins forces with Alex Krycek and faces the depths of his deception. Part 2 of 2."],
+			["Season 4",39.004554,-76.875528,"'Terma' 4x9","To gain tangible proof the organism inside the rock is an alien entity, Mulder joins forces with Alex Krycek and faces the depths of his deception. Part 2 of 2. "],
+			["Season 4",37.545784,-77.445803,"'Terma' 4x9","To gain tangible proof the organism inside the rock is an alien entity, Mulder joins forces with Alex Krycek and faces the depths of his deception. Part 2 of 2. "],
+			["Season 4",38.029306,-78.476678,"'Terma' 4x9","To gain tangible proof the organism inside the rock is an alien entity, Mulder joins forces with Alex Krycek and faces the depths of his deception. Part 2 of 2. "],
+			["Season 4",59.939524,30.312021,"'Terma' 4x9","To gain tangible proof the organism inside the rock is an alien entity, Mulder joins forces with Alex Krycek and faces the depths of his deception. Part 2 of 2. "],
+			["Season 4",38.750949,-77.475267,"'Paper Hearts' 4x10","Seemingly prophetic dreams send Mulder on a search for the undiscovered victims of a serial killer. "],
+			["Season 4",40.121497,-75.339905,"'Paper Hearts' 4x10","Seemingly prophetic dreams send Mulder on a search for the undiscovered victims of a serial killer. "],
+			["Season 4",36.688966,-120.007125,"'El Mundo Gira' 4x11","After a series of paranormal deaths occur at a Mexican migrant camp, Mulder and Scully trail the mythical creature known as El Chupacabra. "],
+			["Season 4",36.746842,-119.772587,"'El Mundo Gira' 4x11","After a series of paranormal deaths occur at a Mexican migrant camp, Mulder and Scully trail the mythical creature known as El Chupacabra. "],
+			["Season 4",40.440625,-79.995886,"'Leonard Betts' 4x12","The agents suspect a man to be an evolutionary freak capable of regeneration."],
+			["Season 4",39.943366,-75.155067,"'Never Again' 4x13","Scully begins dating a dangerous stranger whose jealous tattoo compels him to murder the women he encounters. "],
+			["Season 4",40.608431,-75.490183,"'Momento Mori' 4x14","Scully attempts to come to terms with her inoperable cancer, while Mulder and the Lone Gonemen race to find the cure. "],
+			["Season 4",40.65,-73.95,"'Kaddish' 4x15","While investigating a hate crime in a Hasidic Jewish community, the agents uncover a murder that appears to have been committed by a dead man. "],
+			["Season 4",39.069005,-77.463501,"'Unrequited' 4x16","Mulder and Scully must apprehend an embittered Vietnam vet who can make himself invisible to his victims. "],
+			["Season 4",43.225627,-74.172077,"'Tempus Fugit' 4x17","The agents investigate the unexplained crash of a commercial airliner. Part 1 of 2."],
+			["Season 4",43.817012,-75.817695,"'Max' 4x18","Mulder and Scully set out to prove the passengers aboard the airliner were sacrificed by the military in pursuit of stolen alien technology. Part 2 of 2."],
+			["Season 4",43.225627,-74.172077,"'Max' 4x18","Mulder and Scully set out to prove the passengers aboard the airliner were sacrificed by the military in pursuit of stolen alien technology. Part 2 of 2."],
+			["Season 4",42.358449,-71.09122,"'Synchrony' 4x19","When several scientists are found frozen to death, Mulder and Scully suspect the murders were committed by a time traveller. "],
+			["Season 4",39.45621,-77.963887,"'Small Potatoes' 4x20","A town is placed under suspicion when its babies are born with vestigial tails."],
+			["Season 4",37.321167,-79.186006,"'Zero Sum' 4x21","Trapped in a deal to save Scully's life, Skinner helps the cigarette-smoking man destroy evidence in a fatal bee attack, only to discover he's been framed for murder. "],
+			["Season 4",38.891532,-77.035961,"'Elegy' 4x22","When ghostly images of female victims appear near murder scenes, the apparitions may be harbingers of death for those who see them. "],
+			["Season 4",41.82504,-71.416304,"'Demons' 4x23","Covered in blood and suffering from amnesia, Mulder pieces together the events of the last few days. "],
+			["Season 4",64.282327,-135,"'Gethsemane' 4x24","Mulder fights to prove that a discovery frozen in the mountains of Canada is irrefutable evidence of alien life. "],
+		
+			
+		];
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+					
+		for (i = 0; i < locations.length; i++) 
+		{
+			var iconImage, heading;
+			
+			switch(locations[i][0]) {
+				
+				case "Season 4":
+					iconImage = "img/season-4.png";
+					heading = "<h2 class='season-4'><img src="+iconImage+" />"+locations[i][3]+"</h2>";
+					break;
+				
+			}
+			marker = new google.maps.Marker({
+				icon: iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function(marker, i, heading) {
+				return function() {
+					markerContent =	heading+"</h2><p><b>Description:</b> "+ locations[i][4]+"</p>";
+					infowindow.setContent(markerContent);
+					infowindow.open(map, marker);
+				}
+			})(marker, i, heading));  // end marker click function
+		}; // end for loop		
+	</script>
+</body>
+</html>

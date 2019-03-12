@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Season 2 Map</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	<div id="wrapper">
+	<header></header>
+	
+	
+		<h1>Season 2</h1>
+		
+		<p>The search for "the truth" continues in Season 2 of this multiple Emmy Award-winning sci-fi series that has FBI special agents Fox Mulder and Dana Scully investigating a host of unique and bizarre phenomena. The second season delves deeper into the psyches of the agents, giving viewers both a glimpse of what's to come and a trickle of insight into why they've chosen to do what they do. </p>
+		<b></b>
+		<nav>
+  		<ul>
+    		<li><a href="index.html">Home</a>  |  </li>
+			<li><a href="season-1.html">Season 1</a>  |  </li>
+    		<li><a href="season-2.html">Season 2</a>  |  </li>
+			<li><a href="season-3.html">Season 3</a>  |  </li>
+			<li><a href="season-4.html">Season 4</a>  |  </li>
+			<li><a href="season-5.html">Season 5</a>  |  </li>
+			<li><a href="season-6.html">Season 6</a>  |  </li>
+			<li><a href="season-7.html">Season 7</a>  |  </li>
+			<li><a href="world-map.html">World Map</a>  |  </li>
+			<li><a href="about.html">About the Maps</a>  |  </li>
+  		</ul>
+     </nav>
+	 
+	 
+		<div id="map"></div>  <!-- map is placed within this div -->
+	
+	
+	<footer> 
+		<a href="https://mywebspace.wisc.edu/jmroberts3/web/index.html">&copy;Jane Roberts, 2012</a> 
+	</footer>
+	</div><!-- end wrapper -->	
+	
+	
+	
+	<script type="text/javascript">
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: new google.maps.LatLng(32.67514,-96.064453),
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// populate an array with our data
+		var locations = [
+			
+			["Season 2",18.472445,-66.715731,"'Little Green Men' 2x1","With the X-files closed, Mulder is contacted by a political ally and sent on a dangerous mission to a radio telescope in Arecibo, Puerto Rico. "],
+			["Season 2",40.735657,-74.172367,"'The Host' 2x2","While continuing work not related to the X-files, Mulder apparently finds evidence of a giant worm-like monster in the New Jersey sewage system. "],
+			["Season 2",41.397836,-79.831444,"'Blood' 2x3","Apparently prompted by messages from digital appliances with instructions to kill, several residents of a small farming community suddenly turn violent and dangerous. "],
+			["Season 2",40.714353,-74.005973,"'Sleepless' 2x4","A new partner joins Mulder as he investigates the deaths of several victims who were killed by apparently nonexistent forces. "],
+			["Season 2",37.047898,-80.779793,"'Duane Barry' 2x5","Mulder becomes involved in a hostage situation with an escaped psychiatric patient who claims to be terrified of frequent alien abductions. Part 1 of 2. "],
+			["Season 2",38.579845,-77.978885,"'Ascension' 2x6","Mulder attempts to search for Scully when she is abducted by Duane Barry, the escaped mental patient who recently held Mulder hostage. Part 2 of 2."],
+			["Season 2",34.052234,-118.243685,"'3' 2x7","With Scully missing, Mulder closes in on an 'Unholy Trinity' of vampiresque killers and finds himself falling for a mysterious woman who is the prime suspect."],
+			["Season 2",38.895112,-77.036366,"'One Breath' 2x8","Scully miraculously appears in a Washington DC hospital, unknowingly supervised by a nurse who may never have existed. "],
+			["Season 2",45.465509,-121.915016,"'Firewalker' 2x9","When a moving shadow appears on a video transmission from a volcano, a volcanologist asks Mulder and Scully to investigate the incident. "],
+			["Season 2",43.158028,-87.979181,"'Red Museum' 2x10","The agents investigate a suggested link between a religious cult of vegetarians and the abduction of several teenagers, although they find that the disappearances are actually connected to a deadly event in their own past. "],
+			["Season 2",42.262593,-71.802293,"'Excelsius Dei' 2x11","Mulder and Scully uncover strange occurrences in an old-age care home when one of the nurses is attacked by an unseen force she claims to be one of the residents, a 74 year old man. "],
+			["Season 2",37.943663,-92.802604,"'Aubrey' 2x12","When a detective mysteriously uncovers the remains of an FBI agent who disappeared in the 1940s while investigating a murder case similar to a modern-day one she is investigating, Mulder and Scully believe that the original killer had passed his genetic trait of violence to his grandchild. "],
+			["Season 2",44.983334,-93.26667,"'Irresitable' 2x13","A mortuary worker who collects hair and fingernails from dead bodies begins to kill people to expand his collection, and he sets his sights on Scully. "],
+			["Season 2",43.193852,-71.572395,"'Die hand Die Verletzt' 2x14","After a teenager is ritualistically murdered in a small town, Mulder and Scully are caught up in a secret occult practice within the local PTA and a substitute teacher with odd powers. "],
+			["Season 2",34.536555,-77.504134,"'Fresh Bones' 2x15","After several murders occur within a Haitian refugee camp, Mulder and Scully are caught in the middle of a secret battle involving a Voodoo priest and the camp commander. "],
+			["Season 2",41.408969,-75.662412,"'Colony' 2x16","After four identical men are killed and their obituaries are e-mailed to Mulder, a mysterious CIA agent informs him and Scully that the killer is a bounty hunter sent to destroy the start of a colony of clones. Meanwhile, Mulder is distracted when his sister, Samantha, suddenly returns. Part 1 of 2. "],
+			["Season 2",39.083997,-77.152758,"'End Game' 2x17","Mulder and his sister race to evade the alien bounty hunter and uncover more of the insidious conspiracy. Part 2 of 2."],
+			["Season 2",83.183778,-137.8125,"'End Game' 2x17","Mulder and his sister race to evade the alien bounty hunter and uncover more of the insidious conspiracy. Part 2 of 2."],
+			["Season 2",43.346568,-114.791728,"'Fearful Symmetry' 2x18","Strange things happen in a zoo that result in several deaths, including a government employee and apparently an invisible elephant. "],
+			["Season 2",65,8,"'Dod Calm' 2x19","In the North Atlantic, Mulder and Scully investigate the crew of a US Navy Ship, all of whom somehow radically aged. The agents locate the ship but, like the vessel's crew before them, Mulder and Scully also suffer from rapid aging."],
+			["Season 2",27.853637,-82.382593,"'Humbug' 2x20","A bizarre murder in Florida brings Mulder and Scully to a town populated by circus freaks and sideshows performers of all shapes and sizes, bringing into question the very definition of normal. "],
+			["Season 2",38.010922,-78.657603,"'Calusari' 2x21","With Scully's help, Mulder investigates a strange death that he believes may be an example of poltergeist activity. "],
+			["Season 2",37.076904,-77.653612,"'F. Emasculata' 2x22","After several men in a prison die of a mysterious illness, Scully tries to discover the cause while Mulder attempts to find two escapees who could potentially spread the disease. "],
+			["Season 2",10.495797,-85.354965,"'F. Emasculata' 2x22","After several men in a prison die of a mysterious illness, Scully tries to discover the cause while Mulder attempts to find two escapees who could potentially spread the disease. "],
+			["Season 2",37.540725,-77.436048,"'Soft Light' 2x23","Mulder and Scully encounter a man who is afraid of his own shadow. "],
+			["Season 2",34.456781,-91.898629,"'Our Town' 2x24","Mulder and Scully investigate the disappearance of man in a town where the residents really are what they eat. "],
+			["Season 2",36.138404,-109.759167,"'Anasazi' 2x25","A computer hacker discovers evidence against the Syndicate that is so damning that its revelation to the public would be nothing short of catastrophic, leading Mulder into a race against sinister agents to learn the truth. Part 1 of 3"],
+		
+			
+		];
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+					
+		for (i = 0; i < locations.length; i++) 
+		{
+			var iconImage, heading;
+			
+			switch(locations[i][0]) {
+				
+				case "Season 2":
+					iconImage = "img/season-2.png";
+					heading = "<h2 class='season-2'><img src="+iconImage+" />"+locations[i][3]+"</h2>";
+					break;
+				
+			}
+			marker = new google.maps.Marker({
+				icon: iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function(marker, i, heading) {
+				return function() {
+					markerContent =	heading+"</h2><p><b>Description:</b> "+ locations[i][4]+"</p>";
+					infowindow.setContent(markerContent);
+					infowindow.open(map, marker);
+				}
+			})(marker, i, heading));  // end marker click function
+		}; // end for loop		
+	</script>
+</body>
+</html>

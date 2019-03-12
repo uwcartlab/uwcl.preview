@@ -361,6 +361,10 @@ blockquote.feed cite {
     background-size: cover;
 }
 
+.finalProject{
+    line-height: 1.8em;
+}
+
 /*
 * Custom Button
 */
