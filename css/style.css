@@ -2,6 +2,10 @@
     object-fit: contain;
 }
 
+.nomargin{
+    margin-bottom:0 !important;
+
+}
 .final{
     object-fit: contain;
     width: 144px;
