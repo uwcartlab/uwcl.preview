@@ -2,11 +2,20 @@
     object-fit: contain;
 }
 
+.nomargin{
+    margin-bottom:0 !important;
+
+}
+.final{
+    object-fit: contain;
+    width: 144px;
+    height: 144px;
+}
+
 .profile-thumbnail{
     max-width: auto !important;
     height: auto !important;
 }
-
 
 .logo{
     width: auto;
@@ -353,6 +362,10 @@ blockquote.feed cite {
     height: 400px;
     background: #fff url("../actual_images/popart.png") no-repeat center top;
     background-size: cover;
+}
+
+.finalProject{
+    line-height: 1.8em;
 }
 
 /*

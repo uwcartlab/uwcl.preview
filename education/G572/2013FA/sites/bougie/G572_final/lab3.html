@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="CSS3 Lightbox - A CSS-only lightbox" />
+        <meta name="keywords" content="css3, lightbox, overlay, effect, images, thumbnails, navigate" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/lab2_style.css" />
+        <link rel="stylesheet" type="text/css" href="css/lab2_demo.css" />
+       
+      <!--*** Add all of the meta, link, script, and style tags below -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+
+ 
+ 
+<link rel="stylesheet" href="leaflet-0.7/leaflet.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+
+<script src="leaflet-0.7/leaflet.js"></script>
+
+
+ 
+    </head>
+   
+   
+
+
+
+
+	 <body>
+	<!-------------------------- NAV BUTTON -------------------------------->
+	 	
+	    <div id='navigation'>
+<ul>
+   <li class='active'><a href='home.html'><span>Home</span></a></li>
+   <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+   <li class='last'><a href='Matt Bougie Resume_mod.pdf'><span>Resume</span></a></li>
+   
+</ul>
+</div>
+
+ <div id = "contain">
+ <div id = "explain">
+            
+              <img src="images/full/explain.png">
+             
+            </a>
+
+  </div>    
+
+
+ <div id = "table">
+            <a href="lab3_final.html">
+              <img src="images/full/legend.png">
+             
+            </a>
+
+  </div>
+	
+	 <!--you must add a <div id='map'></div> this where your map will be placed with the help of js-->
+  <div id='map'></div>
+  </div>  
+  <!--before your </body> closing tag add everything between and including the  <script></script> tags -->
+  <script>    
+    // change the set view section to match setting that you created in TileMill under the wrench icon .setView([lat, long], initial zoom level)
+     // .setView([43.0760,-89.3816], 12).maxZoom(12);
+    var map = L.map('map',{
+    // change the set view section to match setting that you created in TileMill under the wrench icon 
+      ////constrain how far they will be able to zoom into the map
+      maxZoom: 14,
+      minZoom: 10,
+      
+      //max bounds: [[southLat,westLong],[northLat,eastLong]]
+      //TileMill Set bounds box:  westLong,southLat,eastLong,northLat  
+      //example this from tile mill go to the below example -89.5142,42.9715,-89.2354,43.1541 
+       maxBounds:[ [45,-95],[43,-89]]
+    // .setView([center], zoom); // .setView([lat, long], initalZoom level)
+    }).setView([ 43.4141,-89.9279], 10);
+
+ 
+      
+  L.tileLayer(
+  //change the tile set to point to your tiles. After the v/3 insert the name of your mapbox account and id of tiles. 'http://a.tiles.mapbox.com/v3/YOUR_TILE_NAME/{z}/{x}/{y}.png')
+  'http://a.tiles.mapbox.com/v3/bianchi76.matt/{z}/{x}/{y}.png',{
+  
+     // beetwen the '' incert the name and links to all of your data sources. use <a> tags to link to websites as needed
+     attribution: 'Made with: <a href="http://mapbox.com">TileMill</a> Map data: <a href="http://dnr.wi.gov/maps/gis/metadata.html">Wisconsin DNR</a>'
+  }).addTo(map);
+
+ 
+
+ var markers = [{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.164299","43.5059013"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1732025","43.4996986"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1738968","43.4976997"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0496979","43.4814987"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9160995","43.4580994"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9382019","43.3807983"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9341965","43.3795013"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0000992","43.2481995"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0101013","43.2276001"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9824982","43.2170982"]},"properties":{"Category":"Deciduous Forest","Species":"Aspen"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0916977","43.5493011"]},"properties":{"Category":"Deciduous Forest","Species":"Bass Wood"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0771027","43.3300018"]},"properties":{"Category":"Deciduous Forest","Species":"Bass Wood"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1350021","43.3124008"]},"properties":{"Category":"Deciduous Forest","Species":"Bass Wood"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1673965","43.6286011"]},"properties":{"Category":"Wetland","Species":"Deciduous Forested Wetland"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1320038","43.5684013"]},"properties":{"Category":"Wetland","Species":"Deciduous Forested Wetland"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8932037","43.4339981"]},"properties":{"Category":"Wetland","Species":"Deciduous Forested Wetland"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.6731033","43.5587006"]},"properties":{"Category":"Wetland","Species":"Emergent Wet Meadow"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1731033","43.3294983"]},"properties":{"Category":"Wetland","Species":"Emergent Wet Meadow"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1432037","43.6385994"]},"properties":{"Category":"Deciduous Forest","Species":"Green Ash"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1095963","43.6185989"]},"properties":{"Category":"Deciduous Forest","Species":"Green Ash"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0087967","43.2463989"]},"properties":{"Category":"Deciduous Forest","Species":"Green Ash"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1746979","43.4998016"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0413971","43.4940987"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9753036","43.4466019"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1243973","43.4389"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.743103","43.3895988"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.921402","43.3498993"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.968399","43.2288017"]},"properties":{"Category":"Deciduous Forest","Species":"Hickory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1213989","43.6395988"]},"properties":{"Category":"Deciduous Forest","Species":"Red Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1136017","43.6217003"]},"properties":{"Category":"Deciduous Forest","Species":"Red Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1164017","43.3451004"]},"properties":{"Category":"Deciduous Forest","Species":"Red Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0158005","43.3133011"]},"properties":{"Category":"Deciduous Forest","Species":"Red Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9539032","43.1985016"]},"properties":{"Category":"Deciduous Forest","Species":"Red Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.7794037","43.5353012"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8050003","43.5315018"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.6927032","43.5275002"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.7906036","43.2739983"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1906967","43.1922989"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1395035","43.1879005"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1259995","43.1781998"]},"properties":{"Category":"Coniferous Forest","Species":"Red Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8871002","43.6402016"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1078033","43.6357994"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9909973","43.6360016"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.819397","43.5603981"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8294983","43.5603981"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.7080002","43.5596008"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9201965","43.5564003"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.7514038","43.5307999"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8246002","43.5280991"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8218002","43.5281982"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.8350983","43.5154991"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9179001","43.3678017"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0131989","43.3554993"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0056","43.2303009"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9674988","43.2277985"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0848007","43.2279015"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9719009","43.2229004"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9886017","43.2122002"]},"properties":{"Category":"Deciduous Forest","Species":"Red Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9382019","43.1997986"]},"properties":{"Category":"Deciduous Forest","Species":"Silver Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.946701","43.1964989"]},"properties":{"Category":"Deciduous Forest","Species":"Silver Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.2020035","43.6259995"]},"properties":{"Category":"Deciduous Forest","Species":"Sugar Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9147034","43.3809013"]},"properties":{"Category":"Deciduous Forest","Species":"Sugar Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9481964","43.3521004"]},"properties":{"Category":"Deciduous Forest","Species":"Sugar Maple"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.6600037","43.5396996"]},"properties":{"Category":"Coniferous Forest","Species":"Tamarack"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9642029","43.2304001"]},"properties":{"Category":"Deciduous Forest","Species":"White Birch"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9765015","43.2209015"]},"properties":{"Category":"Deciduous Forest","Species":"White Birch"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.9154968","43.5032997"]},"properties":{"Category":"Coniferous Forest","Species":"White Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.816597","43.2915993"]},"properties":{"Category":"Coniferous Forest","Species":"White Pine"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.998497","43.6399994"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.1998978","43.6213989"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.6757965","43.4103012"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.7474976","43.3986015"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-89.864502","43.3717003"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-90.0083008","43.2284012"]},"properties":{"Category":"Deciduous Forest","Species":"White Oak"}}];
+
+ // if you are not doing solution 3 then delete this line down to where the < /script > is, but don't delete the script tag!
+
+  // now add a geoJson of your csv points as a variable 
+  // open your csv in a simple text editor (such as sublime or textWrangler), copy every thing. Then in a browser go to http://togeojson.com and paste in your csv data.  It will zzthen create a geoJson of your csv that you can copy and paste into this html.
+  // Add var markers = to geoJson that you pasted in.
+  // Then delete {"type";"FeatureCollection,"features": then so that after the var markers = starts with [{"type"
+  //at the end of your geoJson delete the last } and add a ;
+  
+
+  //copy and past this
+  // the radius is how big the invisible circle is to make it larger increase the number to give a bigger clicking area
+  var style = {
+    radius: 15,
+    color: "#000",
+    weight: 1,
+    opacity: 0.0,
+    fillOpacity: 0.0
+  };
+
+  L.geoJson(markers,{
+   pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, style);
+      },
+      onEachFeature: onEachFeature
+  }).addTo(map);
+
+// change the .Name to match the column in your CSV the same goes for description
+  function onEachFeature (feature, layer){
+    var popUpInfo = "<p style='font-family:arial;color:grey;font-size:18px;''> Category: "+ layer.feature.properties.Category+ "</p>"+ "<p style='font-family:arial;color:grey;font-size:18px;''> Species: " + layer.feature.properties.Species + "</p>";
+
+    if(feature.properties && feature.properties.popUpInfo){
+      popUpInfo += feature.properties.popUpInfo;
+    }
+    layer.bindPopup(popUpInfo);
+  }
+
+
+
+
+  </script>
+
+
+ 
+</body>
+</html>

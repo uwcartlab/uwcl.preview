@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Season 1 Map</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	<div id="wrapper">
+	<header></header>
+	
+	
+		<h1>Season 1</h1>
+		
+		<p>The truth is out there ... and the search begins as FBI special agents Fox Mulder (David Duchovny) and Dana Scully (Gillian Anderson) team up to solve mysterious cases involving the paranormal. From investigations of aliens among us to their own personal demons, the first season of this multiple Emmy Award-winning sci-fi series from Chris Carter shows how it all began.
+		</p>
+		
+		<nav>
+  		<ul>
+    		<li><a href="index.html">Home</a>  |  </li>
+			<li><a href="season-1.html">Season 1</a>  |  </li>
+    		<li><a href="season-2.html">Season 2</a>  |  </li>
+			<li><a href="season-3.html">Season 3</a>  |  </li>
+			<li><a href="season-4.html">Season 4</a>  |  </li>
+			<li><a href="season-5.html">Season 5</a>  |  </li>
+			<li><a href="season-6.html">Season 6</a>  |  </li>
+			<li><a href="season-7.html">Season 7</a>  |  </li>
+			<li><a href="world-map.html">World Map</a>  |  </li>
+			<li><a href="about.html">About the Maps</a>  |  </li>
+  		</ul>
+     </nav>
+	 
+	 
+		<div id="map"></div>  <!-- map is placed within this div -->
+	
+	
+	<footer> 
+		<a href="https://mywebspace.wisc.edu/jmroberts3/web/index.html">&copy;Jane Roberts, 2012</a> 
+	</footer>
+	</div><!-- end wrapper -->	
+	
+	
+	
+	<script type="text/javascript">
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: new google.maps.LatLng(32.67514,-96.064453),
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// populate an array with our data
+		var locations = [
+			["Season 1",44.1738,-123.530273,"'Pilot' 1x1","Dana Scully is assigned to work with Fox Mulder, an FBI agent with an interest in the paranormal. Together, they travel to Oregon where Mulder believes several teenagers have been abducted by aliens. "],
+			["Season 1",43.083621,-89.326136,"'Deep Throat' 1x2","When Mulder and Scully investigate a possible conspiracy in the U.S. Air Force, a mysterious character helps Mulder to differentiate between fact and fiction. "],
+			["Season 1",39.290385,-76.612189,"'Squeeze' 1x3","Mulder and Scully investigate a serial killer who has been active since at least 1903 and is capable of squeezing his body through narrow gaps. "],
+			["Season 1",42.499994,-96.400307,"'Conduit' 1x4","Mulder becomes personally connected when he and Scully encounter a young boy who is deeply affected by the disappearance, or abduction, of his teenage sister. "],
+			["Season 1",39.364283,-74.422927,"'The Jersey Devil' 1x5","While investigating a seemingly cannabilistic murderer, Mulder and Scully encounter a beast woman. "],
+			["Season 1",39.952335,-75.163789,"'Shadows' 1x6","When two extremely odd corpses appear in Philadelphia, Mulder and Scully investigate the deaths and meet a female secretary who seems to be protected by a strange invisible force."],
+			["Season 1",38.851403,-77.050689,"'Ghost in the Machine' 1x7","The agents must survive in a building that is controlled by a murderous computer"],
+			["Season 1",64.200841,-149.493673,"'Ice'1x8","In an Arctic research station, Mulder and Scully are threatened by primordial ice worms that cause their hosts to become dangerously paranoid. "],
+			["Season 1",29.760193,-95.36939,"'Space' 1x9","When Mulder and Scully are told of sabotage attempts to NASA Space Shuttles, the agents investigate the reports and find that the space agency may be under alien control. "],
+			["Season 1",45.328056,-88.589444,"'Fallen Angels' 1x10","Mulder is informed about a government cover-up of a UFO crash site, but finds that a fellow UFO enthusiast is also interested in the find. "],
+			["Season 1",41.038889,-73.613611,"'Eve' 1x11","The agents encounter two girls who look identical and whose individual fathers were murdered in similar, odd circumstances at the same moment over 3000 miles apart. "],
+			["Season 1",41.672928,-70.339087,"'Fire' 1x12","Mulder must overcome his phobia of fire to catch a mutant killer with fire-controlling capabilities. "],
+			["Season 1",35.772096,-78.638614,"'Beyond the Sea' 1x13","After Scully's father dies, her skepticism is put to the test by a prisoner on death row who claims that by using recently gained psychic powers, he can help catch a kidnapper. "],
+			["Season 1",39.173162,-77.27165,"'Gender Bender' 1x14","Mulder and Scully investigate an enclosed community called the Kindred who appear to have the ability to switch gender. "],
+			["Season 1",38.984652,-77.094709,"'Lazarus' 1x15","After a fellow agent and friend of Scully's is shot by a criminal who Scully shoots in turn, the agent is revived but Mulder suspects that he is not who he appears to be. "],
+			["Season 1",38.895112,-77.036366,"'Young at Heart' 1x16","Mulder must stop an elusive stalker who he captured in his youth, but who seems to have remained the same age. "],
+			["Season 1",37.583333,43.733333,"'E.B.E' 1x17","After a downed UFO crashes near Iraqi airspace, Mulder and Scully follow an unmarked truck carrying the UFO's occupant. "],
+			["Season 1",35.52174,-88.342542,"'E.B.E' 1x17","After a downed UFO crashes near Iraqi airspace, Mulder and Scully follow an unmarked truck carrying the UFO's occupant. "],
+			["Season 1",35.484039,-89.723323,"'Miracle Man' 1x18","Mulder and Scully encounter a religious healer who seems to have the power to perform miracles."],
+			["Season 1",48.556917,-113.013417,"'Shapes' 1x19","The shooting of a Native American draws Mulder and Scully into mystery involving lycanthropy, the phenomenon that opened the X-files.  "],
+			["Season 1",47.46438,-123.47829,"'Darkness Falls' 1x20","The agents become trapped in a forest where thirty loggers strangely disappeared, with the same fate eerily approaching them.  "],
+			["Season 1",39.290385,-76.612189,"'Tooms' 1x21","Eugene Victor Tooms - a limb-stretching serial killer who Mulder previously captured - is released from prison and set free against Mulder's advice.  "],
+			["Season 1",42.886447,-78.878369,"'Born Again' 1x22","The agents investigate an eight year old girl who is associated with the killings of two policemen that Mulder suspects murdered her past reincarnation, police officer Charlie Morris." ],
+			["Season 1",48.246138,-117.597656,"'Roland' 1x23","The agents encounter a mentally handicapped janitor who is the only suspect in the murders of two propulsion research scientists, but the evidence of advanced theoretical work astounds Mulder and Scully as to the killer's real identity. "],
+			["Season 1",39.143441,-77.20137,"'Erlenmyer Flask' 1x24","The agents discover evidence of secret government experimentation with alien DNA, but the evidence and everyone who has seen it are quickly being eliminated. "],
+						
+		];
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var marker, i;
+					
+		for (i = 0; i < locations.length; i++) 
+		{
+			var iconImage, heading;
+			
+			switch(locations[i][0]) {
+				case "Season 1":
+					iconImage = "img/season-1.png";
+					heading = "<h2 class='season-1'><img src="+iconImage+" />"+locations[i][3]+"</h2>";
+					break;
+			
+			}
+			marker = new google.maps.Marker({
+				icon: iconImage,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function(marker, i, heading) {
+				return function() {
+					markerContent =	heading+"</h2><p><b>Description:</b> "+ locations[i][4]+"</p>";
+					infowindow.setContent(markerContent);
+					infowindow.open(map, marker);
+				}
+			})(marker, i, heading));  // end marker click function
+		}; // end for loop		
+	</script>
+</body>
+</html>
