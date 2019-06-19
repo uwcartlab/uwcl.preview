@@ -17,7 +17,7 @@ function wpex_load_scripts() {
 	**/
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'wpex-responsive', get_template_directory_uri() .'/responsive.css' );
-	wp_enqueue_style( 'google-font-montserrat', 'http://fonts.googleapis.com/css?family=Montserrat:400,700', 'style' );
+	wp_enqueue_style( 'google-font-montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700', 'style' );
 	if ( function_exists( 'wpcf7_enqueue_styles') ) {
 		wp_dequeue_style( 'contact-form-7' );
 	}

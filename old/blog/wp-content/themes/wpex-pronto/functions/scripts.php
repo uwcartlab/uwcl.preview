@@ -18,7 +18,7 @@ function wpex_load_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
 	// Google Fonts
-	wp_enqueue_style( 'raleway-google-font', 'http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700', 'style' );
+	wp_enqueue_style( 'raleway-google-font', 'https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700', 'style' );
 	wp_enqueue_style( 'font-awesome', WPEX_CSS_DIR . '/font-awesome.min.css', true );
 	
 

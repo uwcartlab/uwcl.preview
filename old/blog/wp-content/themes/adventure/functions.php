@@ -1076,10 +1076,10 @@ function adventure_inline_css() {
 		
         if ( ( get_theme_mod('titlefontstyle_setting') != 'Default') || (get_theme_mod('taglinefontstyle_setting') != 'Default') || (get_theme_mod('bodyfontstyle_setting') != 'Default') || (get_theme_mod('headerfontstyle_setting') != 'Default')) {
             echo '<!-- Custom Font Styles -->' . "\n";
-            if (get_theme_mod('titlefontstyle_setting') != 'Default') {echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-            if (get_theme_mod('taglinefontstyle_setting') != 'Default') {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-            if (get_theme_mod('bodyfontstyle_setting') != 'Default') {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('bodyfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-            if (get_theme_mod('headerfontstyle_setting') != 'Default') {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('headerfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+            if (get_theme_mod('titlefontstyle_setting') != 'Default') {echo "<link href='https://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+            if (get_theme_mod('taglinefontstyle_setting') != 'Default') {	echo "<link href='https://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+            if (get_theme_mod('bodyfontstyle_setting') != 'Default') {	echo "<link href='https://fonts.googleapis.com/css?family=" . get_theme_mod('bodyfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+            if (get_theme_mod('headerfontstyle_setting') != 'Default') {	echo "<link href='https://fonts.googleapis.com/css?family=" . get_theme_mod('headerfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
             echo '<!-- End Custom Fonts -->' . "\n\n";}
 
 		echo '<!-- Custom CSS Styles -->' . "\n";

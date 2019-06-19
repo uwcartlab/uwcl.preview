@@ -25,7 +25,7 @@ $sidebarfont = get_option('timeturner_sidebar_google_fonts');
 $mottofont = get_option('timeturner_motto_google_fonts');
 $menufont = get_option('timeturner_menu_google_fonts');
 
-$fonturl = "http://fonts.googleapis.com/css?family=";
+$fonturl = "https://fonts.googleapis.com/css?family=";
 
 $bodyfonturl = $fonturl.$bodyfont;
 $headingfonturl = $fonturl.$headingfont;

@@ -80,7 +80,7 @@ function timeturner_scripts_styles() {
     wp_enqueue_script( 'responzive', get_template_directory_uri() . '/js/responzive.js', array(), '1.0', true );
 	// Loads the main stylesheet.
 	  wp_enqueue_style( 'timeturner-style', get_stylesheet_uri() ); 
-    wp_enqueue_style( 'google-font-default', 'http://fonts.googleapis.com/css?family=Amarante' );
+    wp_enqueue_style( 'google-font-default', 'https://fonts.googleapis.com/css?family=Amarante' );
   // Loads additional stylesheet for IE8 and older versions.
     wp_enqueue_style( 'timeturner-style-ie', get_template_directory_uri() . '/css/style-ie.css' );
   // Loads additional stylesheet for IE for correct displaying in RTL.
