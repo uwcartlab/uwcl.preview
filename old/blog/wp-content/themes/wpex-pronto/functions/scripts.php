@@ -55,7 +55,7 @@ if ( !function_exists('wpex_ie_scripts') ) {
 			echo '<link rel="stylesheet" type="text/css" href="'. WPEX_CSS_DIR .'/ancient-ie.css" media="screen" />';
 		echo '<![endif]-->';
 		echo '<!--[if lt IE 9]>';
-			echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
+			echo '<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
 			echo '<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>';
 		echo '<![endif]-->';
 	}
