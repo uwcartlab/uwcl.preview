@@ -1,3 +1,7 @@
+.noRed{
+    color:black !important;
+}
+
 .thumb{
     object-fit: contain;
 }

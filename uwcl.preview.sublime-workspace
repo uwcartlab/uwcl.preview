@@ -777,7 +777,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"http://144.92.235.239:8080/search",
+			"https://144.92.235.239:8080/search",
 			"http",
 			"classification",
 			"console",
@@ -912,7 +912,7 @@
 		"regex": false,
 		"replace_history":
 		[
-			"http://144.92.235.239:8080/search",
+			"https://144.92.235.239:8080/search",
 			"legLayerA",
 			"orderLayers",
 			"#timer",
