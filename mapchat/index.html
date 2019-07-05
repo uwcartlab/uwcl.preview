@@ -220,55 +220,5 @@ footer{
         "//cdn.datatables.net/1.10.12/js/jquery.dataTables.js" type=
         "text/javascript">
         </script>
-        <script>
-				  searchHost = " https://144.92.235.239:8080/search"
-				  $(document).ready(function(){
-				    //check if there is a query in the works right now
-						search()
-				  })
-
-					function search(){
-						//get the query parameters
-						q = "education"
-						payload = {
-							category: q,
-							contentType: "html"
-						}
-						//do the search via ajax
-						$.ajax(searchHost,{
-							data: payload,
-							// contentType: "text/html",
-							// dataType: "json",
-							success: function(html){
-								$("#results").empty();
-								$("#results").append(html)
-							},
-							error: function(err){
-								window.location.replace = "500.html"
-							},
-							beforeSend: function(){
-								$("#results").empty()
-								$("#results").append("<img id='ajaxloader' src='img/ajax-loader.gif' />")
-								console.log("Searching.")
-							}
-						})
-					}
-
-				  //for parsing the query string
-				  function getQueryVariable(variable) {
-				      var query = window.location.search.substring(1);
-				      var vars = query.split('&');
-				      for (var i = 0; i < vars.length; i++) {
-				          var pair = vars[i].split('=');
-				          if (decodeURIComponent(pair[0]) == variable) {
-				              return decodeURIComponent(pair[1]);
-				          }
-				      }
-				  }
-					 function toTitleCase(str)
-					{
-							return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-					}
-				  </script>
 </body>
 </html>
