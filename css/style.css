@@ -11,9 +11,10 @@
 
 }
 .final{
-    object-fit: contain;
-    width: 144px;
-    height: 144px;
+    display:block;
+    margin:auto;
+    
+
 }
 
 .profile-thumbnail{
@@ -368,8 +369,10 @@ blockquote.feed cite {
     background-size: cover;
 }
 
-.finalProject{
-    line-height: 1.8em;
+
+div.col-md-4.col-sm-6 p,h3{
+    padding-left: 25px;
+  
 }
 
 /*
