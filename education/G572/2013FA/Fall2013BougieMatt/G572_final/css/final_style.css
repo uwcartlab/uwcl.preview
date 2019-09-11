@@ -1,0 +1,858 @@
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}	
+
+
+header{
+
+text-align: center; 
+color: white;       
+
+}	
+/*--------------------------demo----------------------------------*/
+
+	body{
+		font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+		font-weight: 400;
+		font-size: 15px;
+		background-image:url('../images/full/px_by_Gre3g.png');
+		overflow-y: scroll;
+		min-width: 1024px;
+		
+
+	}
+
+/*--------------NAVIGATION BUTTON----------------------------*/
+@charset 'UTF-8';
+/* Starter CSS for Flyout Menu */
+#navigation,
+#navigation ul,
+#navigation li #navigation a {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  font-family: Helvetica;
+  line-height: 1;
+}
+#navigation {
+  width: auto;
+}
+#navigation ul {
+  zoom: 1;
+ url(pattern.png) top left repeat;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #839b4e;
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+#navigation ul:before {
+  content: '';
+  display: block;
+}
+#navigation ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#navigation a,
+#navigation a:link,
+#navigation a:visited {
+  padding: 15px 20px;
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 -1px 1px #586835;
+  border-right: 1px solid #839b4e;
+}
+#navigation a:hover {
+  color: #586835;
+  text-shadow: 0 1px 1px #bdcd9c;
+}
+#navigation li {
+  float: left;
+  border-right: 1px solid #b2c58b;
+}
+#navigation li:hover {
+  background: #9cb369 url(pattern.png) top left repeat;
+}
+#navigation li:first-child {
+  border-left: none;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+
+
+/*-------arrangement of album with/in the webpage---------------------*/
+	
+
+
+
+
+.my-div-icon{
+    width:25px;
+	height:25px;
+}
+
+
+iframe {width: 100%; height: 100%;}
+
+
+.menu2 a .text, .menu2 a .icon {
+    display:none;
+}
+
+ 
+.menu2 a:hover .text {
+    display:block;
+    position:absolute;
+    height:20px;
+    top:30px;
+    left:0px;
+    color:#000;
+    font-size:11px;
+}
+ 
+
+.menu2 a: .icon {
+    display:block;
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+   
+}
+
+
+
+
+#DC {
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .isOn:hover
+{
+border-width: 3px;
+border-style: solid;
+border-color: green;
+} 
+
+
+
+#sidebar{
+width:400px;
+height:356px;
+
+background-color: rgb(191,220,255);
+}
+  
+#right{
+width:560px;
+height:625px;
+float:right;
+
+}
+
+
+
+
+#map {
+      /*margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%; */
+     width:560px;
+     height:525px;
+     background-color:white;
+     margin-left:auto;
+     margin-right:auto;
+     float:right;
+
+}
+
+
+
+#container{
+   
+    width: 960px;
+    height:625px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  
+}
+
+
+
+#tableHolder{
+     width:400px;
+     height:215px;
+     background-color:orange;
+     
+    
+  
+}
+
+#left{
+width:400px;
+height:625px;
+float:left;
+
+}
+
+#introBar {
+background-image: url('..images/full/expalin_some_small.png');
+width:560px;
+height:100px;
+float:right;
+}
+
+#introBarRight{
+width:0px;
+height:100px;
+float:right; 
+background-color:yellow;
+}
+
+#introBarLeft{
+
+padding-left: 0px;
+width:560px;
+height:100px;
+
+
+float:left;
+
+}
+
+#sidebarText{
+text-align: left;
+padding: 10px;  
+}
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+div #text { 
+   position: absolute; 
+   top: 0px; 
+   left: 145px;
+   padding-top: 3px; 
+   width: 100%;
+    color: rgba(27,54,81,1);
+    
+    font-size: 25px;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 4px;
+
+}
+
+
+
+#introBarLeft div#heading{
+color: rgba(27,54,81,0.9);
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+    font-size: 20px;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 4px;
+
+}
+
+
+/*////////////////inside buttons//////////////////////////////*/
+
+#cssmenuIN {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  width: auto;
+
+}
+#cssmenuIN ul {
+ 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenuIN li {
+  
+  float: left;
+  padding: 0px;
+}
+#cssmenuIN li a {
+  
+  background: grey url('../images/thumbs/seperator.png') bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 20px;
+  padding-top:9px;
+  margin: 0px;
+  width:78px;
+  height: 35px;
+  /*padding: 3px 25px 3px 25px;*/
+  text-align: center;
+  text-decoration: none;
+   border-right: 1px  solid #3a3a3a;
+  border-left: 1px solid #1b1b1b;
+  border-top: 1px  solid #3a3a3a;
+  border-bottom: 1px solid #1b1b1b;
+}
+
+#cssmenuIN li >a.noPad{
+padding-top:1px;
+padding-bottom:8px;
+background-color: #333333 ;
+
+}
+
+#cssmenuIN li >a.yellow:hover{
+background-color: yellow ;
+} 
+
+#cssmenuIN li >a.red:hover{
+background-color: red ;
+
+}
+#cssmenuIN li >a.border {
+
+/*padding: 3px 26px 2px 27px;*/
+background-color: #333333 ;
+
+
+}
+
+#cssmenuIN li >a.percent {
+
+/*padding: 3px 26px 2px 27px;*/
+
+font-weight: thick;
+
+
+}
+#cssmenuIN > ul > li > a {
+  color: #cccccc;
+}
+#cssmenuIN ul ul a {
+color:  #2580a2;
+
+}
+#cssmenuIN li > a:hover,
+#cssmenuIN ul li:hover > a {
+  
+}
+#cssmenuIN li ul {
+  background: #333333;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  /*top:1em;
+  /*left:0;*/
+
+}
+#cssmenuIN li:hover ul {
+  display: block;
+}
+#cssmenuIN li li {
+  background: url('../images/thumbs/sub_sep.png') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+}
+#cssmenuIN li:hover li a {
+  background: none;
+}
+#cssmenuIN li ul a {
+  display: block;
+  height: 35px;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0px;
+  
+  text-align: left;
+}
+
+
+
+#cssmenuIN li ul a:hover,
+#cssmenuIN li ul li:hover > a {
+  background: #2580a2 url('hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#cssmenuIN p {
+  clear: left;
+}
+
+/*//////////header nav button/////////////////////////////////////////////*/
+
+#cssmenuHed {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+ /* width: auto;*/
+}
+#cssmenuHed ul {
+  background: #333333;
+  height: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenuHed li {
+  float: left;
+  padding: 0px;
+}
+#cssmenuHed li a {
+  background: #333333 url('seperator.png') bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 35px;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: left;
+  text-decoration: none;
+  
+}
+#cssmenuHed > ul > li > a {
+  color: #cccccc;
+}
+#cssmenuHed ul ul a {
+  color: #cccccc;
+}
+#cssmenuHed li > a:hover,
+#cssmenuHed ul li:hover > a {
+  background: #2580a2 url('hover.png') bottom center no-repeat;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#cssmenuHed li ul {
+  background: #333333;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  word-spacing:2px;
+  /*top:1em;
+  /*left:0;*/
+}
+#cssmenuHed li >ul#home {
+ 
+  width: 400px;
+  height: 361px;
+  
+}
+
+
+#cssmenuHed li >ul.landtypes {
+ 
+  width: 111px;
+ } 
+
+#cssmenuHed li >ul.ground {
+ 
+  width: 167px;
+ 
+}
+#cssmenuHed li:hover ul {
+  display: block;
+}
+#cssmenuHed li li {
+  background: url('sub_sep.png') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+
+#cssmenuHed li:hover li a {
+  background: none;
+}
+#cssmenuHed li ul a {
+  display: block;
+  height: 35px;
+  font-size: 14px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: left;
+}
+
+
+
+#cssmenuHed li ul a.explainSmall {
+font-size: 17px;
+color:  #2580a2;
+}
+
+#cssmenuHed li ul a#talk {
+height: 100px;
+ 
+
+
+}
+#cssmenuHed li ul a:hover,
+#cssmenuHed li ul li:hover > a {
+  
+#cssmenuHed p {
+  clear: left;
+}
+
+
+
+/*#cssmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: auto;
+  position: relative;
+  display: block;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent url('../images/thumbs/nav_bg.png') repeat-x top left;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+}
+#cssmenu li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li a {
+  display: block;
+  float: left;
+  color: #999999;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 20px 0 20px;
+}
+#cssmenu li a:hover {
+  color: #FFFFFF;
+  height: 22px;
+  background: transparent url('../images/thumbs/nav_bg.png') 0px -30px no-repeat;
+}
+#cssmenu li.active a {
+  display: inline;
+  height: 22px;
+  background: transparent url('../images/thumbs/nav_bg.png') 0px -30px no-repeat;
+  float: left;
+  margin: 0;
+}*/
+
+
+
+
+
+
+
+
+
+/*---------------------border buttons vertical-----------------------------*/
+
+@charset 'UTF-8';
+/* Some stylesheet reset */
+#cssmenu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  line-height: 1;
+
+}
+
+/* The container */
+#cssmenu > ul {
+  display: block;
+  position: relative;
+  width: 70px;
+  
+
+/* The list elements which contain the links */
+}
+#cssmenu > ul li {
+  z-index: 100;
+  display: block;
+  position: relative;
+  margin: 0;
+  width: 100%;
+}
+
+
+/* General link styling */
+#cssmenu > ul li a {
+  /* Layout */
+
+  display: block;
+  position: relative;
+  margin: 0;
+  border-right: 1px  solid black;
+  border-left: 1px solid black;
+  border-top: 1px  solid black;
+  border-bottom: 1px solid black;
+  padding: 9px 30px 10px 0px;
+  
+  /* Typography */
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d8d8d8;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px #000;
+  font-size: 13px;
+  font-weight: 300;
+  
+ /* Background & effects */
+ background: #333333 
+}
+
+#cssmenu > ul li >a.balance {
+  /* Layout */
+
+  
+  padding: 10px 0px 10px 0px;
+  
+  
+}
+/* Rounded corners for the first link of the menu/submenus */
+/*#cssmenu > ul li:first-child > a {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top: 0;
+}*/
+
+/* The hover state of the menu/submenu links */
+/* The hover state of the menu/submenu links */
+#cssmenu > ul li > a:hover,
+#cssmenu > ul li:hover > a {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  background: #54cdf1;
+  border-color: transparent;
+}
+
+
+/* THE SUBMENUS */
+#cssmenu > ul ul {
+  z-index: 200;
+  position: absolute;
+  top: 100%;
+  top: 0px;
+  padding-left: 0px;
+  opacity: 0;
+  
+}
+/* Showing the submenu when the user is hovering the parent link */
+#cssmenu > ul li:hover > ul {
+  top: 0px;
+  opacity: 1;
+}
+
+
+/*---------------------border buttons horizontal----------------------------*/
+
+
+#cssmenuH {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  width: auto;
+}
+
+#cssmenuH ul {
+ 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenuH li {
+  float: left;
+  padding: 0px;
+}
+#cssmenuH li a {
+  display: block;
+  position: relative;
+  margin: 0;
+ border-right: 1px  solid black;
+  border-left: 1px solid black;
+  border-top: 1px  solid black;
+  border-bottom: 1px solid black;
+  padding: 5px 7px 5px 8px;
+  
+  /* Typography */
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d8d8d8;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px #000;
+  font-size: 13px;
+  font-weight: 300;
+  
+ /* Background & effects */
+ background: #333333 url('seperator.png') bottom right no-repeat;
+}
+
+#cssmenuH li >a.final {
+ 
+  padding: 7px 8px 8px 0px;
+   border-right: 1px  solid black;
+ 
+}
+
+#cssmenuH > ul > li > a {
+  color: #cccccc;
+}
+#cssmenuH ul ul a {
+  color: #cccccc;
+}
+#cssmenuH li > a:hover,
+#cssmenuH ul li:hover > a {
+  background: #2580a2 url('hover.png') bottom center no-repeat;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#cssmenuH li ul {
+  background: #333333;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  /*top:1em;
+  /*left:0;*/
+
+}
+#cssmenuH li:hover ul {
+  display: block;
+}
+#cssmenuH li li {
+  background: url('sub_sep.png') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+}
+#cssmenuH li:hover li a {
+  background: none;
+}
+#cssmenuH li ul a {
+  display: block;
+  height: 35px;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0px;
+  
+  text-align: left;
+}
+#cssmenuH li ul a:hover,
+#cssmenuH li ul li:hover > a {
+  background: #2580a2 url('hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#cssmenuH p {
+  clear: left;
+}
+
+
+
+
+
+
+/*//////////////////break////////////////////////////////*/
+
+
+
+img.spacev{
+  padding: 1px 10px 0px 35px;
+}
+
+img.spaceh{
+  padding: 10px 20px 0px 20px;
+}
+
+
+/*#outsideButtons{
+  width:104px; 
+  background-color: green;
+float:left;
+}*/
+
+
+ /*#container33 {
+    display: table;
+    }
+
+  #row  {
+    display: table-row;
+    }
+
+  #left, #right, #middle {
+    display: table-cell;
+    }*/
+
+/*//////////////////div table////////////////////////////////////////////////////*/
+
+
+
+/*.container2{
+    width: 550px;
+    display:inline-block;
+    
+     margin-left: auto;
+    margin-right: auto;
+    background-color: pink;
+  
+}
+*/
+
+
+
+.green:hover{
+background-color: green;
+
+};
