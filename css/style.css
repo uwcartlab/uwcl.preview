@@ -391,6 +391,23 @@ a div.col-md-4.col-sm-6:hover{
     border: 2.5px solid #706b6b;
 }
 
+.final575 {
+    height: 375px !important;
+    border: 2.5px solid transparent;
+
+}
+
+.final575:hover{
+    border: 2.5px solid #706b6b;
+
+}
+
+.centerFinal{
+    text-align:center;
+}
+
+
+
 
 /*
 * Custom Button

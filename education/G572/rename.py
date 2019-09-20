@@ -28,7 +28,7 @@ def main():
                     break
             #os.rename('PDF/' + filename, 'PDF/' + 'Spring2016' + last + first +'.PDF')
             print("<a href='2018FA/PDF/" + filename + "' " + "target='_blank'>")
-            print("<div class='col-md-4 col-sm-6'>")
+            print("<div class='col-md-4 col-sm-6 centerFinal'>")
             print("<img src='2018FA/ImgSq/" + filename[:-4] + ".png' " + "alt='...' class='final'>")
             print("<h3 class='finalProject'>        </h3>")
             print("<p><i>" + first + " " + last +"</i></p>")
