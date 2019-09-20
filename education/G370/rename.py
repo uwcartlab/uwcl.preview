@@ -4,10 +4,10 @@ import os
 # Function to rename multiple files
 def main():
     def removeYear(): 
-        for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/uwcl.preview/education/G370/2011FA/PDF"):
+        for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/Repos/uwcl.preview/education/G370/2013FA/PDF"):
             print(filename)
     def organizeLetters():
-        for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/uwcl.preview/education/G370/2011FA/PDF"):
+        for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/Repos/uwcl.preview/education/G370/2013FA/PDF"):
             i=1
             name = filename[8:]
             last = name[0]
@@ -27,9 +27,9 @@ def main():
                 elif letter == '.':
                     break
             #os.rename('PDF/' + filename, 'PDF/' + 'Spring2016' + last + first +'.PDF')
-            print("<a href='2011FA/PDF/" + filename + "' " + "target='_blank'>")
+            print("<a href='2013FA/PDF/" + filename + "' " + "target='_blank'>")
             print("<div class='col-md-4 col-sm-6'>")
-            print("<img src='2011FA/ImgSq/" + filename[:-4] + ".png' " + "alt='...' class='final'>")
+            print("<img src='2013FA/ImgSq/" + filename[:-4] + ".png' " + "alt='...' class='final'>")
             print("<h3 class='finalProject'>        </h3>")
             print("<p><i>" + first + " " + last +"</i></p>")
             print("</div></a>")
