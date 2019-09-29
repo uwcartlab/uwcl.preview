@@ -18,6 +18,7 @@
 .finalProject{
     line-height: 1.25em;
     padding-top: 10px;
+    padding-left: 25px;
 }
 
 
@@ -381,30 +382,55 @@ a div.col-md-4.col-sm-6 p, a div.col-md-4.col-sm-6 h3{
 }
 
 a div.col-md-4.col-sm-6{
-    height: 375px !important;
+    height: 400px !important;
     border: 2.5px solid transparent;
+    padding-top: 15px !important;
 
   
 }
 
-a div.col-md-4.col-sm-6:hover{
-    border: 2.5px solid #706b6b;
+a div.col-md-4.col-sm-6:after{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: rgba(0,0,0,.2);
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
 
-.final575 {
-    height: 375px !important;
-    border: 2.5px solid transparent;
+a div.col-md-4.col-sm-6:hover:after {
+    opacity: 1;
+}
+
+a div.col-md-4.col-sm-6 p {
+    padding-left: 40px;
+}
+
+
+
+.carousel575{
+}
+
+/*Do not change or carousel for 575 will fail */
+.marginRight{
+    margin-right: -50px ;
+    max-width: 5% !important;
 
 }
 
-.final575:hover{
-    border: 2.5px solid #706b6b;
+.marginLeft{
+   margin-left: -50px ;
+   max-width: 5% !important;
 
 }
 
-.centerFinal{
-    text-align:center;
-}
+
 
 
 
@@ -1792,9 +1818,32 @@ ul.footer-list li a:hover {
 }
 @media only screen and (max-width: 1200px) {
     .blog-post blockquote { margin-left: -200px; }
+    .finalProject{
+        padding-left: 5px !important;
+    }
+    /*Do not change or carousel for 575 will fail */
+.marginRight{
+    margin-right: -40px ;
+}
+
+.marginLeft{
+   margin-left: -40px ;
+}
 }
 @media only screen and (max-width: 959px) {
     .blog-post blockquote { margin-left: -200px; }
+    .finalProject{
+        padding-left: 20px !important;
+    }
+    /*Do not change or carousel for 575 will fail */
+.marginRight{
+    margin-right: -30px ;
+}
+
+.marginLeft{
+   margin-left: -30px ;
+}
+
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -1833,6 +1882,17 @@ ul.footer-list li a:hover {
     .copyright, .footnav ul { text-align: center; }
     .blog-post blockquote { margin-left: 0; }
     .comment-image { display: none; }
+
+    .finalProject{
+        padding-left: 40px !important;
+    }
+    .marginRight{
+        margin-right: -20px ;
+    }
+    
+    .marginLeft{
+       margin-left: -20px ;
+    }
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
