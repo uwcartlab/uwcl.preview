@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <strong>Where is it from?</strong>
+    <p>The original data was acquired from <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910%2FDVN%2FKJEBIL">Harvard's Dataverse.</a> The data was then processed using a python script to count the number of times each country was mentioned per year and saved the result to a csv file for use with the map.</p>
+    <br>
+    <strong>How was it processed?</strong>
+    <p>Using the names of countries within the countries topojson file, each tweet was examined to see if each it contained each country name.  
+        If a tweet contained two different country names, each country included would gain a mention.  Extra criteria for a mention was created speifically for the USA.  
+        If a tweet contained the word "america" and did not contain "north", "south", or "united states of america", it was assumed that Trump was referring to 
+        the USA and counted as a mention.  In the same vain, if "USA" or "U.S.A." was included in the tweet, it was counted as a mention. It is recognized that 
+        this method can not accurately calculate the exact number of country mentions due to language nuances.  It is also recognized that country names change
+        and the list generated from the 2018 Natural Earth countries topojson file may not include all country names mentioned.</p>
+    <br><br>
+</html>

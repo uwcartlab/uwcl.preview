@@ -1,0 +1,219 @@
+body {
+  background-color: #EDEDED;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover{
+
+  background: darkgrey;
+}
+
+.menu{
+  color: white;
+}
+
+
+.thumbnail img:hover{
+
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+
+}
+
+.thumbnail1 img:hover{
+
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+
+}
+
+.thumbnail2 img:hover{
+
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+
+}
+
+.thumbnail3 img:hover{
+
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+}
+
+.MathResourceIcons a img:hover{
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+}
+
+#footer a img:hover{
+  box-shadow: 0 0 4px 3px rgba(1, 140, 186, 0.9);
+  width: auto;
+  height: auto;
+}
+
+.thumbnail img{
+	height: 80%;
+  width: 95%;
+  border-width: auto;
+  box-shadow: 1px -1px 1px 1px #68747D;
+  background-color: white;
+  padding: 20px;
+  margin: 1px auto;
+  display: block;
+  position: relative;
+}
+
+.thumbnail1 img{
+	height: 70%;
+  width: 85%;
+  border-width: auto;
+  box-shadow: 1px -1px 1px 1px #68747D;
+  background-color: white;
+  padding: 0px;
+  margin: 1px auto;
+  display: block;
+  position: relative;
+}
+
+.thumbnail2 img{
+	height: 70%;
+  width: 85%;
+  border-width: auto;
+  box-shadow: 1px -1px 1px 1px #68747D;
+  background-color: white;
+  padding: 10px;
+  display: block;
+  margin: 1px auto;
+  position: relative;
+  align-content: center;
+}
+
+.ImageBorder{
+  height: 60%;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 1px -1px 1px 1px #68747D;
+  display: block;
+  margin: 1px auto;
+}
+
+.mathcauses{
+  box-shadow: 1px 1px 1px 1px #68747D;
+  padding-left: 3px;
+  padding-right: 2px;
+  background: #EDEDED;
+  border: 0.5px solid maroon;
+  border-radius: 3px;
+}
+p1{
+  font-size: 15.5px;
+}
+
+.jumbotron{
+  background:#41b6c4;
+  height: 120px;
+  text-align: center;
+  color: #1f0302;
+  padding-top: 2%;
+  font-weight: bold;
+  border: 0.2px solid #670505;
+}
+
+.PISA_2018_Report a:hover{
+  height: yellow;
+}
+
+.PISA_2018_Report{
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 65%;
+}
+
+
+.mathresources{
+  height: 10%;
+  width: 40%;
+  display: block;
+  margin: 1px auto;
+  padding-top: 20px;
+
+}
+
+h1{
+  padding-top: 45px;
+  text-align: center;
+
+}
+h2{
+  font-size: 32px;
+  text-align: center;
+}
+h4{
+  font-size: 30px;
+  text-align: center;
+}
+h5{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+
+
+.navbar-custom {
+    background:#0f0c08;
+}
+
+.navbar-custom .navbar-brand{
+  color:white;
+  font-size: 25px;
+}
+
+.navbar-custom .nav-item:hover .nav-link {
+    background-color: #ebf4f5;
+    border-radius: 10px;
+}
+
+.nav-link{
+  color: white;
+  font-size: 17px;
+}
+
+
+#footer{
+  height: 50px;
+  margin-top: 200px;
+  clear: both;
+}
+
+.about{
+  padding-top: 100px;
+  position: relative;
+}
+.photo{
+  max-height: 34%;
+  max-width: 34%;
+  border-radius:50%;
+  float: right;
+}
+
+.contactme{
+  color: black;
+  font-size: 42px;
+  font-weight: : bold;
+}
+
+
+.navbar-custom .navbar-brand:hover{
+    color: yellow;
+
+}
+
+
+p {
+  font-size: 18px;
+}
+.dropdown-item:hover{
+    background-color: #ccffff;
+}

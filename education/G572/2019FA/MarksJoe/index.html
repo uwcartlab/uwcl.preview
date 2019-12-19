@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trump's Twitter Map</title>
+    <meta charset="utf-8">
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Import d3 -->
+    <script src="js/d3.v3.min.js" type="text/javascript"></script>
+    <!-- jquery -->
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <!-- For slider -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- bootstrap styling -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+
+    <!-- fontawesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+    <script src="https://unpkg.com/simple-statistics@7.0.2/dist/simple-statistics.min.js"></script>
+
+    <script src="lib/colorbrewer.js"></script>
+    <script src="lib/topojson.js"></script>
+    <script src="lib/cartogram.js"></script>
+    <style type="text/css">
+
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        font-size: 14px;
+        line-height: 1.4em;
+      }
+
+      /* Styling for Navbar header */
+
+      .navbar{
+        background-color:#54278f !important;
+        height: 40px;
+      }
+
+      .navbar-brand h4{
+          letter-spacing: .25rem !important;
+          margin-bottom: .3rem;
+          margin-left: .5rem;
+          color: white;
+      }
+
+      #navbar-spacer{
+          height: 60px;
+      }
+
+      #totalTweets{
+        text-align: center;
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+      }
+
+
+      /* Styling for years above timeline */
+      #value-range{
+        width: 100%;
+      }
+
+      .year{
+        width: 9.5%;
+        display: inline-block;
+        text-align: center;
+      }
+
+      /* Styling for date slider */
+      #slider-range{
+        height: 10px;
+      }
+
+      .ui-slider-tick-mark{
+        display:inline-block;
+        width:1px;
+        background:rgb(197, 197, 197);
+        height:16px;
+        position:absolute;
+        transform: translateY(100%)
+
+      }
+
+      .ui-slider-year{
+        display:inline-block;
+        height:16px;
+        position:absolute;
+        top:-4px;
+        transform: translate(-50%, 125%);
+      }
+
+      .ui-slider-range { 
+        background: #54278f; 
+      }
+      
+      .ui-slider-handle { 
+        border-color: #54278f; 
+      }
+
+      #buttonDiv{
+        margin-top: 6vh;
+      }
+
+      .btn-primary{
+        background-color: #54278f;
+        border-color: #54278f;
+        margin: auto;
+      }
+
+      .btn-primary:hover{
+        background-color: #756bb1;
+        border-color: #756bb1;
+        margin: auto;
+      }
+
+      #map-container {
+        height: 73vh;
+        width: 73vw;
+        left:0;
+        text-align: center;
+        margin: 3px auto 0px;
+      }
+
+      #map {
+        display: block;
+        position: absolute;
+        background: #fff;
+        width: 74%;
+        height: 100%;
+        margin: 0;
+      }
+
+      #layer{
+        width: 100%;
+      }
+      #countries{
+        width: 100%;
+      }
+
+      path.country {
+        stroke: #666;
+        stroke-width: .5;
+      }
+
+      path.country:hover {
+        stroke: #000;
+      }
+
+      /* Styling for modal (popup) */
+      #infoModal {
+        display: none;
+        position: absolute;
+        top: calc(120px + (100% - 120px) / 50);
+        left: 15%;
+        color: #08090A;
+        background-color: #F4F7F5;
+        width: 70%;
+        height: calc(8 * (100% - 85px) / 10);
+        z-index: 1003; 
+        padding:0.5%;
+        border-radius: 25px;
+      }
+
+      #infoModal h3 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.75em;
+        line-height: 1em;
+      }
+      #infoModal .fa-times {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+      #infoModal .fa-times:hover {
+        cursor: pointer;
+      }
+
+      #modalBkgd {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8,9,10,0.7);
+        z-index: 1002; 
+      }
+
+      #modalContent {
+        margin-left: 15px;
+        margin-top: 60px;
+        max-width: calc(100% - 30px);
+        max-height: calc(100% - 75px);
+        overflow: auto;
+      }
+
+
+      #modalContent div {
+        position: relative;
+        width: 100%;
+        float: left;
+        clear: both;
+      }
+      #modalContent p {
+        margin: 0;
+        padding: 10px 0;
+        font-weight: 400;
+        font-size: 1em;
+      }
+      #modalContent strong {
+        margin: 0;
+        padding: 10px 0;
+        font-weight: 800;
+        font-size: 1em;
+      }
+
+      #modalContent .inlineSelect {
+        margin-left: 25px;
+          font-weight: 700;
+          font-size: 1em;
+          line-height: 1em;
+      }
+      #modalContent .inlineSelect select {
+        border: none;
+          background-color: #F4F7F5;
+          font-size: 1.25em;
+          text-decoration: underline;
+          font-weight: 700;
+      }
+      #modalContent a {
+        color: #0D3B66;
+        text-decoration: underline;
+      }
+      #modalContent a:hover {
+        cursor: pointer;
+      }
+      #modalContent form textarea {
+        width: calc(100% - 6px);
+        max-width: 500px;
+          font-weight: 400;
+          font-size: 1em;
+          line-height: 1em;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div id="modalBkgd"></div>
+
+    <div id="infoModal">
+        <i class="fas fa-times"></i>
+        <h3></h3>
+        <div id="modalContent"></div>
+    </div>
+
+    <!-- NAVBAR header -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand">
+            <h4>
+                World Map according to Trump's Twitter
+            </h4>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>    
+        
+          <div class="navbar-collapse collapse" id="navbarNavAltMarkup" aria-expanded="false">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#" onclick="javascript:$('#infoModal h3').html('About the Map'); $('#modalContent').load('html/aboutthemap.html'); $('#infoModal').fadeIn(500); $('#modalBkgd').fadeIn(500);">About the Map</a>
+                <a class="nav-link" href="#" onclick="javascript:$('#infoModal h3').html('About the Data'); $('#modalContent').load('html/aboutthedata.html'); $('#infoModal').fadeIn(500); $('#modalBkgd').fadeIn(500);">About the Data</a>
+            </div>
+        </div> 
+    </nav>
+
+
+    <!-- Content -->
+    <div class="container-fluid">
+
+      <div class="row" id="navbar-spacer"></div>
+
+      <div class="row">
+      <div class="col-md-12">
+          <h5 id="totalTweets"></h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div id="slider-range"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div id="buttonDiv" class="text-center">
+            <button type="button" class="btn btn-primary btn-sm" onclick="update();">Update Map</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" style="padding:0;">
+          <div id="map-container">
+            <svg id="map"></svg>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    <script>
+
+      /********** Create listener for clicking the "x" on an info link's content (E.g. Help, About, Contact, etc) *********/
+      $('#infoModal .fa-times').on('click', function (e) {
+          $('#infoModal').fadeOut(500);
+          $('#modalBkgd').fadeOut(500);
+      });
+
+
+      // Track the total number of tweets being considered
+      // These values were summed outside this web-page during the data processing
+      var totalMentionsDict = {2009:3, 2010:12, 2011:304, 2012:786, 2013:842, 2014:735, 2015:1490, 2016:1079, 2017:826, 2018:886, 2019:728}
+      var totalTweetsDict = {2009:56, 2010:143, 2011:870, 2012:4193, 2013:8359, 2014:5997, 2015:7730, 2016:4215, 2017:2513, 2018:3443, 2019:2722}
+      var totalMentions = 0;
+      var totalTweets = 0;
+      var removeDistortion = true;
+
+      // For calculating jenks
+      ss.jenks = function(data, n_classes) {
+
+        // sort data in numerical order
+        data = data.slice().sort(function (a, b) { return a - b; });
+
+        // get our basic matrices
+        var matrices = ss.jenksMatrices(data, n_classes),
+            // we only need lower class limits here
+            lower_class_limits = matrices.lower_class_limits,
+            k = data.length - 1,
+            kclass = [],
+            countNum = n_classes;
+
+        // the calculation of classes will never include the upper and
+        // lower bounds, so we need to explicitly set them
+        kclass[n_classes] = data[data.length - 1];
+        kclass[0] = data[0];
+
+        // the lower_class_limits matrix is used as indexes into itself
+        // here: the `k` variable is reused in each iteration.
+        while (countNum > 1) {
+            kclass[countNum - 1] = data[lower_class_limits[k][countNum] - 2];
+            k = lower_class_limits[k][countNum] - 1;
+            countNum--;
+        }
+
+        return kclass;
+      };
+
+      // Also for calculating jenks
+      ss.jenksMatrices = function(data, n_classes) {
+
+        // in the original implementation, these matrices are referred to
+        // as `LC` and `OP`
+        //
+        // * lower_class_limits (LC): optimal lower class limits
+        // * variance_combinations (OP): optimal variance combinations for all classes
+        var lower_class_limits = [],
+            variance_combinations = [],
+            // loop counters
+            i, j,
+            // the variance, as computed at each step in the calculation
+            variance = 0;
+
+        // Initialize and fill each matrix with zeroes
+        for (i = 0; i < data.length + 1; i++) {
+            var tmp1 = [], tmp2 = [];
+            for (j = 0; j < n_classes + 1; j++) {
+                tmp1.push(0);
+                tmp2.push(0);
+            }
+            lower_class_limits.push(tmp1);
+            variance_combinations.push(tmp2);
+        }
+
+        for (i = 1; i < n_classes + 1; i++) {
+            lower_class_limits[1][i] = 1;
+            variance_combinations[1][i] = 0;
+            // in the original implementation, 9999999 is used but
+            // since Javascript has `Infinity`, we use that.
+            for (j = 2; j < data.length + 1; j++) {
+                variance_combinations[j][i] = Infinity;
+            }
+        }
+
+        for (var l = 2; l < data.length + 1; l++) {
+
+            // `SZ` originally. this is the sum of the values seen thus
+            // far when calculating variance.
+            var sum = 0, 
+                // `ZSQ` originally. the sum of squares of values seen
+                // thus far
+                sum_squares = 0,
+                // `WT` originally. This is the number of 
+                w = 0,
+                // `IV` originally
+                i4 = 0;
+
+            // in several instances, you could say `Math.pow(x, 2)`
+            // instead of `x * x`, but this is slower in some browsers
+            // introduces an unnecessary concept.
+            for (var m = 1; m < l + 1; m++) {
+
+                // `III` originally
+                var lower_class_limit = l - m + 1,
+                    val = data[lower_class_limit - 1];
+
+                // here we're estimating variance for each potential classing
+                // of the data, for each potential number of classes. `w`
+                // is the number of data points considered so far.
+                w++;
+
+                // increase the current sum and sum-of-squares
+                sum += val;
+                sum_squares += val * val;
+
+                // the variance at this point in the sequence is the difference
+                // between the sum of squares and the total x 2, over the number
+                // of samples.
+                variance = sum_squares - (sum * sum) / w;
+
+                i4 = lower_class_limit - 1;
+
+                if (i4 !== 0) {
+                    for (j = 2; j < n_classes + 1; j++) {
+                        if (variance_combinations[l][j] >=
+                            (variance + variance_combinations[i4][j - 1])) {
+                            lower_class_limits[l][j] = lower_class_limit;
+                            variance_combinations[l][j] = variance +
+                                variance_combinations[i4][j - 1];
+                        }
+                    }
+                }
+            }
+
+            lower_class_limits[l][1] = 1;
+            variance_combinations[l][1] = variance;
+        }
+
+        return {
+            lower_class_limits: lower_class_limits,
+            variance_combinations: variance_combinations
+        };
+      };
+
+      // Update spacer height
+      $('#navbar-spacer').css("height", $('nav').outerHeight(true))
+
+      // Instantiate slider
+      function setSliderTicks(){
+        var $slider =  $('#slider-range');
+        var max =  $slider.slider("option", "max");    
+        var min =  $slider.slider("option", "min");    
+        var spacing =  100 / (max - min);
+
+        $slider.find('.ui-slider-tick-mark').remove();
+        for (var i = 0; i < max-min+1 ; i++) {
+            if ( i != 0 && i != max-min){
+              $('<span class="ui-slider-tick-mark"></span>').css({'left': (spacing * i) +  '%', "height": $('#slider-range').height()}).appendTo($slider); 
+            }else{
+              $('<span class="ui-slider-tick-mark"></span>').css({'left': (spacing * i) +  '%', "height": $('#slider-range').height()}).appendTo($slider); 
+            }
+            $('<span class="ui-slider-year">'+(2009+i)+'</span>').css('left', (spacing * i) +  '%').appendTo($slider); 
+        }
+      }
+
+      $( function() {
+        $( "#slider-range" ).slider({
+          range: true,
+          min: 2009,
+          max: 2019,
+          values: [ 2009, 2019 ],
+          slide: function( event, ui ) {
+            startYear = ui.values[0]
+            endYear = ui.values[1]
+            // update();
+          }
+        });
+        setSliderTicks();
+      } );
+
+
+
+
+      var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+
+          startYear = 2009,
+          endYear = 2019,
+          colors = colorbrewer.Purples[6]
+            // .reverse()
+            .map(function(rgb) { return d3.hsl(rgb); });
+
+
+      var body = d3.select("body"),
+          stat = d3.select("#status"),
+          totalTweetsSpan = d3.select("#totalTweets")
+
+
+      // DEFINE VARIABLES
+      // Define size of map group
+      w = $("#map-container").width();
+      h = $("#map-container").height();
+
+      var proj = d3.geo.equirectangular()
+        // .center([0,15])
+        .scale([w / (2*Math.PI)])
+        .translate([w/2, h/2]),
+          topology,
+          geometries,
+          rawData,
+          dataById = {},
+          carto = d3.cartogram()
+            .projection(proj)
+            .properties(function(d) {
+              return dataById[d.id];
+            })
+            .value(function(d) {
+              return +d.properties[startYear];
+            });
+
+      var map = d3.select("#map")
+        .attr("width", $("#map-container").width())
+        .attr("height", $("#map-container").height()),
+          layer = map.append("g")
+            .attr("id", "layer"),
+
+
+          countries = layer.append("g")
+            .attr("id", "countries")
+            .selectAll("path");
+      
+
+          
+
+      url = ["data", "ne_110m_admin_0_countries.topojson"].join("/")
+      d3.json(url, function(topo) {
+        topology = topo;
+
+        geometries = topology.objects.countries.geometries;
+        d3.csv("data/countryTweetMentions.csv", function(data) {
+          rawData = data;
+          dataById = d3.nest()
+            .key(function(d) { return d.NAME; })
+            .rollup(function(d) { return d[0]; })
+            .map(data);
+
+          // Add ID startYear to each feature of topojson
+          for (var i = 0; i < geometries.length;i++){
+            geometries[i].id=geometries[i].properties.NAME
+          }
+
+          init();
+        });
+      });
+
+
+      function init() {
+        features = carto.features(topology, geometries),
+        // generate path from geojson (topojson?) data
+            path = d3.geo.path()
+            // specify projection
+              .projection(proj);
+
+
+        // join states with features data
+        countries = countries.data(features)
+        // identify any DOM elements that need to be added when the joined array is longer than the selection (states)
+          .enter()
+          // Add elements to the dom
+          .append("path")
+            // add attributes to those DOM elements
+            .attr("class", "country")
+            .attr("id", function(d) {
+              return d.properties.NAME;
+            })
+            .attr("fill", "#fafafa")
+            .attr("d", path);
+
+        countries.append("title");
+
+        update();
+
+
+      }
+
+      function update() {
+        
+        // Update total mentions and total number of tweets within the timeframe
+        totalMentions = 0;
+        totalTweets = 0;
+
+        for(i = 0; i < years.length; i++){
+          if (years[i] >= startYear && years[i] <= endYear){
+            totalMentions += totalMentionsDict[years[i]]
+            totalTweets += totalTweetsDict[years[i]]
+          }
+        }
+
+        var key = startYear
+            fmt = (typeof startYear.format === "function")
+              ? startYear.format
+              : d3.format(startYear.format || ","),
+            value = function(d) {
+              tweetsSum = 0
+
+              for(i = 0; i < years.length; i++){
+
+                if (years[i] >= startYear && years[i] <= endYear){
+                  tweetsSum += +d.properties[years[i]]
+                }
+              }
+
+              return +tweetsSum
+            },
+            values = countries.data() 
+              .map(value)
+              .filter(function(n) {
+                return !isNaN(n);
+              })
+              .sort(d3.ascending),
+            lo = values[0],
+            hi = values[values.length - 1];
+
+        // use low and high values to generate color scale
+        var color = d3.scale.linear()
+          .range(colors)
+          .domain(ss.jenks(features.map(function(d) {return value(d)}), 5));
+
+        // normalize the scale to positive numbers
+        var scale = d3.scale.linear()
+          .domain([lo, hi])
+          .range([1, hi+1]);
+
+        // tell the cartogram to use the scaled values
+        carto.value(function(d) {
+          return scale(value(d));
+        });
+
+        // generate the new features, pre-projected
+        features = carto(topology, geometries).features;
+
+        // update the data
+        countries.data(features)
+          .select("title")
+            .text(function(d) {
+              return d.properties.NAME + ": " + value(d) + " Mentions";
+            });
+
+        countries.transition()
+          .duration(750)
+          .ease("linear")
+          .attr("fill", function(d) {
+            return color(value(d));
+          })
+          .attr("d", carto.path);
+
+        totalTweetsSpan.text([totalMentions, "country mentions from", totalTweets, "tweets"].join(" ")) 
+      }
+
+      var deferredUpdate = (function() {
+        var timeout;
+        return function() {
+          var args = arguments;
+          clearTimeout(timeout);
+          stat.text("calculating...");
+          return timeout = setTimeout(function() {
+            update.apply(null, arguments);
+          }, 10);
+        };
+      })();
+
+      var hashish = d3.selectAll("a.hashish")
+        .datum(function() {
+          return this.href;
+        });
+
+
+    </script>
+  </body>
+</html>
