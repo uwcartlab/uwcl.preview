@@ -44,6 +44,7 @@ function parseURL(){
 	//console.log(mode,ex);
 	if(ex < 1 || ex > 7){
 		console.log("Link parameters do not match. Defaulted to example 1.");
+		ex = 1;
 	} else {
 		console.log("You have chosen to open to example", ex);
 	}
@@ -105,29 +106,37 @@ function createMap(ex,tile){
 	esri_sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 	});
+	esri_gray = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+		maxZoom: 16
+	});
 
 	var tiles = [];
 
 	// if a tile was specified load it. if not choose the default
-	if(tile < 1 || tile > 3){
+	if(tile < 1 || tile > 4){
 		console.log("Tile not found. Defaulted to OSM_Mapnik");
-		tiles = [osm_def];
+		tiles = [esri_gray];
 	}
 	else{
 		switch(tile){
 			case 0:
-				tiles = [osm_def];
+				tiles = [esri_gray];
 				console.log("You have chosen to open with the default tileset");
 				break;
 			case 1:
+				tiles = [osm_def];
+				console.log("You have chosen to open with the OSM tileset");
+				break;
+			case 2:
 				tiles = [stamen_wc];
 				console.log("You have chosen to open with the watercolor tileset");
 				break;
-			case 2:
+			case 3:
 				tiles = [carto_dm];
 				console.log("You have chosen to open with the dark mode tileset");
 				break;
-			case 3:
+			case 4:
 				tiles = [esri_sat];
 				console.log("You have chosen to open with the satellite tileset");
 				break;
@@ -160,6 +169,7 @@ function createMap(ex,tile){
 
 	// adding all basemaps for user to switch
 	var baseMaps = {
+		"Esri Gray Earth Canvas": esri_gray,
 		"OpenStreetMaps Mapnik": osm_def,
 		"Stamen Watercolor": stamen_wc,
 		"Dark Matter": carto_dm,
@@ -194,7 +204,7 @@ function createMap(ex,tile){
 		
 		// position in top right of map
 		options: {
-			position: 'topleft'
+			position: 'topright'
 		},
 
 		onAdd: function () {
@@ -202,15 +212,37 @@ function createMap(ex,tile){
 			var container = L.DomUtil.create('div', 'widget-control-container');
 			
 			// create a button that calls the resetZoom function
-			$(container).append('<button onclick="showWidget()" title="Zoom/Pan Widget" id="viz-button">>></button>');
+			$(container).append('<button onclick="showWidget()" title="Zoom/Pan Widget" id="viz-button"></button>');
 			$(container).append('<div id="widget-sidebar"><button onclick="dropPan()" style="margin-right: 5px">-</button><span id=panAmount-text>Pan Amount: 0</span><button onclick="addPan()" style="margin-left: 5px">+</button><br><br><button onclick="dropZoom()" style="margin-right: 5px">-</button><span id=zoomLevel-text>Zoom Level: 0</span><button onclick="addZoom()" style="margin-left: 5px">+</button></div>');
 			L.DomEvent.disableClickPropagation(container);
 	
 			return container;
 		}
 	});
-	
+
 	map.addControl(new WidgetControl());
+
+	// create a widget for adjusting pan/zoom amounts
+	var WidgetControlHidden = L.Control.extend({
+		
+		// position in top right of map
+		options: {
+			position: 'topright'
+		},
+
+		onAdd: function () {
+			// create the control container with a particular class name
+			var container = L.DomUtil.create('div', 'widget-control-container-hidden');
+			
+			// create a button that calls the resetZoom function
+			$(container).append('<button onclick="showWidget()" title="Zoom/Pan Widget" id="viz-button-hidden"></button>');
+			L.DomEvent.disableClickPropagation(container);
+	
+			return container;
+		}
+	});
+	
+	map.addControl(new WidgetControlHidden());
 
 	// horizontal slider for example 4
 	var HorzSequenceControl = L.Control.extend({
@@ -226,8 +258,8 @@ function createMap(ex,tile){
 			$(container).append('<input class="range-slider" type="range" id="horizontal">');
 			
 			// create the step buttons
-			$(container).append('<button class="step" id="reverse"><-</button>');
-			$(container).append('<button class="step" id="forward">+></button>');
+			$(container).append('<button class="step" id="reverse"></button>');
+			$(container).append('<button class="step" id="forward"></button>');
 			
 			L.DomEvent.disableClickPropagation(container);
 			
@@ -249,8 +281,8 @@ function createMap(ex,tile){
 			$(container).append('<input class="range-slider" type="range" orient="vertical" id="vertical">');
 			
 			// create the step buttons
-			$(container).append('<button class="step" id="up">/\\</button>');
-			$(container).append('<button class="step" id="down">\\/</button>');
+			$(container).append('<button class="step" id="up"></button>');
+			$(container).append('<button class="step" id="down"></button>');
 			
 			L.DomEvent.disableClickPropagation(container);
 			
@@ -262,11 +294,13 @@ function createMap(ex,tile){
 	map.addControl(new HorzSequenceControl());
 	map.addControl(new VertSequenceControl());
 
+	var prev = Math.ceil(maxHorz/2);
+
 	// set slider attributes
 	$('.range-slider').attr({
 		min: min,
 		max: maxHorz,
-		value: Math.ceil(maxHorz/2),
+		value: prev,
 		step: 1
 	});
 
@@ -333,12 +367,13 @@ function displayExample(ex){
 	// for dynamic slider length in ex4
 	currEx = ex;
 
+	$(".active").toggleClass();
+
+	$("#"+ex).toggleClass("active");
+
 	// if previous example was #7 then the widget needs to be available again
 	if(needToShowWidget){
-		$(".widget-control-container").animate({
-			left: "+=35",
-		  }, 1000, function() {
-		});
+		$("#viz-button-hidden").fadeIn(200);
 		needToShowWidget = false;
 	}
 
@@ -357,18 +392,24 @@ function displayExample(ex){
 	document.getElementsByClassName("horz-sequence-control-container")[0].style.display = "none";
 	document.getElementsByClassName("vert-sequence-control-container")[0].style.display = "none";
 	
-	document.getElementsByClassName("zoom-reset-control-container")[0].style.display = "none";
+	//document.getElementsByClassName("zoom-reset-control-container")[0].style.display = "none";
+	document.getElementsByClassName("zoom-reset-control-container")[0].style.display = "block";
 	
 	map.removeControl(map.zoomControl);
 
 	updateWidget();
 
+	if(true){
+		resetZoom(13);
+	}
+
 	map.off('click');
 	map.dragging.disable();
 	map.boxZoom.disable();
 	map.keyboard.disable();
-	map.touchZoom.disable()
+	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
+	map.scrollWheelZoom.disable();
 	
 	// based on the ex passed turn off/on certain features
 	switch(ex) {
@@ -377,11 +418,11 @@ function displayExample(ex){
 		case 1:
 			console.log(ex);
 			ex_name.innerText = "Grab and Drag";
-			ex_desc.innerText = "Click and drag directly on the map to reposition it.";
-			
-			resetZoom(13);
+			ex_desc.innerText = "Click and drag directly on the map to reposition it. Scroll to zoom in and out.";
 			
 			map.dragging.enable();
+			map.scrollWheelZoom.enable();
+			map.touchZoom.enable();
 			
 			break;
 		
@@ -390,8 +431,6 @@ function displayExample(ex){
 			console.log(ex);
 			ex_name.innerText = "Zoom and Recenter";
 			ex_desc.innerText = "Click on the map to pan and zoom.";
-
-			resetZoom(12);
 			
 			map.on('click', function(ev) {
 				//console.log(map.getZoom());
@@ -415,8 +454,6 @@ function displayExample(ex){
 			console.log(ex);
 			ex_name.innerText = "Zoom Box";
 			ex_desc.innerText = "Hold shift and click the map to begin drawing a box, then release to zoom to the area in the box.";
-
-			resetZoom(12);
 			
 			// leaflet has this built in
 			map.boxZoom.enable();
@@ -439,10 +476,8 @@ function displayExample(ex){
 			console.log(ex);
 			ex_name.innerText = "Smart Scroll Bars";
 			ex_desc.innerText = "Use the scroll bars to pan. Note that the scroll bar length changes depending on the zoom.";
-
-			resetZoom(13);
 			
-			map.addControl(map.zoomControl);
+			//map.addControl(map.zoomControl);
 			document.getElementsByClassName("vert-sequence-control-container")[0].style.display = "block";
 			document.getElementsByClassName("horz-sequence-control-container")[0].style.display = "block";
 			
@@ -453,8 +488,6 @@ function displayExample(ex){
 			console.log(ex);
 			ex_name.innerText = "Navigator Tabs";
 			ex_desc.innerText = "Click the arrows to pan the map.";
-		
-			resetZoom(14);
 			
 			// buttons created at page start so just display them
 			document.getElementById("pan-up").style.display = "block";
@@ -470,8 +503,6 @@ function displayExample(ex){
 			ex_name.innerText = "Keyboard Controls";
 			ex_desc.innerText = "Click inside this box first to give it focus, then use the arrow keys to pan the map.";
 
-			resetZoom(13);
-
 			// leaflet has this built in
 			map.keyboard.enable();
 			
@@ -482,53 +513,40 @@ function displayExample(ex){
 			console.log(ex);
 			ex_name.innerText = "Navigator Window";
 			ex_desc.innerText = "Click and drag the box in the inset map to pan.";
-			
-			map.options.minZoom = 14;
-			map.options.maxZoom = 14;
-			resetZoom(14);
 
 			// hide the zoom/pan widget based on current state
 			if(shown == false){
-				$(".widget-control-container").animate({
-					left: "-=35",
-				  }, 1000, function() {
-				});
+				$("#viz-button-hidden").fadeOut(200);
 			}
 			else if(shown == true) {
 				shown = false;
-				widget.animate({
-					left: "-=215",
-				  }, 1000, function() {
-				});
-				$("#viz-button").html(">>");
+				$(".widget-control-container").fadeOut(200);
 			}
 			needToShowWidget = true;
 
 			// show the div the minimap will be in
 			document.getElementById("minimap").style.display = "block";
-			document.getElementsByClassName("leaflet-control-layers")[0].style.top = "185px";
 			
 			// create the minimap
 			bounds1 = L.latLngBounds(L.latLng(43.2,-89.6),L.latLng(42.95,-89.2));
 			minimap = L.map('minimap', {attributionControl: false,scrollWheelZoom: false,boxZoom: false,keyboard: false, doubleClickZoom: false,dragging: false, scrollWheelPan: true,touchZoom: false,maxBounds: bounds1,maxBoundsViscosity: 1.0}).setView([43.076,-89.40], 13);
 			// load the tileset I found
-			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-				subdomains: 'abcd',
+			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
 				minZoom: 0,
-				maxZoom: 18,
+				maxZoom: 16,
 				ext: 'png',
 			}).addTo(minimap);
 	
 			minimap.removeControl(minimap.zoomControl);
 			
-			minimap.setZoom(10);
+			minimap.setZoom(9);
 			
 			// make a marker that takes the shape of a rectangle that matches the size of the larger map
 			var rectangle = L.icon({
-				iconUrl: 'rect.png',
+				iconUrl: 'img/rect.png',
 				
-				iconSize: [50,30],
-				iconAnchor: [25,15]
+				iconSize: [53,35],
+				iconAnchor: [18,15]
 			});
 			marker = null;
 			marker = new L.marker(map.getCenter(),{
@@ -564,7 +582,7 @@ function resetZoom(zoom){
 // show/hide the widget for adjusting zoom/pan
 function showWidget(){
 	widget = $(".widget-control-container");
-	sidebar = document.getElementById("widget-sidebar");
+	sidebar = $("#widget-sidebar");
 	
 	panText = $("#panAmount-text");
 	zoomText = $('#zoomLevel-text');
@@ -572,21 +590,19 @@ function showWidget(){
 	panText.text("Pan Amount: " + panAmount);
 	zoomText.text("Zoom Level: " + zoomLevel);
 
+	console.log(sidebar);
+
 	if(shown == false){
 		shown = true;
-		widget.animate({
-			left: "+=180",
-		  }, 1000, function() {
-		});
-		$("#viz-button").html("<<");
+		widget.fadeIn(200);
+		document.getElementById("viz-button-hidden").style.display = "none";
 	}
 	else if(shown == true) {
 		shown = false;
-		widget.animate({
-			left: "-=180",
-		  }, 1000, function() {
+		widget.fadeOut(200);
+		widget.promise().done(function(){
+			document.getElementById("viz-button-hidden").style.display = "block";
 		});
-		$("#viz-button").html(">>");
 	}
 }
 
@@ -672,7 +688,12 @@ function changeSliders(trueIfZoom){
 			$("#vertical")[0].value = Math.ceil(vert/2);
 
 			$("#horizontal").css('width', '150px');
-			$("#vertical").css('height', '150px');
+			$("#vertical").css('width', '150px');
+
+			$("#vertical").css('right', '-13px');
+			$("#vertical").css('bottom', '164px');
+
+			$("#up").css('top', '-171px');
 
 			break;
 		case 13:
@@ -680,13 +701,18 @@ function changeSliders(trueIfZoom){
 			vert = calcVert(13);
 
 			$("#horizontal")[0].max = horz;
-			$("#vertical")[0].max = vert;
+			$("#vertical")[0].max = 18;
 
 			$("#horizontal")[0].value = Math.ceil(horz/2);
-			$("#vertical")[0].value = Math.ceil(vert/2);
+			$("#vertical")[0].value = Math.ceil(18/2);
 			
 			$("#horizontal").css('width', '225px');
-			$("#vertical").css('height', '225px');
+			$("#vertical").css('width', '225px');
+
+			$("#vertical").css('right', '-50px');
+			$("#vertical").css('bottom', '202px');
+
+			$("#up").css('top', '-246px');
 
 			break;
 		case 14:
@@ -700,7 +726,12 @@ function changeSliders(trueIfZoom){
 			$("#vertical")[0].value = Math.ceil(vert/2);
 			
 			$("#horizontal").css('width', '300px');
-			$("#vertical").css('height', '300px');
+			$("#vertical").css('width', '300px');
+
+			$("#vertical").css('right', '-87px');
+			$("#vertical").css('bottom', '239px');
+
+			$("#up").css('top', '-322px');
 
 			break;
 		case 15:
@@ -713,8 +744,13 @@ function changeSliders(trueIfZoom){
 			$("#horizontal")[0].value = Math.ceil(horz/2);
 			$("#vertical")[0].value = Math.ceil(vert/2);
 
-			$("#horizontal").css('width', '375px');
-			$("#vertical").css('height', '375px');
+			$("#horizontal").css('width', '350px');
+			$("#vertical").css('width', '350px');
+
+			$("#vertical").css('right', '-112px');
+			$("#vertical").css('bottom', '265px');
+
+			$("#up").css('top', '-372px');
 
 			break;
 		default:

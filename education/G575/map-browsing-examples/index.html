@@ -18,38 +18,37 @@
 		<!-- Buttons for example selection. Link can also end in '/?ex=' and a number to open to specific example -->
 		<ul class="ui">
 			<li>
-				<a  onclick="displayExample(1)">
-					<img src='img/GnD.png'>
+				<a  id="1" class="active" onclick="displayExample(1)">
 					Grab and Drag
 				</a>
 			</li>
 			<li>
-				<a  onclick="displayExample(2)">
+				<a id="2" onclick="displayExample(2)">
 					Zoom and Recenter
 				</a>
 			</li>
 			<li>
-				<a onclick="displayExample(3)">
+				<a id="3" onclick="displayExample(3)">
 					Zoom Box
 				</a>
 			</li>
 			<li>
-				<a  onclick="displayExample(4)">
+				<a id="4" onclick="displayExample(4)">
 					Smart Scroll Bar
 				</a>
 			</li>
 			<li>
-				<a onclick="displayExample(5)">
+				<a id="5" onclick="displayExample(5)">
 					Navigator Tabs
 				</a>
 			</li>
 			<li>
-				<a onclick="displayExample(6)">
+				<a id="6" onclick="displayExample(6)">
 					Keyboard Controls
 				</a>
 			</li>
 			<li>
-				<a onclick="displayExample(7)">
+				<a id="7" onclick="displayExample(7)">
 					Navigator Window
 				</a>
 			</li>
@@ -57,13 +56,13 @@
 
 		<!-- Divs for replacing text/content for each example -->
 		<h1 class="ui" id="example-name"><b>Grab and Drag</b></h1>
-		<p class="ui" id="example-desc">Click and drag directly on the map to reposition it.</p>
+		<p class="ui" id="example-desc">Click and drag directly on the map to reposition it. Scroll to zoom in and out.</p>
 
 		<!-- Buttons used for example 5 -->
-		<button class="ui" id="pan-up" onclick="pan(0)">/\</button>
-		<button class="ui" id="pan-down" onclick="pan(1)">\/</button>
-		<button class="ui" id="left" onclick="pan(2)"><</button>
-		<button class="ui" id="right" onclick="pan(3)">></button>
+		<button id="pan-up" onclick="pan(0)"></button>
+		<button id="pan-down" onclick="pan(1)"></button>
+		<button id="left" onclick="pan(2)"></button>
+		<button id="right" onclick="pan(3)"></button>
 		
 		<!-- the libraries used -->
 		<script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
