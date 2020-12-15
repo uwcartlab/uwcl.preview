@@ -3,10 +3,8 @@ import os
   
 # Function to rename multiple files
 def main():
-    def removeYear(): 
-        for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/uwcl.preview/education/G370/2019FA/PDF"):
-            print(filename)
     def organizeLetters():
+        ##Change path to the folder containing the final projects
         for filename in os.listdir("C:/Users/Tim/Desktop/Workspace/uwcl.preview/education/G370/2019FA/PDF"):
             i=1
             #Can change name to 8: if year is attached like 2010Fall
@@ -28,15 +26,19 @@ def main():
                 elif letter == '.':
                     break
             #print(last + first)
+            ##Use the os.rename if you still need to add the year/semester to the project names
             #os.rename('2019FA/PDF/' + filename, '2019FA/PDF/' + 'Fall2019' + last + first +'.PDF')
+            
+            #Change the relative path to the respective course time (If spring 2020: e.g. 2020SP)
             print("<a href='2019FA/PDF/" + filename + "' " + "target='_blank'>")
             print("<div class='col-md-4 col-sm-6'>")
+            #Change path to be the same as two lines above
             print("<img src='2019FA/ImgSq/" + filename[:-4] + ".png' " + "alt='...' class='final'>")
             print("<h3 class='finalProject'>        </h3>")
             print("<p><i>" + first + " " + last +"</i></p>")
             print("</div></a>")
             print
-    #removeYear()       
+    
     organizeLetters()
             
         
